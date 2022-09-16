@@ -59,7 +59,7 @@
             <div class="col-4">
 
                 {{-- TRENDING TAG --}}
-                @include('ui.components.trending-tag')
+                @include('defaultsite.desktop.components-ui.ui-trending-tag')
 
                 {{-- LIVE STREAMING --}}
                 @include('ui.components.live-streaming')
