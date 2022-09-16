@@ -1,10 +1,10 @@
 @extends('defaultsite.desktop.layouts.ui-main')
 
-@push('preload')
+{{-- @push('preload')
     @if ($headline[0]['news_id'] ?? null)
         <link rel="preload" as="image" href="{{ Src::imgNewsCdn($headline[0] ?? null, '640x360', 'webp') }}" />
     @endif
-@endpush
+@endpush --}}
 
 @section('content')
     <header>
@@ -16,9 +16,10 @@
         <div class="row gx-5">
             <div class="col-8">
 
+
                 {{-- HEADLINE --}}
                 @if ($headline[0]['news_id'] ?? null)
-                    @include('defaultsite.desktop.components.ui-main-news', ['hl' => $headline])
+                    @include('defaultsite.desktop.components-ui.ui-main-news', ['hl' => $headline])
                 @endif
                 {{-- BERITA UTAMA LAINNYA --}}
                 <div class="mt-4">
@@ -47,9 +48,10 @@
 
 
                 {{-- VIDEO NEWS --}}
-                @include('ui.components.video-news')
-
-
+                {{-- @dump($feed) --}}
+                @if ($feed[1]['news_id'] ?? null)
+                    @include('defaultsite.desktop.components-ui.ui-video-news', ['r' => $feed])
+                @endif
                 {{-- LIST MAIN NEWS REPEAT --}}
                 @include('ui.components.list-main-news')
 

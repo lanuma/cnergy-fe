@@ -1,7 +1,7 @@
 <div class="main-news-container">
     <figure>
-        <a href="#">
-            <img src='{{ $hl[0]['news_image']['real'] }}'>
+        <a href="{{ $hl[0]['news_image']['real'] }}" _noblank>
+            <img src={{ $hl[0]['news_image']['real'] }}>
         </a>
         <figcaption>5 menit lalu</figcaption>
     </figure>
