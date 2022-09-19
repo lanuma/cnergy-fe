@@ -1,12 +1,35 @@
 <div class="main-news-container">
     <figure>
-        <a href="{{ $hl[0]['news_image']['real'] }}" _noblank>
+        <a href="#">
             <img src={{ $hl[0]['news_image']['real'] }}>
         </a>
-        <figcaption>5 menit lalu</figcaption>
+        <figcaption>{{ $hl[0]['news_date_publish'] }}</figcaption>
     </figure>
     <div class="main-news-deskripsi">
         <h3>{{ $hl[0]['news_title'] }}</h3>
         <p>{{ $hl[0]['news_synopsis'] }}</p>
     </div>
+    <div class="mt-4">
+        <h4 class="special-font-prompt text-uppercase fst-italic fw-bold" style="font-size: 16px; margin-left: 20px">
+            Berita
+            Utama Lainnya</h4>
+        <section class="custom-slider">
+            <button class="pre-btn"><img src="{{ URL::asset('assets/icons/prev.svg') }}" alt=""></button>
+            <button class="nxt-btn"><img src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
+            <div class="slider-container">
+                @foreach ($hl as $s)
+                    <a href="#" class="slider-card">
+                        <div class="slider-image">
+                            <img src="{{ $s['news_image']['real'] }}" class="slider-thumb" alt="">
+                        </div>
+                        <div class="slider-info">
+                            <span class="slider-title">{{ $s['news_title'] }}</span>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </section>
+
+    </div>
+
 </div>
