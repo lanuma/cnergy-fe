@@ -9,7 +9,9 @@
 @section('content')
     <header>
         @include('ui.components.navbar')
-        @include('ui.components.breaking-news')
+        @if ($headline[0]['news_id'] ?? null) 
+            @include('defaultsite.desktop.components-ui.ui-breaking-news', ['bn' => $headline])
+        @endif
     </header>
 
     <div class="mt-4">
