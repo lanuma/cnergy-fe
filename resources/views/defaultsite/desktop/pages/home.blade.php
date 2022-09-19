@@ -22,7 +22,13 @@
                 @if ($headline[0]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-main-news', ['hl' => $headline])
                 @endif
-
+                {{-- BERITA UTAMA LAINNYA --}}
+                <div class="mt-4">
+                    <h4 class="special-font-prompt text-uppercase fst-italic fw-bold"
+                        style="font-size: 16px; margin-left: 20px">Berita Utama Lainnya</h4>
+                    @include('ui.components.slider-news')
+                </div>
+               
 
                 {{-- BERITA SPOTLIGHT --}}
                 <div class="mt-4">
@@ -54,7 +60,10 @@
                 @endif
 
                 {{-- LIST MAIN NEWS REPEAT --}}
-                @include('ui.components.list-main-news')
+                
+                @if ($headline[3]['news_id'] ?? null)
+                @include('defaultsite.desktop.components-ui.ui-list-main-news',['nw' => $headline] )
+                @endif
 
             </div>
             <div class="col-4">
