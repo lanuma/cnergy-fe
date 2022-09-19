@@ -3,7 +3,8 @@
         <a href="#">
             <img src={{ $hl[0]['news_image']['real'] }}>
         </a>
-        <figcaption>{{ $hl[0]['news_date_publish'] }}</figcaption>
+        {{-- <figcaption>{{ $hl[0]['news_date_publish'] }}</figcaption> --}}
+        <figcaption> {{ Util::date('2022-09-19 14:57:27', 'ago') }}
     </figure>
     <div class="main-news-deskripsi">
         <h3>{{ $hl[0]['news_title'] }}</h3>
@@ -20,7 +21,13 @@
                 @foreach ($hl as $s)
                     <a href="#" class="slider-card">
                         <div class="slider-image">
-                            <img src="{{ $s['news_image']['real'] }}" class="slider-thumb" alt="">
+                            {{-- <img src="{{ $s['news_image']['real'] }}" class="slider-thumb" alt=""> --}}
+                            @include('image', [
+                                'source' => $s,
+                                'force' => '300x172',
+                                'size' => '300x172',
+                                $s['news_title'] ?? null,
+                            ])
                         </div>
                         <div class="slider-info">
                             <span class="slider-title">{{ $s['news_title'] }}</span>

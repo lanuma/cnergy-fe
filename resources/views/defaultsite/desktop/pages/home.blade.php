@@ -9,7 +9,7 @@
 @section('content')
     <header>
         @include('ui.components.navbar')
-        @if ($headline[0]['news_id'] ?? null) 
+        @if ($headline[0]['news_id'] ?? null)
             @include('defaultsite.desktop.components-ui.ui-breaking-news', ['bn' => $headline])
         @endif
     </header>
@@ -38,15 +38,15 @@
 
                 {{-- GALLERY BERITA --}}
                 {{-- @dump($headline[0]['news_type']) --}}
-                @if ($headline[5]['news_type'] == 'news' ?? null)
+                @if ($headline[0]['news_type'] == 'news' ?? null)
                     @include('defaultsite.desktop.components-ui.ui-gallery-news', [
                         'gl' => $headline,
                     ]),
                 @endif
 
                 {{-- PROMOTION PRODUCT --}}
-                @if ($headline[4]['news_id'] ?? null)
-                @include('defaultsite.desktop.components-ui.ui-promotion', ['pr' => $headline ] )
+                @if ($headline[0]['news_id'] ?? null)
+                    @include('defaultsite.desktop.components-ui.ui-promotion', ['pr' => $headline])
                 @endif
 
 
@@ -57,7 +57,7 @@
                 @endif
 
                 {{-- LIST MAIN NEWS REPEAT --}}
-                @if ($headline[3]['news_id'] ?? null)
+                @if ($headline[0]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-list-main-news', ['nw' => $headline])
                 @endif
 
