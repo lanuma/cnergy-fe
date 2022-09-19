@@ -18,6 +18,7 @@
 
 
                 {{-- HEADLINE --}}
+                {{-- @dump($headline) --}}
                 @if ($headline[0]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-main-news', ['hl' => $headline])
                 @endif
@@ -27,7 +28,8 @@
                         style="font-size: 16px; margin-left: 20px">Berita Utama Lainnya</h4>
                     @include('ui.components.slider-news')
                 </div>
-                
+               
+
                 {{-- BERITA SPOTLIGHT --}}
                 <div class="mt-4">
                     <h4 class="special-font-prompt text-uppercase fst-italic fw-bold"
@@ -40,8 +42,12 @@
 
 
                 {{-- GALLERY BERITA --}}
-                @include('ui.components.gallery-news')
-
+                {{-- @dump($headline[0]['news_type']) --}}
+                @if ($headline[5]['news_type'] == 'news' ?? null)
+                    @include('defaultsite.desktop.components-ui.ui-gallery-news', [
+                        'gl' => $headline,
+                    ]),
+                @endif
 
                 {{-- PROMOTION PRODUCT --}}
                 @include('ui.components.promotion-product')
@@ -52,6 +58,7 @@
                 @if ($feed[1]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-video-news', ['r' => $feed])
                 @endif
+
                 {{-- LIST MAIN NEWS REPEAT --}}
                 
                 @if ($headline[3]['news_id'] ?? null)
