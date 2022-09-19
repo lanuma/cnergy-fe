@@ -45,7 +45,9 @@
                 @endif
 
                 {{-- PROMOTION PRODUCT --}}
-                @include('ui.components.promotion-product')
+                @if ($headline[4]['news_id'] ?? null)
+                @include('defaultsite.desktop.components-ui.ui-promotion', ['pr' => $headline ] )
+                @endif
 
 
                 {{-- VIDEO NEWS --}}
