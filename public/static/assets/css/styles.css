@@ -652,11 +652,14 @@ nav {
 }
 
 .list-berita-populer h1 {
+    width: 10%;
     color: #e5e5e5;
     font-size: 45px;
     font-family: var(--prompt-font);
     font-style: italic;
     font-weight: bold;
+    text-align: center;
+    display: block;
 }
 
 .berita-populer-deskripsi span {
@@ -665,6 +668,10 @@ nav {
     font-weight: 700;
     color: #ca0000;
     text-transform: uppercase;
+}
+
+.berita-populer-deskripsi {
+    width: 90%;
 }
 
 .berita-populer-deskripsi p {
