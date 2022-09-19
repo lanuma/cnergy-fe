@@ -76,7 +76,9 @@
                 @endif
 
                 {{-- BERITA POPULER --}}
-                @include('ui.components.populer-news')
+                @if ($feed[2]['news_id'] ?? null)
+                    @include('defaultsite.desktop.components-ui.ui-populer-news', ['populer' => $feed])
+                @endif
 
             </div>
         </div>
