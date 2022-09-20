@@ -8,7 +8,10 @@
 
 @section('content')
     <header>
-        @include('ui.components.navbar')
+        @include('defaultsite.desktop.components.header')
+
+
+        {{-- @include('ui.components.navbar') --}}
         @if ($headline[0]['news_id'] ?? null)
             @include('defaultsite.desktop.components-ui.ui-breaking-news', ['bn' => $headline])
         @endif
@@ -26,11 +29,9 @@
                 @endif
 
                 {{-- BERITA SPOTLIGHT --}}
-                <div class="mt-4">
-                    <h4 class="special-font-prompt text-uppercase fst-italic fw-bold"
-                        style="font-size: 16px; margin-left: 20px">spotlight</h4>
-                    @include('ui.components.slider-news')
-                </div>
+                @if ($latest[2]['news_id'] ?? null)
+                    @include('defaultsite.desktop.components-ui.ui-spotlight-news', ['sl' => $latest])
+                @endif
 
                 {{-- LIST MAIN NEWS --}}
                 @include('ui.components.list-main-news')
@@ -83,4 +84,8 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        @include('defaultsite.desktop.components.footer')
+    </footer>
 @endsection
