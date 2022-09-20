@@ -11,7 +11,7 @@
         @foreach ($latest as $item)
             <a href="#" class="d-flex align-items-center justify-content-between gap-3">
                 <div class="image">
-                    <img src="{{ $item['news_image']['real'] }}" width="100%" height="100%>
+                    <img src="{{ $item['news_image']['real'] }}"  >
                 </div>
                 <p>{{ $item['news_title'] }}</p>
             </a>
