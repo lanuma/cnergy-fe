@@ -1386,13 +1386,15 @@ nav {
 }
 
 .list-berita-terkini a .image {
-    width: 160px;
+    width: 250px;
     height: 90px;
     background-color: silver;
     border-radius: 5px;
 }
 
 .list-berita-terkini a .image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 5px;
 }
