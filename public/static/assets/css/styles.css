@@ -630,14 +630,24 @@ nav {
     text-transform: uppercase;
 }
 
-.populer-container figure img {
+.list-populer-container figure {
+    margin: 0;
+}
+
+.list-populer-container figure img {
     object-fit: cover;
 }
 
-.populer-container a {
+.list-populer-container a {
     display: block;
     margin-top: 10px;
     text-decoration: none;
+}
+
+.list-populer-container {
+    margin-top: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
 }
 
 .list-berita-populer a {
@@ -645,8 +655,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    padding: 20px 7px;
+    gap: 25px;
+    padding: 20px 20px;
     border: 1px solid #e5e5e5;
     margin: 0;
 }
@@ -657,6 +667,8 @@ nav {
     font-family: var(--prompt-font);
     font-style: italic;
     font-weight: bold;
+    width: 60px;
+    text-align: center;
 }
 
 .berita-populer-deskripsi span {
