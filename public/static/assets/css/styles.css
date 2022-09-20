@@ -607,9 +607,14 @@ nav {
     padding: 10px 0px;
 }
 
-.list-berita-sidebar a img {
-    width: 90px;
+.list-berita-sidebar a .image {
+    width: 220px;
     height: 90px;
+    background-color: silver;
+    border-radius: 5px;
+}
+
+.list-berita-sidebar a .image img {
     object-fit: cover;
     border-radius: 5px;
 }
