@@ -64,6 +64,10 @@
                 {{-- BERITA POPULER --}}
                 @include('ui.components.populer-news')
 
+                {{-- BERITA TERKINI --}}
+                @include('ui.components.latest-news')
+              
+
             </div>
         </div>
     </div>
