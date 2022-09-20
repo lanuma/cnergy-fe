@@ -9,7 +9,9 @@
     <div class="list-berita-populer">
       @foreach ($populer as $item)
         <a href="#">
-          <h1>{{ $loop->iteration }}</h1>
+          <div class="populer-number">
+            <h1>{{ $loop->iteration }}</h1>
+          </div>
           <div class="berita-populer-deskripsi">
             <span>{{ $item['category_name'] }}</span>
             <p>{{ $item['news_title'] }}</p>
