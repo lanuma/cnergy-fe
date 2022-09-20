@@ -352,11 +352,17 @@ nav {
     grid-row-gap: 0px;
 }
 
-.gallery-image-container .div2 img,
+.gallery-image-container .div2 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    padding: 0 0 2px 2px;
+}
 .gallery-image-container .div3 img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    padding: 0 0 0 2px;
 }
 
 .gallery-image-container .div1 img {
@@ -606,11 +612,12 @@ nav {
 
 .list-populer-container figure img {
     object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .list-populer-container a {
     display: block;
-    margin-top: 10px;
     text-decoration: none;
 }
 
@@ -642,7 +649,7 @@ nav {
     font-style: italic;
     font-weight: bold;
     text-align: center;
-    width: 50px;
+    width: 40px;
 }
 
 .berita-populer-deskripsi span {
