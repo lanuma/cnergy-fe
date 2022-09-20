@@ -24,8 +24,8 @@
                             {{-- <img src="{{ $s['news_image']['real'] }}" class="slider-thumb" alt=""> --}}
                             @include('image', [
                                 'source' => $s,
-                                'force' => '300x172',
-                                'size' => '300x172',
+                                'force' => '212x115',
+                                'size' => '212x115',
                                 $s['news_title'] ?? null,
                             ])
                         </div>

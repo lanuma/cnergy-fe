@@ -257,58 +257,25 @@ nav {
 }
 
 .custom-slider .slider-image {
-    position: relative;
-    --aspect-ratio: 40/23;
-    padding-bottom: calc(100% / (var(--aspect-ratio)));
     background-color: silver;
-    height: 0;
-    width: 100%;
-    overflow: hidden;
+    height: 115px;
+    width: 212px;
 }
 
 .slider-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-}
-
-.custom-slider .card-btn {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px;
-    width: 90%;
-    text-transform: capitalize;
-    border: none;
-    outline: none;
-    background: #fff;
-    border-radius: 5px;
-    transition: 0.5s;
-    cursor: pointer;
-    opacity: 0;
-}
-
-.custom-slider .slider-card:hover .card-btn {
-    opacity: 1;
-}
-
-.custom-slider .card-btn:hover {
-    background: #ff7d7d;
-    color: #fff;
 }
 
 .custom-slider .slider-info {
     margin-top: 10px;
+    inline-size: 212px;
+    display: flex;
 }
 
 .custom-slider .slider-title {
     font-family: var(--lato-font);
     font-size: 10px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
 }
 
