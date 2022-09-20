@@ -4,7 +4,7 @@
             <img src={{ $hl[0]['news_image']['real'] }}>
         </a>
         {{-- <figcaption>{{ $hl[0]['news_date_publish'] }}</figcaption> --}}
-        <figcaption> {{ Util::date('2022-09-19 14:57:27', 'ago') }}
+        <figcaption> {{ Util::date($hl[0]['news_date_publish'], 'ago') }} </figcaption>
     </figure>
     <div class="main-news-deskripsi">
         <h3>{{ $hl[0]['news_title'] }}</h3>

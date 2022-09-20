@@ -312,6 +312,14 @@ nav {
     text-decoration: none;
 }
 
+.list-news-image {
+    background-color: silver;
+}
+
+.list-news-image a img {
+    object-fit: cover;
+}
+
 .list-main-news-card {
     padding: 20px 0px;
     border-bottom: 1px solid #e5e5e5;
@@ -555,17 +563,23 @@ nav {
     text-transform: uppercase;
 }
 
-.berita-sidebar-container figure img {
-    object-fit: cover;
-}
-
 .berita-sidebar-container a {
     margin-top: 10px;
     display: block;
     text-decoration: none;
 }
 
-.berita-sidebar-container figure figcaption {
+.berita-sidebar-container .image-content {
+    background-color: silver;
+    width: 310px;
+    height: 172px;
+}
+
+.berita-sidebar-container .image-content img {
+    object-fit: cover;
+}
+
+.berita-sidebar-container span {
     font-family: var(--lato-font);
     font-size: 14px;
     color: #000000;
@@ -577,14 +591,14 @@ nav {
     padding: 10px 0px;
 }
 
-.list-berita-sidebar a .image {
-    width: 220px;
-    height: 90px;
+.list-berita-sidebar .image-content {
     background-color: silver;
     border-radius: 5px;
+    width: 60px;
+    height: 60px;
 }
 
-.list-berita-sidebar a .image img {
+.list-berita-sidebar .image-content img {
     object-fit: cover;
     border-radius: 5px;
 }
@@ -594,6 +608,8 @@ nav {
     font-size: 14px;
     color: #000000;
     font-weight: 700;
+    width: 70%;
+    overflow-wrap: break-word;
 }
 
 /* POPULER NEWS CSS */
@@ -605,11 +621,14 @@ nav {
     text-transform: uppercase;
 }
 
-.list-populer-container figure {
+.list-populer-container .image-content {
     margin: 0;
+    background-color: silver;
+    width: 310px;
+    height: 172px;
 }
 
-.list-populer-container figure img {
+.list-populer-container .image-content img {
     object-fit: cover;
 }
 
@@ -628,12 +647,15 @@ nav {
 .list-berita-populer a {
     text-decoration: none;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 25px;
     padding: 20px 20px;
     border: 1px solid #e5e5e5;
     margin: 0;
+}
+
+.list-berita-populer div:first-child {
+    width: 20%;
 }
 
 .list-berita-populer h1 {
@@ -642,8 +664,11 @@ nav {
     font-family: var(--prompt-font);
     font-style: italic;
     font-weight: bold;
-    width: 60px;
     text-align: center;
+}
+
+.berita-populer-deskripsi {
+    width: 100%;
 }
 
 .berita-populer-deskripsi span {
@@ -668,9 +693,12 @@ nav {
     margin-top: 20px;
 }
 
-.first-link-footer {
-    gap: 30px;
+.first-link-footer ul {
+    list-style-type: none;
+    display: flex;
     flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
 }
 
 .first-link-footer a {
@@ -680,6 +708,13 @@ nav {
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+
+.social-media-container ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    gap: 15px;
 }
 
 .copyright {
@@ -1321,50 +1356,42 @@ nav {
     text-transform: uppercase;
 }
 
-.berita-terkini {
+.berita-terkini-container a {
     margin-top: 10px;
-    border: 1px solid #e5e5e5;
-    border-radius: 5px;
-}
-
-.berita-terkini figure img {
-    object-fit: cover;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-.berita-terkini a {
     display: block;
     text-decoration: none;
 }
 
-.berita-terkini figure {
-    margin: 0px;
+.berita-terkini-container .image-content {
+    background-color: silver;
+    width: 310px;
+    height: 172px;
 }
 
-.berita-terkini figure figcaption {
+.berita-terkini-container .image-content img {
+    object-fit: cover;
+}
+
+.berita-terkini-container span {
     font-family: var(--lato-font);
     font-size: 14px;
     color: #000000;
-    font-weight: 700;
-    margin: 8px 10px;
+    margin-top: 6px;
 }
 
 .list-berita-terkini a {
     border-top: 1px solid #e5e5e5;
-    padding: 10px 10px;
+    padding: 10px 0px;
 }
 
-.list-berita-terkini a .image {
-    width: 250px;
-    height: 90px;
+.list-berita-terkini .image-content {
     background-color: silver;
     border-radius: 5px;
+    width: 60px;
+    height: 60px;
 }
 
-.list-berita-terkini a .image img {
-    width: 100%;
-    height: 100%;
+.list-berita-terkini .image-content img {
     object-fit: cover;
     border-radius: 5px;
 }
@@ -1374,4 +1401,6 @@ nav {
     font-size: 14px;
     color: #000000;
     font-weight: 700;
+    width: 70%;
+    overflow-wrap: break-word;
 }

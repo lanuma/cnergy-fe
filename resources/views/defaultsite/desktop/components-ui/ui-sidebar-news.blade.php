@@ -1,23 +1,29 @@
 <div class="berita-sidebar-container">
     <h4>berita sidebar</h4>
     <a href="#">
-        <figure>
-            <img src="{{ $sb[1]['news_image']['real'] }}" width="100%" height="170px">
-            <figcaption>{{ $sb[1]['news_title'] }}</figcaption>
-        </figure>
+        <div class="image-content">
+            @include('image', [
+                'source' => $sb,
+                'force' => '310x172',
+                'size' => '310x172',
+                $sb['news_title'] ?? null,
+            ])
+        </div>
+        <span>{{ $sb[1]['news_title'] }}</span>
     </a>
     <div class="list-berita-sidebar mt-2">
-        <a href="#" class="d-flex align-items-center justify-content-between gap-3">
-            <div class="image">
-                <img src="{{ $sb[2]['news_image']['real'] }}" width="100%" height="100%">
-            </div>
-            <p>{{ $sb[2]['news_title'] }}</p>
-        </a>
-        <a href="#" class="d-flex align-items-center justify-content-between gap-3">
-            <div class="image">
-                <img src="{{ $sb[3]['news_image']['real'] }}" width="100%" height="100%">
-            </div>
-            <p>{{ $sb[3]['news_title'] }}</p>
-        </a>
+        @for ($i = 1; $i < 3; $i++)
+            <a href="#" class="d-flex align-items-center gap-3">
+                <div class="image-content">
+                    @include('image', [
+                        'source' => $sb,
+                        'force' => '60x60',
+                        'size' => '60x60',
+                        $sb['news_title'] ?? null,
+                    ])
+                </div>
+                <p>{{ $sb[$i]['news_title'] }}</p>
+            </a>
+        @endfor
     </div>
 </div>
