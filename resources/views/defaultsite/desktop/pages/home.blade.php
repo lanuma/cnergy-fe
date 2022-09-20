@@ -85,8 +85,6 @@
                 @if ($feed[2]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-latest-news', ['latest' => $feed])
                 @endif
-
-
             </div>
         </div>
     </div>
