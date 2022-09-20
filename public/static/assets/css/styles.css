@@ -251,8 +251,8 @@ nav {
 }
 
 .custom-slider .slider-card {
-    flex: 0 0 auto;
-    margin: 0 8px;
+    flex: 0 0 calc(96% / 3);
+    margin: 0 2px;
     color: black;
 }
 
@@ -260,10 +260,12 @@ nav {
     background-color: silver;
     height: 115px;
     width: 212px;
+    border-radius: 8px;
 }
 
 .slider-image img {
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .custom-slider .slider-info {
@@ -319,6 +321,7 @@ nav {
 .list-main-news-card img {
     object-fit: cover;
     border-radius: 5px;
+    width: 230px;
 }
 
 .list-main-news-deskripsi a h4 {
