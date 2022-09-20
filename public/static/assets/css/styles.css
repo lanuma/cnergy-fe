@@ -652,14 +652,11 @@ nav {
 }
 
 .list-berita-populer h1 {
-    width: 10%;
     color: #e5e5e5;
     font-size: 45px;
     font-family: var(--prompt-font);
     font-style: italic;
     font-weight: bold;
-    text-align: center;
-    display: block;
 }
 
 .berita-populer-deskripsi span {
@@ -668,10 +665,6 @@ nav {
     font-weight: 700;
     color: #ca0000;
     text-transform: uppercase;
-}
-
-.berita-populer-deskripsi {
-    width: 90%;
 }
 
 .berita-populer-deskripsi p {
@@ -1326,4 +1319,70 @@ nav {
     border-radius: 8px;
     border: none;
     text-transform: uppercase;
+}
+
+/* BERITA TERKINI */
+.berita-terkini-container {
+    margin: 30px 0;
+}
+
+.berita-terkini-container h4 {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: var(--prompt-font);
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.berita-terkini {
+    margin-top: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+}
+
+.berita-terkini figure img {
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.berita-terkini a {
+    display: block;
+    text-decoration: none;
+}
+
+.berita-terkini figure {
+    margin: 0px;
+}
+
+.berita-terkini figure figcaption {
+    font-family: var(--lato-font);
+    font-size: 14px;
+    color: #000000;
+    font-weight: 700;
+    margin: 8px 10px;
+}
+
+.list-berita-terkini a {
+    border-top: 1px solid #e5e5e5;
+    padding: 10px 10px;
+}
+
+.list-berita-terkini a .image {
+    width: 160px;
+    height: 90px;
+    background-color: silver;
+    border-radius: 5px;
+}
+
+.list-berita-terkini a .image img {
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.list-berita-terkini p {
+    font-family: var(--lato-font);
+    font-size: 14px;
+    color: #000000;
+    font-weight: 700;
 }

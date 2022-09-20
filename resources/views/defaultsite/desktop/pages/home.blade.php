@@ -80,6 +80,7 @@
                     @include('defaultsite.desktop.components-ui.ui-populer-news', ['populer' => $feed])
                 @endif
 
+
             </div>
         </div>
     </div>
