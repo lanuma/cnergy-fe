@@ -1,14 +1,15 @@
 <div class="main-news-container">
     <figure>
-        <a href="#">
+        <a href="{{ Src::detail($hl[0]) }}" aria-label="{{ $hl[0]['news_title'] ?? null }}">
             <img src={{ $hl[0]['news_image']['real'] }}>
         </a>
-        {{-- <figcaption>{{ $hl[0]['news_date_publish'] }}</figcaption> --}}
         <figcaption> {{ Util::date($hl[0]['news_date_publish'], 'ago') }} </figcaption>
     </figure>
     <div class="main-news-deskripsi">
-        <h3>{{ $hl[0]['news_title'] }}</h3>
-        <p>{{ $hl[0]['news_synopsis'] }}</p>
+        <a href="{{ Src::detail($hl[0]) }}" aria-label="{{ $hl[0]['news_title'] ?? null }}">
+            <h3>{{ $hl[0]['news_title'] }}</h3>
+            <p>{{ $hl[0]['news_synopsis'] }}</p>
+        </a>
     </div>
     <div class="mt-4">
         <h4 class="special-font-prompt text-uppercase fst-italic fw-bold" style="font-size: 16px; margin-left: 20px">

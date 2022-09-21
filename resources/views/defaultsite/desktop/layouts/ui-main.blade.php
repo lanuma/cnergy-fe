@@ -85,7 +85,21 @@
 <body>
 
     <div class="container w-kly">
+        {{-- Header --}}
+        @include('defaultsite.desktop.components-ui.ui-header')
+
+        {{-- Breaking news --}}
+        @if ($headline[0]['news_id'] ?? null)
+            @include('defaultsite.desktop.components-ui.ui-breaking-news', ['bn' => $headline])
+        @endif
+
+        {{-- Content --}}
         @yield('content')
+
+        {{-- Footer --}}
+        @if (config('site.use_footer', 'yes') == 'yes')
+            @include('defaultsite.desktop.components-ui.ui-footer')
+        @endif
     </div>
 
 </body>

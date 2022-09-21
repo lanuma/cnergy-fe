@@ -3,41 +3,35 @@
 @section('title', 'Index Tag Paging')
 
 @section('content-field')
-{{-- LAYOUT HOMEPAGE --}}
-<header>
-    @include('components.navbar')
-    @include('components.breaking-news')
-</header>
+    {{-- LAYOUT HOMEPAGE --}}
 
-@include('components.tab-news')
+    @include('ui.components.tab-news')
 
-<div class="mt-4">
-    <div class="row gx-5">
-        <div class="col-4">
+    <div class="mt-4">
+        <div class="row gx-5">
+            <div class="col-4">
 
-            {{-- MORE INFO --}}
-            @include('components.more-info')
+                {{-- MORE INFO --}}
+                @include('ui.components.more-info')
 
-            {{-- PHOTO COLLECTION --}}
-            @include('components.photo-collection')
+                {{-- PHOTO COLLECTION --}}
+                @include('ui.components.photo-collection')
 
-            {{-- VIDEO COLLECTION --}}
-            @include('components.video-collection')
+                {{-- VIDEO COLLECTION --}}
+                @include('ui.components.video-collection')
 
-        </div>
-        <div class="col-8">
+            </div>
+            <div class="col-8">
 
-            {{-- LIST NEWS --}}
-            @include('components.list-main-news')
-            @include('components.list-main-news')
+                {{-- LIST NEWS --}}
+                @include('ui.components.list-main-news')
+                @include('ui.components.list-main-news')
 
-            {{-- VIDEO NEWS --}}
-            @include('components.video-news')
+                {{-- VIDEO NEWS --}}
+                @include('ui.components.video-news')
 
+            </div>
         </div>
     </div>
-</div>
 
-{{-- FOOTER --}}
-@include('components.footer')
 @endsection

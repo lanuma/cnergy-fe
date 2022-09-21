@@ -794,7 +794,7 @@ nav {
 }
 
 .main-content-news-container .content-news img {
-    width: 100%;
+    /* width: 100%; */
     object-fit: cover;
 }
 
