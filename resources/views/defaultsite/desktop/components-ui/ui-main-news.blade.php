@@ -20,7 +20,8 @@
             <button class="nxt-btn"><img src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
             <div class="slider-container">
                 @foreach ($hl as $s)
-                    <a href="#" class="slider-card">
+                    <a href="{{ Src::detail($s) }}" aria-label="{{ $s[0]['news_title'] ?? null }}"
+                        class="slider-card">
                         <div class="slider-image">
                             {{-- <img src="{{ $s['news_image']['real'] }}" class="slider-thumb" alt=""> --}}
                             @include('image', [
