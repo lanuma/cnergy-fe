@@ -3,8 +3,8 @@
         <div class="div1">
             @include('image', [
                 'source' => $gl,
-                'force' => '426x238',
-                'size' => '426x238',
+                'force' => '212x115',
+                'size' => '212x115',
                 $gl['news_title'] ?? null,
             ])
         </div>
