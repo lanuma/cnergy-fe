@@ -11,6 +11,7 @@ class Site {
      */
     static function view( $path, $params=[] )
     {
+         // dd(config('site'));
         $path = config('site.path', 'defaultsite')
           .'.'. config('site.device', 'mobile')
           .'.'. $path;
