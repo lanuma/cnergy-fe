@@ -1,6 +1,6 @@
 <div class="berita-terkini-container">
     <h4>berita terkini</h4>
-    <a href="#">
+    <a href="{{ Src::detail($latest[1]) }}" aria-label="{{ $latest[1]['news_title'] ?? null }}">
         <div class="image-content">
             @include('image', [
                 'source' => $latest,
@@ -13,7 +13,8 @@
     </a>
     <div class="list-berita-terkini mt-2">
         @foreach ($latest as $item)
-            <a href="#" class="d-flex align-items-center gap-3">
+            <a href="{{ Src::detail($item) }}" aria-label="{{ $item['news_title'] ?? null }}"
+                class="d-flex align-items-center gap-3">
                 <div class="image-content">
                     @include('image', [
                         'source' => $item,

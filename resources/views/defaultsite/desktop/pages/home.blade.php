@@ -7,22 +7,13 @@
 @endpush --}}
 
 @section('content')
-    <header>
-        @include('defaultsite.desktop.components-ui.ui-header')
-
-
-        {{-- @include('ui.components.navbar') --}}
-        @if ($headline[0]['news_id'] ?? null)
-            @include('defaultsite.desktop.components-ui.ui-breaking-news', ['bn' => $headline])
-        @endif
-    </header>
-
     <div class="mt-4">
         <div class="row gx-5">
             <div class="col-8">
 
 
                 {{-- HEADLINE --}}
+                {{-- @dump($headline) --}}
                 @if ($headline[0]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-main-news', ['hl' => $headline])
                 @endif
@@ -34,10 +25,13 @@
 
                 {{-- LIST MAIN NEWS --}}
                 @if ($headline[0]['news_id'] ?? null)
-                    @include('defaultsite.desktop.components-ui.ui-list-main-news', ['listnews' => $headline])
+                    @include('defaultsite.desktop.components-ui.ui-list-main-news', [
+                        'listnews' => $headline,
+                    ])
                 @endif
 
                 {{-- GALLERY BERITA --}}
+                {{-- @dump($headline) --}}
                 @if ($headline[0]['news_type'] == 'news' ?? null)
                     @include('defaultsite.desktop.components-ui.ui-gallery-news', [
                         'gl' => $headline,
@@ -57,7 +51,6 @@
 
             </div>
             <div class="col-4">
-
                 {{-- TRENDING TAG --}}
                 @include('defaultsite.desktop.components-ui.ui-trending-tag')
 
@@ -67,19 +60,18 @@
                 @endif
 
                 {{-- BERITA POPULER --}}
+                {{-- @dump($feed) --}}
                 @if ($feed[1]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-populer-news', ['populer' => $feed])
                 @endif
 
                 {{-- BERITA TERKINI --}}
+                {{-- @dump($feed) --}}
                 @if ($feed[1]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-latest-news', ['latest' => $feed])
                 @endif
+
             </div>
         </div>
     </div>
-
-    <footer>
-        @include('ui.components.footer')
-    </footer>
 @endsection

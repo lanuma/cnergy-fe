@@ -1,6 +1,6 @@
 <div class="footer-container">
   
-  <a href="/" class="m-auto mb-4" style="background-image: url({{ Src::imgNewsCdn(config('site.attributes'), '320x', 'webp', 'file_logo') }});"><img src="{{ URL::asset('assets/images/logo.webp') }}" alt="logo" width="168px" height="34px"></a>
+  <a href="/" class="m-auto mb-4"><img src="{{ URL::asset('assets/images/logo.webp') }}" alt="logo" width="168px" height="34px"></a>
   <div class="first-link-footer mt-3 d-flex flex-row justify-content-center">
     @if ($footer_menu = Data::menu(position: 'footer') ?? null)
       <ul>
@@ -11,7 +11,6 @@
           @endif
       </ul>
     @endif
-    
   </div>
 
   <p class="special-font-lato mt-5" style="color: #999999; font-size: 12px;">{!! nl2br( config('site.attributes.address') ) !!}</p>

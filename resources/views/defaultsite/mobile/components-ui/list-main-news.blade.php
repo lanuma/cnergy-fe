@@ -1,7 +1,7 @@
 <div class="list-main-news-container">
   <div class="card-news">
     <a href="#">
-      <img src="{{ URL::asset('assets/images/list-main-news-image1.png') }}" alt="news" width="85px" height="85px">
+      {{-- <img src="{{ URL::asset('assets/images/list-main-news-image1.png') }}" alt="news" width="85px" height="85px"> --}}
       <div class="description">
         <div class="banner">
           <p>berita pilihan</p>
@@ -13,7 +13,7 @@
   </div>
   <div class="card-news">
     <a href="#">
-      <img src="{{ URL::asset('assets/images/list-main-news-image1.png') }}" alt="news" width="85px" height="85px">
+      {{-- <img src="{{ URL::asset('assets/images/list-main-news-image1.png') }}" alt="news" width="85px" height="85px"> --}}
       <div class="description">
         <div class="banner">
           <p>berita pilihan</p>

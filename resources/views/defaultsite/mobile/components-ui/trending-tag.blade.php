@@ -1,11 +1,13 @@
+@if ($tag=collect(Data::trendingTag())->slice(0, 5)??null)
+@if (count($tag)>0)
 <div class="trending-tag-container">
   <h4>trending tag #</h4>
   <div class="list-trending-tag">
-    <a href="#">vaksin covid</a>
-    <a href="#">pemilu 2024</a>
-    <a href="#">bbm</a>
-    <a href="#">scoopy</a>
-    <a href="#">pawang hujan</a>
-    <a href="#">minyak goreng</a>
+    @foreach ($tag as $r)
+    <a href="{{Src::detailTag($r)}}">{{$r['title']??null}}</a>
+     @endforeach
+    
   </div>
 </div>
+@endif
+@endif
