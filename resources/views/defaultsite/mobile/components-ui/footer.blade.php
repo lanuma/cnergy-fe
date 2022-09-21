@@ -11,7 +11,7 @@
     <a href="#">kebijakan data pengguna</a>
   </div>
   <p>Jakarta: Jl. Tebet Barat IV No.3 Jakarta Selatan, 12810 Malang: PBI Araya Blok A1-3 Blimbing, Malang, 65126 Email: redaksi.merdeka@kly.id Telp: (021) 8379 52 45</p>
-  <div class="social-media">
+  <div class="social-media mx-3">
     <a href="#"><img src="{{ URL::asset('assets/icons/facebook.svg') }}" alt="facebook"></a>
     <a href="#"><img src="{{ URL::asset('assets/icons/twitter.svg') }}" alt="twitter"></a>
     <a href="#"><img src="{{ URL::asset('assets/icons/vidio.svg') }}" alt="vidio"></a>

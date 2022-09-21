@@ -5,7 +5,7 @@
   <div class="breaking-text-marquee">
     <span>
       <marquee direction="left">
-        Suzuki Indonesia Siapkan Diri Jadi Basis Produksi Jimny Suzuki Indonesia Siapkan Diri Jadi Basis Produksi Jimny?
+        {{ $bm[2]['news_title'] }}
       </marquee>
     </span>
   </div>
