@@ -2,7 +2,7 @@
   <figure>
     <a href="#">
       <div class="image-news">
-        <img src="{{ URL::asset('assets/images/main-news-image.png') }}">
+        @include('image', ['source'=>$row, 'size'=>'375x', $row['news_title']??null])
       </div>
     </a>
   </figure>

@@ -3,9 +3,10 @@
   <div class="slider-content">
     @foreach ($hl as $s)
     <div class="slider-news">
-      <a href="#">
+      <a href="{{ Src::detail($s) }}" aria-label="{{ $s[0]['news_title'] ?? null }}">
         <figure>
           <div class="image-news">
+            
             @include('image', [
               'source' => $s,
               'force' => '212x115',
