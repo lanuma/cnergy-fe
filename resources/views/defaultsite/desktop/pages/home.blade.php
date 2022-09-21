@@ -23,6 +23,7 @@
 
 
                 {{-- HEADLINE --}}
+                {{-- @dump($headline) --}}
                 @if ($headline[0]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-main-news', ['hl' => $headline])
                 @endif
@@ -34,7 +35,9 @@
 
                 {{-- LIST MAIN NEWS --}}
                 @if ($headline[0]['news_id'] ?? null)
-                    @include('defaultsite.desktop.components-ui.ui-list-main-news', ['listnews' => $headline])
+                    @include('defaultsite.desktop.components-ui.ui-list-main-news', [
+                        'listnews' => $headline,
+                    ])
                 @endif
 
                 {{-- GALLERY BERITA --}}
@@ -57,7 +60,7 @@
 
             </div>
             <div class="col-4">
-
+                @yield('sidebar')
                 {{-- TRENDING TAG --}}
                 @include('defaultsite.desktop.components-ui.ui-trending-tag')
 
@@ -75,6 +78,7 @@
                 @if ($feed[1]['news_id'] ?? null)
                     @include('defaultsite.desktop.components-ui.ui-latest-news', ['latest' => $feed])
                 @endif
+
             </div>
         </div>
     </div>
