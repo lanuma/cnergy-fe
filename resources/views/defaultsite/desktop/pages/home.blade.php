@@ -7,16 +7,6 @@
 @endpush --}}
 
 @section('content')
-    <header>
-        @include('defaultsite.desktop.components-ui.ui-header')
-
-
-        {{-- @include('ui.components.navbar') --}}
-        @if ($headline[0]['news_id'] ?? null)
-            @include('defaultsite.desktop.components-ui.ui-breaking-news', ['bn' => $headline])
-        @endif
-    </header>
-
     <div class="mt-4">
         <div class="row gx-5">
             <div class="col-8">
@@ -82,8 +72,4 @@
             </div>
         </div>
     </div>
-
-    <footer>
-        @include('ui.components.footer')
-    </footer>
 @endsection

@@ -734,17 +734,23 @@ nav {
     margin-bottom: 20px;
 }
 
-.main-content-news-container span,
-.main-content-news-container span a {
+.main-content-news-container ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+}
+
+.main-content-news-container ul li a {
     font-family: var(--lato-font);
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 700;
     color: #999999;
 }
 
-.main-content-news-container span a {
+.main-content-news-container ul li:first-child a {
     color: #ca0000;
-    text-decoration: none;
 }
 
 .main-content-news-container h4 {
@@ -758,6 +764,11 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 10px 0;
+}
+
+.account-shared-content img {
+    border-radius: 50%;
 }
 
 .account-shared-content .account {
@@ -767,12 +778,18 @@ nav {
     gap: 10px;
 }
 
+.account .account-detail {
+    display: flex;
+    flex-direction: column;
+}
+
 .account-shared-content .account h5,
 .account-shared-content .account span {
     font-family: var(--lato-font);
     font-weight: 400;
     font-size: 12px;
     color: #000000;
+    display: inline-block;
 }
 
 .account-shared-content .account span {
@@ -793,8 +810,12 @@ nav {
     border-radius: 20px;
 }
 
+.main-content-news-container .content-news figure {
+    width: 100%;
+    height: auto;
+}
+
 .main-content-news-container .content-news img {
-    /* width: 100%; */
     object-fit: cover;
 }
 
@@ -807,10 +828,7 @@ nav {
     border-bottom: 1px solid #e5e5e5;
 }
 
-.main-content-news-container .content-news pre {
-    width: 100%;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+.content-news .dt-paragraph {
     font-family: var(--lato-font);
     font-weight: 400;
     font-size: 14px;
@@ -871,6 +889,14 @@ nav {
     margin-bottom: 20px;
 }
 
+.related-tag-container ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+}
+
 .related-tag-container a {
     background-color: #ca0000;
     color: white;
@@ -879,11 +905,6 @@ nav {
     font-weight: 700;
     padding: 10px;
     border-radius: 8px;
-}
-
-.related-tag-container a:last-child {
-    color: #555555;
-    background-color: #e5e5e5;
 }
 
 /* CREDIT CSS */
