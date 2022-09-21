@@ -30,14 +30,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://mobile-km-fe.herokuapp.com/" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css-mobile/styles.css') }}">
     <title>@yield('title')</title>
 </head>
 
 <body>
 
     <div>
-        @yield('content-field')
+        @yield('content')
     </div>
 
 </body>
