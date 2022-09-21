@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
     <title>EnglishSite.com</title>
-    <meta name="description"
+    {{-- <meta name="description"
         content="Local News, Business Economy, Politic, Sports, Law & Order, Agri Farming, Entertainment, Photo, Video, More ">
     <meta name="keywords"
         content="Local News, Business Economy, Politic, Sports, Law & Order, Agri Farming, Entertainment, Photo, Video, More ">
@@ -29,8 +29,9 @@
     <meta name="real-url" content="https://mobile-km-fe.herokuapp.com/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://mobile-km-fe.herokuapp.com/" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link rel="stylesheet" href="{{ URL::asset('assets/css-mobile/styles.css') }}">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  --}}
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/styles-mobile.css') }}">
+
     <title>@yield('title')</title>
 </head>
 
