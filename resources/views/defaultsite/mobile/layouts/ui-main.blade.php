@@ -38,7 +38,20 @@
 <body>
 
     <div>
+        {{-- Header --}}
+        @include('defaultsite.mobile.components-ui.navbar')
+
+        {{-- Breaking news --}}
+        @if ($headline[2]['news_id'] ?? null)
+            @include('defaultsite.mobile.components-ui.breaking-news', ['bm' => $headline])
+        @endif
+
         @yield('content')
+
+        {{-- Footer --}}
+        @if (config('site.use_footer', 'yes') == 'yes')
+            @include('defaultsite.mobile.components-ui.footer')
+        @endif
     </div>
 
 </body>

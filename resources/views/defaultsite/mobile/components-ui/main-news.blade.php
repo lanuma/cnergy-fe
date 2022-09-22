@@ -1,13 +1,15 @@
 <div class="main-news-container">
   <figure>
-    <a href="#">
+    <a href="{{ Src::detail($mn[0]) }}" aria-label="{{ $mn[0]['news_title'] ?? null }}">
       <div class="image-news">
-        @include('image', ['source'=>$row, 'size'=>'375x', $row['news_title']??null])
+
+        <img src="{{ $mn[0]['news_image']['real'] }}">
+
       </div>
     </a>
   </figure>
   <div class="main-news-deskripsi">
-    <h3>Harga Pertamax Plus Turbo dan Racing Per Liter Terbaru Hari Ini April 2020</h3>
-    <p>5 menit yang lalu</p>
+    <h3>{{ $mn[0]['news_title'] }}</h3>
+    <p>{{ Util::date($mn[0]['news_date_publish'], 'ago') }} </p>
   </div>
 </div>
