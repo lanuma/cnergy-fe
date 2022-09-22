@@ -2,7 +2,7 @@
     <div class="parent">
         <div class="div1">
             @include('image', [
-                'source' => $gl,
+                'source' => $gl[1],
                 'force' => '212x115',
                 'size' => '212x115',
                 $gl['news_title'] ?? null,
@@ -10,7 +10,7 @@
         </div>
         <div class="div2">
             @include('image', [
-                'source' => $gl,
+                'source' => $gl[2],
                 'force' => '212x115',
                 'size' => '212x115',
                 $gl['news_title'] ?? null,
@@ -18,7 +18,7 @@
         </div>
         <div class="div3">
             @include('image', [
-                'source' => $gl,
+                'source' => $gl[2],
                 'force' => '212x115',
                 'size' => '212x115',
                 $gl['news_title'] ?? null,

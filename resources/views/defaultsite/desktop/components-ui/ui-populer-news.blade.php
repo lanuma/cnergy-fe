@@ -13,7 +13,7 @@
                         ])
                     </div>
                 </a>
-                <div class="list-berita-popular">
+                <div class="list-berita-populer">
                     @foreach ($popular as $item)
                         <a href="{{ Src::detail($item) }}" aria-label="{{ $item['news_title'] ?? null }}"
                             class="slider-card">
