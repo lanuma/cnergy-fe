@@ -30,6 +30,8 @@
     <meta name="adx:sections" content="{{config('site.attributes.meta.type')??null }}">
     <meta name="adx:keywords" content="{{config('site.attributes.meta.article_keyword')??null }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/styles-mobile.css') }}">
+    {{-- font awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <title>@yield('title')</title>
 </head>
