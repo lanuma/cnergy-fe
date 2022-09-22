@@ -5,10 +5,10 @@
             <a href="{{ Src::detail($latest[1]) }}" aria-label="{{ $latest[1]['news_title'] ?? null }}">
                 <div class="image-content">
                     @include('image', [
-                        'source' => $latest,
+                        'source' => $latest[1],
                         'force' => '300x172',
                         'size' => '300x172',
-                        $latest['news_title'] ?? null,
+                        $latest[1]['news_title'] ?? null,
                     ])
                 </div>
                 <span>{{ $latest[1]['news_title'] }}</span>

@@ -1,14 +1,14 @@
 @if ($sb = \Data::recommendation($reference) ?? null)
-    @if (count($sb) !== 0)
-        <div class="berita-sidebar-container">
+    <div class="berita-sidebar-container">
+        @if (count($sb) !== 0)
             <h4>berita sidebar</h4>
             <a href="{{ Src::detail($sb[1]) }}" aria-label="{{ $sb[1]['news_title'] ?? null }}">
                 <div class="image-content">
                     @include('image', [
-                        'source' => $sb,
+                        'source' => $sb[1],
                         'force' => '300x172',
                         'size' => '300x172',
-                        $sb['news_title'] ?? null,
+                        $sb[1]['news_title'] ?? null,
                     ])
                 </div>
                 <span>{{ $sb[1]['news_title'] }}</span>
@@ -29,6 +29,6 @@
                     </a>
                 @endfor
             </div>
-        </div>
-    @endif
+    </div>
+@endif
 @endif
