@@ -82,7 +82,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>@yield('title')</title>
 
-    @if (config('app.enabled_turbolink'))
+    {{-- @if (config('app.enabled_turbolink'))
         <script>
             var initedJS = false;
         </script>
@@ -97,12 +97,12 @@
 
 
     <!--window kly object-->
-    @include('object_js')
+    @include('object_js') --}}
 </head>
 
 <body>
 
-    @include('object_nonjs')
+    {{-- @include('object_nonjs') --}}
 
     <div class="container w-kly">
         {{-- Header --}}
@@ -142,7 +142,7 @@
     })
 </script>
 
-<script>
+{{-- <script>
     @if (!config('app.enabled_turbolink'))
         var initedJS = false;
     @endif
@@ -204,7 +204,7 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(js)
         })();
     }
-</script>
+</script> --}}
 
 @stack('script')
 
@@ -239,8 +239,8 @@
 
 
 
-@if (config('app.enabled_ads'))
+{{-- @if (config('app.enabled_ads'))
     {!! Util::getAds('after-body') !!}
-@endif
+@endif --}}
 
 </html>
