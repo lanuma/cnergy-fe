@@ -3,6 +3,7 @@
     <a href="{{ Src::detail($mn[0]) }}" aria-label="{{ $mn[0]['news_title'] ?? null }}">
       <div class="image-news">
 
+       
         <img src="{{ $mn[0]['news_image']['real'] }}">
 
       </div>

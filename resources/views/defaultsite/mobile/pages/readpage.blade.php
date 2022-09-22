@@ -3,34 +3,16 @@
 
 
 
-
 @section('content')
+{{-- headline news --}}    
+{{-- @dump($row) --}}
+@include('defaultsite.mobile.components-ui.main-news-article')
 
-
-{{-- breaking-news --}}
-{{-- @dump($headline) --}}
-{{-- @if ($headline[2]['news_id'] ?? null) --}}
-@include('defaultsite.mobile.components-ui.main-news')
-{{-- @endif --}}
-
-{{-- Adds-1 --}}    
-{{-- @if ($headline[2]['news_id'] ?? null) --}}
+{{-- ads --}}
 @include('defaultsite.mobile.components-ui.ads-on')
-{{-- @endif --}}
 
-{{-- trending tag --}}
-
-@include('defaultsite.mobile.components-ui.trending-tag')
-
-{{-- slider --}}
-@if ($headline[0]['news_id'] ?? null)
-@include('defaultsite.mobile.components-ui.slider', ['hl' => $headline])
-@endif
+{{-- dt-share --}}
+@include('defaultsite.mobile.components-ui.dt-share')
 
 
-{{-- footer --}}
-@include('defaultsite.mobile.components-ui.footer')
-
-
-
-@endsection  
+@endsection
