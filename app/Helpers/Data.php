@@ -76,7 +76,7 @@ class Data {
                 'category'=> $category,
                 'news_type'=> $news_type,
                 'has_potrait'=> false,
-                'start_date'=> date('Y-m-d',strtotime("-".config('site.attributes.popular_day', 1)."month")),
+                'start_date'=> date('Y-m-d',strtotime("-".config('site.attributes.popular_day', 3)."months")),
                 'end_date'=> date('Y-m-d')
             ]
         );
