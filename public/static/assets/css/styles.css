@@ -368,6 +368,7 @@ nav {
     padding: 0 0 2px 2px;
     border-radius: 0 10px 0 0;
 }
+
 .gallery-image-container .div3 img {
     width: 100%;
     height: 200px;
@@ -908,7 +909,7 @@ nav {
     justify-content: start;
     gap: 10px;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .related-tag-container ul {
@@ -919,9 +920,9 @@ nav {
     gap: 15px;
 }
 
-.related-tag-container a {
+.related-tag-container ul li a {
     background-color: #ca0000;
-    color: white;
+    color: white !important;
     font-family: var(--lato-font);
     font-size: 14px;
     font-weight: 700;
@@ -1001,26 +1002,17 @@ nav {
 }
 
 /* REPORT ARTICLE CSS */
-.report-article-container {
-    margin: 20px 0px;
-}
-
-.report-article-container a {
-    display: inline-block;
-    padding: 13px 20px;
-    background-color: #ffffff;
-    border: 1px solid #e5e5ee;
-    border-radius: 8px;
-}
-
-.report-article-container p {
-    display: inline-block;
+.report-btn {
     font-family: var(--lato-font);
     font-weight: 500;
     font-size: 14px;
     text-transform: uppercase;
-    color: #000000;
 }
+
+.desc-report {
+    width: 73px;
+}
+
 
 /* TAB NEWS CSS */
 .tab-news-container {
