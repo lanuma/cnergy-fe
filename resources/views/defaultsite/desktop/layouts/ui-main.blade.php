@@ -142,6 +142,33 @@
     })
 </script>
 
+<script>
+    document.querySelectorAll('img').forEach((img) => {
+        img.onerror = function(e) {
+            let default_img = "{{ Src::mix('img/320x180_no_image.jpg') }}";
+
+            e.target.onerror = null;
+            e.currentTarget.parentNode.children[0].setAttribute('srcset', default_img)
+            e.currentTarget.parentNode.children[0].setAttribute('data-srcset', default_img)
+
+            e.currentTarget.parentNode.children[1].setAttribute('srcset', default_img)
+            e.currentTarget.parentNode.children[1].setAttribute('data-srcset', default_img)
+
+            e.currentTarget.parentNode.children[2].setAttribute('src', default_img)
+            e.currentTarget.parentNode.children[2].setAttribute('data-src', default_img)
+        }
+    });
+
+    setInterval(function() {
+        grecaptcha.ready(function() {
+            grecaptcha.execute('{{ config('recaptchav3.sitekey') }}', {
+                action: 'register'
+            }).then(function(token) {
+                document.querySelectorAll('input[name=g-recaptcha-response]')[0].value = token;
+            });
+        });
+    }, 60 * 1000);
+</script>
 {{-- <script>
     @if (!config('app.enabled_turbolink'))
         var initedJS = false;
