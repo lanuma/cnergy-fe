@@ -4,6 +4,11 @@
 
 
 @section('content')
+{{-- breaking news --}}
+
+@include('defaultsite.mobile.components-ui.breaking-news')
+
+
 {{-- headline news --}}    
 {{-- @dump($row) --}}
 @include('defaultsite.mobile.components-ui.main-news-article')
