@@ -3,33 +3,32 @@
 
 <head>
     <meta charset="utf-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    <title>EnglishSite.com</title>
-    {{-- <meta name="description"
-        content="Local News, Business Economy, Politic, Sports, Law & Order, Agri Farming, Entertainment, Photo, Video, More ">
-    <meta name="keywords"
-        content="Local News, Business Economy, Politic, Sports, Law & Order, Agri Farming, Entertainment, Photo, Video, More ">
-    <meta property="og:title" content="English Site" />
-    <meta property="og:description"
-        content="Local News, Business Economy, Politic, Sports, Law & Order, Agri Farming, Entertainment, Photo, Video, More " />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="mobile-km-fe.herokuapp.com/" />
-    <meta property="og:image"
-        content="https://cdns.klimg.com/newshub.id/news/2022/08/10/464128/pengakuan-bharada-e-di-balik-perintah-tembak-dari-atasan-2208107.jpg" />
-    <meta property="og:site_name" content="mobile-km-fe.herokuapp.com" />
-    <meta name="twitter:title" content="EnglishSite.com" />
-    <meta name="twitter:description"
-        content="Local News, Business Economy, Politic, Sports, Law & Order, Agri Farming, Entertainment, Photo, Video, More " />
-    <meta name="twitter:image"
-        content="https://cdns.klimg.com/newshub.id/news/2022/08/10/464128/pengakuan-bharada-e-di-balik-perintah-tembak-dari-atasan-2208107.jpg" />
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@merdekacom">
-    <meta name="twitter:creator" content="@merdekacom">
-    <meta name="twitter:domain" content="https://twitter.com/merdekacom">
-    <meta name="real-url" content="https://mobile-km-fe.herokuapp.com/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://mobile-km-fe.herokuapp.com/" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  --}}
+    <title>{{config('site.attributes.meta.title') }}</title>
+    <meta http-equiv="cache-control" content="public, no-transform" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="{{ config('site.attributes.meta.rel_to_amp') ?? 'canonical' }}" href="{{ config('site.attributes.meta.ampUrl') ?? request()->url() }}" />
+    <link rel="icon" type="image/png" href="{{ config('site.attributes.favicon') }}">
+
+    <meta name="title" content="{{config('site.attributes.meta.title')??null }}">
+    <meta name="description" content="{{config('site.attributes.meta.site_description')??null }}">
+    <meta name="keywords" content="{{config('site.attributes.meta.article_keyword')??null }}">
+    <meta property="og:site_name" content="{{config('site.attributes.reldomain.domain_name')??null }}">
+    <meta property="og:url" content="{{config('site.attributes.meta.article_url')??null }}">
+    <meta property="og:title" content="{{config('site.attributes.meta.article_title')??null }}">
+    <meta property="og:description" content="{{config('site.attributes.meta.article_short_desc')??null }}">
+    <meta property="article:modified_time" content="{{config('site.attributes.meta.article_last_update')??null }}">
+    <meta property="og:updated_time" content="{{config('site.attributes.meta.article_last_update')??null }}">
+    <meta property="fb:app_id" content="{{config('site.attributes.fb_app_id')??null }}">
+    <meta property="og:type" content="{{config('site.attributes.meta.type')??null }}">
+    <meta property="og:image" content="{{config('site.attributes.meta.article_url_image')??null }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{config('site.attributes.twitter_username')??null }}">
+    <meta name="twitter:creator" content="{{config('site.attributes.twitter_username')??null }}">
+
+    <meta name="adx:sections" content="{{config('site.attributes.meta.type')??null }}">
+    <meta name="adx:keywords" content="{{config('site.attributes.meta.article_keyword')??null }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/styles-mobile.css') }}">
 
     <title>@yield('title')</title>
