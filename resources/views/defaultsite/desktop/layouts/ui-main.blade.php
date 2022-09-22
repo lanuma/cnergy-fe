@@ -104,9 +104,7 @@
         @include('defaultsite.desktop.components-ui.ui-header')
 
         {{-- Breaking news --}}
-        @if ($headline[0]['news_id'] ?? null)
-            @include('defaultsite.desktop.components-ui.ui-breaking-news', ['bn' => $headline])
-        @endif
+        @include('defaultsite.desktop.components-ui.ui-breaking-news')
 
         {{-- Content --}}
         @yield('content')

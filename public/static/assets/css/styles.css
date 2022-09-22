@@ -150,7 +150,11 @@ nav {
 
 .breaking-news-logo {
     background-color: #000000;
-    padding: 10px 15px;
+    padding: 0 15px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
     position: absolute;
     border-bottom-left-radius: 10px;
@@ -169,7 +173,9 @@ nav {
     z-index: -1;
     position: relative;
     background-color: #ca0000;
-    padding: 10px 15px;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
