@@ -99,5 +99,72 @@
                 </script>
             @endpush
         </div>
+
+        {{-- RELATED TAG --}}
+        @include('defaultsite.desktop.components-ui.ui-related-tag')
+
+        {{-- credit --}}
+        @include('defaultsite.desktop.components-ui.ui-credit')
+        
+        {{-- SHARE NEWS --}}
+        @include('defaultsite.desktop.components-ui.ui-share-news')
+
+        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between">
+                        <p class="special-font-prompt text-uppercase fs-3 fw-bold ms-5">Laporkan Artikel</p>
+                        <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-5">
+                        <div class="desc-report">
+                            @include('image', ['source'=>$row, 'size'=>'93x53', 'force' => '93x53', $row['news_title']??null])
+                        </div>
+                        <p class="special-font-lato fs-5 fw-bold">{{$row['news_title']??null}}</p>
+                    </div>
+
+                    <div class="form-report mt-3">
+                        <form class="form-submit">
+                            <input type="hidden" class="form-control" value="{{url()->current()}}" name="url" hidden readonly>
+                            <div class="form-box">
+                                <input type="text" class="form-control " placeholder="Nama Depan" value="" name="name">
+                                <label id="name-error" class="error label-error" for="name"></label>
+                            </div>
+                            <div class="form-box">
+                                <input type="email" class="form-control  " placeholder="Email" value="" name="from"  required='required' >
+                                <label id="from-error" class="error label-error" for="from"></label>
+                            </div>
+                            <div class="form-box">
+                                <input type="text" class="form-control  " placeholder="Nomor HP" value="" name="phone" rule='[^0-9]' required='required' minlength='9' maxlength='12'>
+                                <label id="phone-error" class="error label-error" for="phone"></label>
+                            </div>
+                            <div class="form-box">
+                                <input type="text" class="form-control  " placeholder="Judul Laporan" value="" name="subject"  required='required'>
+                                <label id="subject-error" class="error label-error" for="subject"></label>
+                            </div>
+                            <div class="form-box">
+                                <textarea class="form-control " rows="5" placeholder="Detail Laporan" value="" name="content"  required='required'></textarea>
+                                <label id="content-error" class="error label-error" for="content"></label>
+                            </div>
+                            <div class="form-box d-flex justify-content-end">
+                                <div class="form-button">
+                                    <button type="submit" class="btn btn--submit py-2 px-6 rounded-md" style="background-color: #CA0000; color: white">Kirim</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+              </div>
+              
+            </div>
+        </div>
+
     </div>
 </div>
