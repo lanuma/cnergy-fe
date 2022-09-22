@@ -823,12 +823,21 @@ nav {
 }
 
 .main-content-news-container .content-news figure {
-    width: 100%;
+    margin: 0;
     height: auto;
+    background-color: silver;
+    width: 100%;
+    border-radius: 8px;
 }
 
 .main-content-news-container .content-news img {
     object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.main-content-news-container .content-news figcaption::first-letter {
+    text-transform: uppercase;
 }
 
 .main-content-news-container .content-news figcaption {
@@ -836,8 +845,9 @@ nav {
     font-weight: 400;
     font-size: 12px;
     color: #999999;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #e5e5e5;
+    font-style: italic;
 }
 
 .content-news .dt-paragraph {
@@ -1143,7 +1153,6 @@ nav {
 
 .video-collection-container .card-video-content {
     display: flex;
-    align-items: center;
     gap: 15px;
     justify-content: space-between;
 }

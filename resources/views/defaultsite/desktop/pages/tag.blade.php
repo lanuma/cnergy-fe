@@ -16,11 +16,11 @@
                 @include('defaultsite.desktop.components-ui.ui-more-info')
 
                 {{-- PHOTO COLLECTION --}}
-                @dump($photo) <?php/*KOSONG */?>
+                {{-- @dump($photo)  --}}
                 @include('defaultsite.desktop.components-ui.ui-photo-collection')
 
                 {{-- VIDEO COLLECTION --}}
-                @dump($video)<?php/*KOSONG */?>
+                {{-- @dump($video) --}}
                 @include('defaultsite.desktop.components-ui.ui-video-collection')
 
             </div>
@@ -29,10 +29,11 @@
                 {{-- LIST NEWS --}}
                 {{-- @dump($rows) --}}
                 <div class="list-main-news-container">
+
                     @foreach ($rows as $ln)
                         <div class="d-flex align-items-start gap-3 list-main-news-card">
                             <div class="list-news-image">
-                                <a href="#">
+                                <a href="{{ Src::detail($ln) }}" aria-label="{{ $ln['news_title'] ?? null }}">
                                     @include('image', [
                                         'source' => $ln,
                                         'force' => '230x129',
@@ -46,7 +47,7 @@
                                     <span class="text-uppercase text-danger fw-bold">{{ $ln['news_type'] }}</span>
                                     <span class="text-black-50">{{ Util::date($ln['news_date_publish'], 'ago') }}</span>
                                 </div>
-                                <a href="#">
+                                <a href="{{ Src::detail($ln) }}" aria-label="{{ $ln['news_title'] ?? null }}">
                                     <h4>{{ $ln['news_title'] }}</h4>
                                     <p>{{ $ln['news_synopsis'] }}</p>
                                 </a>
