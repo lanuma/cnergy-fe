@@ -16,10 +16,11 @@
                 @include('defaultsite.desktop.components-ui.ui-related-tag')
 
                 {{-- CREDITS --}}
-                @include('ui.components.credit')
+                {{-- @dump($row) --}}
+                @include('defaultsite.desktop.components-ui.ui-credit')
 
                 {{-- SHARE NEWS --}}
-                @include('ui.components.share-news')
+                @include('defaultsite.desktop.components-ui.ui-share-news')
 
                 {{-- REPORT ARTICLE --}}
                 @include('ui.components.report-article')
