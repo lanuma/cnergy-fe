@@ -4,6 +4,13 @@
 
 @include('defaultsite.mobile.components-ui.main-content-index-m')
 
+
+{{-- adds-on --}}
+{{-- @if ($headline[2]['news_id'] ?? null)  --}}
+ @include('defaultsite.mobile.components-ui.ads-on')
+ {{-- @endif  --}}
+
+
 {{-- list main news --}}
 
 {{-- @dump($headline) --}}
