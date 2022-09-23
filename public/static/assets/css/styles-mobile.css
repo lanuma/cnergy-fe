@@ -994,3 +994,58 @@ nav img {
 .fa-twitter {
     background-color: #1dadeb;
 }
+
+/* main tag index */
+.more-info-container-index {
+    padding: 15px;
+}
+.index-h1 {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 39px;
+    text-align: center;
+}
+.index-tag {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #999999;
+}
+.index-p {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: justify;
+    /* or 157% */
+
+    color: #000000;
+}
+.index-span {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    /* or 157% */
+
+    color: #ca0000;
+}
+.index-tentang,
+.index-lokasi,
+.index-date {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    /* or 157% */
+    color: #000000;
+    padding: 10px 0px;
+}
