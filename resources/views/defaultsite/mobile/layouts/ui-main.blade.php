@@ -43,9 +43,7 @@
         @include('defaultsite.mobile.components-ui.navbar')
 
         {{-- Breaking news --}}
-        @if ($headline[2]['news_id'] ?? null)
-            @include('defaultsite.mobile.components-ui.breaking-news', ['bn' => $headline[2]])
-        @endif
+        @include('defaultsite.mobile.components-ui.breaking-news')
 
         @yield('content')
 

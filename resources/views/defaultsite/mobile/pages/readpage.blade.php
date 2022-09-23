@@ -2,16 +2,14 @@
 
 @section('content')
 
-{{-- breaking news --}}
-@include('defaultsite.mobile.components-ui.breaking-news', ['bn' => $row])
-
-{{-- headline news --}}    
+{{-- headline news --}}
 @include('defaultsite.mobile.components-ui.main-news-article')
 
 {{-- read too list --}}
 @if ($popular = \Data::popular() ?? null)
-@include('defaultsite.mobile.components-ui.read-too-list' , ['news' => $popular])
+    @include('defaultsite.mobile.components-ui.read-too-list' , ['news' => $popular])
 @endif
+
 {{-- related tag --}}
 @include('defaultsite.mobile.components-ui.related-tag')
 
