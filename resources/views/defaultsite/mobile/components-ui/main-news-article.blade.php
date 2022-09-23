@@ -1,10 +1,29 @@
 <div class="main-news-container">
+
+    <ul class="main-breadcrumb flex items-center flex-wrap list-none m-4">
+        <li class="main-breadcrumb-item"><a href="/">Home</a></li>
+        @foreach ($row['news_category'] as $r)
+            @if ($loop->iteration==1)
+                <li class="main-breadcrumb-item {{$loop->count==1?'active':''}}"><a href="{{ url(( $row['news_category'][0]['url']??'' )) }}">{{$r['name']??null}}</a></li>
+            @elseif($loop->iteration==2)
+                <li class="main-breadcrumb-item {{$loop->count==2?'active':''}}"><a href="{{ url(( $row['news_category'][0]['url']??'' ).'/'.( $row['news_category'][1]['url']??'' )) }}">{{$r['name']??null}}</a></li>
+            @elseif($loop->iteration==3)
+                <li class="main-breadcrumb-item {{$loop->count==3?'active':''}}"><a href="{{ url(( $row['news_category'][0]['url']??'' ).'/'.( $row['news_category'][1]['url']??'' ).'/'.( $row['news_category'][2]['url']??'' )) }}">{{$r['name']??null}}</a></li>
+            @endif
+        @endforeach
+    </ul>
+
      <div class="main-news-deskripsi">
       <h3>{{ $row['news_title'] ?? null }}</h3>
       <p>{{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
      <figure>
         <div class="image-news">
-            <img src={{ $row['news_image']['real'] }}>
+            @include('image', [
+                'source' => $row,
+                'force' => '380x214',
+                'size' => '380x214',
+                $row['news_title'] ?? null,
+            ])
         </div>
         <p>{{ $row['news_imageinfo'] ?? null }}</p>
     </figure>

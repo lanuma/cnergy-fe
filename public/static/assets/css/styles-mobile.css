@@ -146,13 +146,46 @@ nav img {
     color: #fff;
 }
 
+.main-breadcrumb {
+    font-family: var(--lato-font);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    font-size: 14px;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.main-breadcrumb .main-breadcrumb-item {
+    color: #4a4a4a;
+}
+
+.main-breadcrumb .active {
+    color: #ca0000;
+}
+
+.main-breadcrumb .main-breadcrumb-item a {
+    color: inherit;
+}
+
+.main-breadcrumb .main-breadcrumb-item::after {
+    content: ">";
+    margin: 0px 10px;
+}
+
+.main-breadcrumb .main-breadcrumb-item:last-child::after {
+    content: "";
+}
+
 .main-news-deskripsi {
-    margin: 25px 20px;
+    margin: 25px 0px;
     line-height: 1.5;
 }
 
-.main-news-deskripsi h3 {
-    margin-bottom: 10px;
+.main-news-deskripsi h3,
+.main-news-deskripsi p {
+    margin: 0 20px;
 }
 
 .main-news-deskripsi figure .image-news {
@@ -222,7 +255,7 @@ nav img {
 
 .trending-tag-container .list-trending-tag a::after {
     content: "/";
-    margin: 0 10px;
+    margin-left: 15px;
 }
 
 .baca-juga-container a:last-child::after,
@@ -286,8 +319,8 @@ nav img {
     color: #000;
 }
 
-.highlight-article-container,
 .slider-container {
+    margin: 30px auto;
 }
 
 .slider-container h4 {
@@ -418,8 +451,9 @@ nav img {
 
     margin: 27px;
 }
-.dt-paragraph {
-    font-style: normal;
+
+.dt-paragraph p {
+    margin-bottom: 1.5rem;
 }
 
 .main-content-news-container span a {
@@ -551,14 +585,18 @@ nav img {
     align-items: flex-start;
     gap: 10px;
 }
-.artikel-terkait-container a {
+.artikel-terkait-container figure figcaption a {
     font-family: "Lato";
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
-    margin-top: 15px;
+    margin-top: 10px;
     color: black;
+}
+
+.artikel-terkait-container figure {
+    margin-bottom: 30px;
 }
 
 .artikel-terkait-container a,

@@ -12,7 +12,7 @@
     </a>
   </figure>
   <div class="main-news-deskripsi">
-    <h3>{{ $mn[0]['news_title'] }}</h3>
+    <a href="{{ Src::detail($mn[0]) }}" aria-label="{{ $mn[0]['news_title'] ?? null }}"><h3>{{ $mn[0]['news_title'] }}</h3></a>
     <p>{{ Util::date($mn[0]['news_date_publish'], 'ago') }} </p>
   </div>
 </div>
