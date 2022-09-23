@@ -1,11 +1,22 @@
 <div class="artikel-terkait-container">
   <h4>artikel terkait</h4>
-  <a href="#">
+@foreach ($row as $item)
+    <a href="{{ Src::detail($item) }}" aria-label="{{ $item['news_title'] ?? null }}">
     <figure>
       <div class="image-news">
-        <img src="{{ URL::asset('assets/images/berita-sidebar-image.png') }}">
+        @include('image', [
+          'source' => $item,
+          'force' => '168x34',
+          'size' => '168x34',
+          $s['news_title'] ?? null,
+      ])    
       </div>
-      <figcaption>4 'Penampakan' Michael Jackson Setelah Kematiannya</figcaption>
+      <figcaption>
+        <h2 class="item-desc-title font-bold"><a href="{{Src::detail($item)}}">{{$item['news_title']??null}}</a></h2></figcaption>
     </figure>
   </a>
+@endforeach
+   
+
+ 
 </div>

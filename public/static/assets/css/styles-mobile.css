@@ -192,6 +192,7 @@ nav img {
     flex-wrap: wrap;
     gap: 15px;
     line-height: 25px;
+    list-style: none;
 }
 
 .trending-tag-container .list-trending-tag a::after {
@@ -381,6 +382,21 @@ nav img {
     color: #999;
 }
 
+.main-news-container .dt-paragraph {
+    font-family: var(--lato-font);
+    font-weight: 500;
+    font-size: 16px;
+    /* margin-right: 2px; */
+    line-height: 230%;
+    color: #000000;
+    text-align: justify;
+
+    margin: 27px;
+}
+.dt-paragraph {
+    font-style: normal;
+}
+
 .main-content-news-container span a {
     color: #ca0000;
     text-decoration: none;
@@ -483,6 +499,7 @@ nav img {
     background: #f9f9f9;
     border: 1px solid #e5e5e5;
     border-radius: 4px;
+    margin: 40px 28px;
 }
 
 .baca-juga-list-container h4 {
@@ -529,11 +546,11 @@ nav img {
 }
 
 .related-tag-container {
-    margin: 25px 0;
+    margin: 25px 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 15px;
+    line-height: 200%;
 }
 
 .related-tag-container a {
@@ -873,4 +890,31 @@ nav img {
     color: #ca0000;
     font-size: 12px;
     font-weight: 700;
+}
+
+.dt-share-container {
+    padding: 10px 10px 10px 25px;
+}
+.fa-facebook-f,
+.fa-whatsapp,
+.fa-twitter {
+    color: white;
+    padding: 10px 23px;
+}
+.fa-brands {
+    font-family: "Font Awesome 6 Brands";
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    width: 60px;
+    height: 35px;
+}
+.fa-fb {
+    background-color: #4a6db4;
+}
+.fa-wa {
+    background-color: #86c747;
+}
+.fa-twitter {
+    background-color: #1dadeb;
 }

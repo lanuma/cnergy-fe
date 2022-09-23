@@ -3,34 +3,34 @@
 
 
 
-
 @section('content')
+{{-- breaking news --}}
+
+@include('defaultsite.mobile.components-ui.breaking-news')
 
 
-{{-- breaking-news --}}
-{{-- @dump($headline) --}}
-{{-- @if ($headline[2]['news_id'] ?? null) --}}
-@include('defaultsite.mobile.components-ui.main-news')
-{{-- @endif --}}
+{{-- headline news --}}    
+{{-- @dump($row) --}}
+@include('defaultsite.mobile.components-ui.main-news-article')
 
-{{-- Adds-1 --}}    
-{{-- @if ($headline[2]['news_id'] ?? null) --}}
-@include('defaultsite.mobile.components-ui.ads-on')
-{{-- @endif --}}
+{{-- read too list --}}
+
+@include('defaultsite.mobile.components-ui.read-too-list')
+
+{{-- related tag --}}
+@include('defaultsite.mobile.components-ui.related-tag')
+
+{{-- related artikel --}}
+{{-- @dump($row) --}}
+
+@include('defaultsite.mobile.components-ui.related-article', ['item' => $row] )
 
 {{-- trending tag --}}
-
 @include('defaultsite.mobile.components-ui.trending-tag')
 
 {{-- slider --}}
-@if ($headline[0]['news_id'] ?? null)
-@include('defaultsite.mobile.components-ui.slider', ['hl' => $headline])
-@endif
-
-
-{{-- footer --}}
-@include('defaultsite.mobile.components-ui.footer')
-
-
-
-@endsection  
+{{-- @dump($row) --}}
+@if ($row[0]['news_id'] ?? null)
+    @include('defaultsite.mobile.components-ui.slider-article', ['hl' => $row])
+    @endif
+@endsection

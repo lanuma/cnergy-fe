@@ -5,7 +5,7 @@
   <div class="breaking-text-marquee">
     <span>
       <marquee direction="left">
-        {{ $bm[2]['news_title'] }}
+        {{ $row['news_title'] }}
       </marquee>
     </span>
   </div>
