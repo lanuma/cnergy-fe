@@ -46,6 +46,11 @@ a {
     text-decoration: none;
 }
 
+body {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -102,6 +107,14 @@ nav img {
     font-size: 16px;
     padding: 10px 0;
     font-family: var(--lato-font);
+}
+
+.header-nav-item a {
+    color: black;
+}
+
+.header-nav-item a:hover {
+    color: #cd2027;
 }
 
 .breaking-news-logo {
