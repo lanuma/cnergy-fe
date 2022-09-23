@@ -4,7 +4,7 @@
             <h4>Foto </h4>
             <i class="fa-solid fa-circle-chevron-right ms-2"></i>
         </div>
-        <div class="card-photo-content">
+        <div class="card-photo-content mt-2">
             @foreach ($photo as $r)
                 <div class="card-photo-news">
                     <figure>
@@ -18,7 +18,7 @@
                                 $r['news_title'] ?? null,
                             ])
                         </a>
-                        <figcaption><a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a></figcaption>
+                        <p><a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a></p>
                     </figure>
                 </div>
             @endforeach

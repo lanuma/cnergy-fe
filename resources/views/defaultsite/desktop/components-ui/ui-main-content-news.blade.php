@@ -18,7 +18,7 @@
     </ul>
 
     <h4>{{ $row['news_title'] ?? null }}</h4>
-    <div class="account-shared-content">
+    <div class="account-shared-content my-4">
         <div class="account">
             <a href="{{ Src::author($row) }}">
                 <img class="aspect-square"
@@ -26,8 +26,10 @@
                     width="40" height="40" alt="user">
             </a>
             <div class="account-detail">
-                <h5 href="{{ Src::author($row) }}">{{ $row['news_editor'][0]['name'] ?? null }}</h5>
-                <span>{{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</span>
+                <a href="{{ Src::author($row) }}">
+                    <h5 href="{{ Src::author($row) }}">{{ $row['news_editor'][0]['name'] ?? null }}</h5>
+                </a>
+                <span>{{ Util::date($row['news_date_publish'] ?? null, 'ago') }}</span>
             </div>
         </div>
 
@@ -50,18 +52,16 @@
     </div>
 
     <div class="content-news mt-3">
-        <a href="#">
-            <figure>
-                {{-- @include('image', [
+        <figure>
+            {{-- @include('image', [
                     'source' => $row,
                     'force' => '300x172',
                     'size' => '300x172',
                     $row['news_title'] ?? null,
                 ]) --}}
-                <img src={{ $row['news_image']['real'] }}>
-            </figure>
-            <figcaption>{{ $row['news_imageinfo'] ?? null }}</figcaption>
-        </a>
+            <img src={{ $row['news_image']['real'] }}>
+        </figure>
+        <figcaption>{{ $row['news_imageinfo'] ?? null }}</figcaption>
         <div class="dt-paragraph mt-3">
             {!! str_replace(
                 ['mce-mce-mce-mce-no/type', 'mce-no/type'],
@@ -105,23 +105,24 @@
 
         {{-- credit --}}
         @include('defaultsite.desktop.components-ui.ui-credit')
-        
+
         {{-- SHARE NEWS --}}
         @include('defaultsite.desktop.components-ui.ui-share-news')
 
-        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
+        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
+                class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
 
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
-            
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-body">
-                    {{-- FORM REPORT --}}
-                    @include('defaultsite.desktop.components-ui.ui-form-report')
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                        {{-- FORM REPORT --}}
+                        @include('defaultsite.desktop.components-ui.ui-form-report')
+                    </div>
                 </div>
-              </div>
-              
+
             </div>
         </div>
 

@@ -280,6 +280,14 @@ nav {
     display: flex;
 }
 
+.slider-info .time-info {
+    color: #999999;
+    font-family: var(--lato-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+}
+
 .custom-slider .slider-title {
     font-family: var(--lato-font);
     font-size: 10px;
@@ -589,8 +597,8 @@ nav {
 
 .berita-sidebar-container .image-content {
     background-color: silver;
-    width: 310px;
-    height: 172px;
+    /* width: 310px;
+    height: 172px; */
 }
 
 .berita-sidebar-container .image-content img {
@@ -641,10 +649,10 @@ nav {
 }
 
 .list-populer-container .image-content {
-    margin: 0;
+    /* margin: 0; */
     background-color: silver;
-    width: 310px;
-    height: 172px;
+    /* width: 310px;
+    height: 172px; */
 }
 
 .list-populer-container .image-content img {
@@ -792,14 +800,15 @@ nav {
 
 .account-shared-content .account {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 5px;
 }
 
 .account .account-detail {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .account-shared-content .account h5,
@@ -809,6 +818,7 @@ nav {
     font-size: 12px;
     color: #000000;
     display: inline-block;
+    margin: 0;
 }
 
 .account-shared-content .account span {
@@ -1019,7 +1029,6 @@ nav {
     width: 73px;
 }
 
-
 /* TAB NEWS CSS */
 .tab-news-container {
     margin-top: 20px;
@@ -1107,9 +1116,8 @@ nav {
 }
 
 .photo-collection-container .card-photo-content {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     display: flex;
-    align-items: center;
     justify-content: space-between;
     gap: 15px;
 }
@@ -1117,15 +1125,16 @@ nav {
 .photo-collection-container .card-photo-news {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    width: 100%;
 }
 
 .photo-collection-container .card-photo-news img {
     object-fit: cover;
     border-radius: 8px;
+    width: 100%;
 }
 
-.photo-collection-container .card-photo-news figcaption {
+.photo-collection-container .card-photo-news p {
     font-family: var(--lato-font);
     font-weight: 400;
     font-size: 12px;
@@ -1159,9 +1168,11 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 100%;
 }
 
-.video-collection-container .card-video-news iframe {
+.video-collection-container .card-video-news img {
+    //IMG CHANGE TO IFRAME
     object-fit: cover;
     border-radius: 8px;
     width: 100%;
@@ -1405,8 +1416,8 @@ nav {
 
 .berita-terkini-container .image-content {
     background-color: silver;
-    width: 310px;
-    height: 172px;
+    /* width: 310px;
+    height: 172px; */
 }
 
 .berita-terkini-container .image-content img {

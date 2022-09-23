@@ -17,7 +17,21 @@
                         ])
                     </div>
                     <div class="slider-info">
-                        <span class="slider-title">{{ $s['news_title'] }}</span>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-row align-items-center">
+                                @if ($s['news_type'] == 'photonews')
+                                    <i class="fa-sharp fa-solid fa-circle-camera me-3" style="color: #CA0000"></i>
+                                @endif
+
+                                @if ($s['news_type'] == 'video')
+                                    <i class="fa-solid fa-circle-play me-3" style="color: #CA0000"></i>
+                                @endif
+                                <p class="time-info">
+                                    {{ Util::date($s['news_date_publish'], 'ago') }}
+                                </p>
+                            </div>
+                            <span class="slider-title">{{ $s['news_title'] }}</span>
+                        </div>
                     </div>
                 </a>
             @endforeach
