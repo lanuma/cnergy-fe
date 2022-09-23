@@ -2,7 +2,12 @@
   @foreach ($listnews as $ln)
     <div class="card-news">
       <a  href="{{ Src::detail($ln) }}" aria-label="{{ $ln['news_title'] ?? null }}">
-        {{-- <img src="{{ URL::asset('assets/images/list-main-news-image1.png') }}" alt="news" width="85px" height="85px"> --}}
+          @include('image', [
+              'source' => $ln,
+              'force' => '85x85',
+              'size' => '85x85',
+              $ln['news_title'] ?? null,
+          ])
         <div class="description">
           <div class="banner">
             <p>{{ $ln['category_name'] }}</p>

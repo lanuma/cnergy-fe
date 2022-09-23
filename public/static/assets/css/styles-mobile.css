@@ -58,6 +58,48 @@ nav img {
     cursor: pointer;
 }
 
+.nav-main {
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    background: white;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+    transform: translateX(-100%);
+}
+
+.nav-main.active {
+    left: 0;
+}
+
+.nav-main .nav-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 15px 5px;
+    border-bottom: 0.2px solid gainsboro;
+}
+
+.nav-header img {
+    cursor: pointer;
+}
+
+.nav-menus {
+    padding: 15px;
+}
+
+.nav-menus li {
+    list-style: none;
+    font-size: 16px;
+    padding: 10px 0;
+    font-family: var(--lato-font);
+}
+
 .breaking-news-logo {
     background-color: #000000;
     padding: 7px 35px 11px 13px;
@@ -88,7 +130,8 @@ nav img {
 }
 
 .main-news-deskripsi {
-    padding: 5px 20px 17px;
+    margin: 25px 20px;
+    line-height: 1.5;
 }
 
 .main-content-news-container .content-news .image-news,
@@ -115,7 +158,7 @@ nav img {
     font-family: var(--lato-font);
     color: #000;
     font-size: 24px;
-    font-weight: 900;
+    font-weight: bolder;
 }
 
 .main-news-deskripsi p {
@@ -174,6 +217,7 @@ nav img {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin: 40px 20px;
 }
 
 .list-main-news-container .card-news a {
@@ -218,7 +262,10 @@ nav img {
 
 .highlight-article-container,
 .slider-container {
-    margin: 20px 0;
+}
+
+.slider-container h4 {
+    margin: 0 20px;
 }
 
 .slider-container figure {
@@ -230,7 +277,7 @@ nav img {
     overflow-x: scroll;
     overflow-y: hidden;
     gap: 15px;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 10px;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -269,6 +316,14 @@ nav img {
     height: 100%;
     object-fit: cover;
     border-radius: 4px;
+}
+
+.slider-container .slider-news:first-child {
+    margin-left: 20px;
+}
+
+.slider-container .slider-news:last-child {
+    margin-right: 20px;
 }
 
 .footer-container {

@@ -6,16 +6,15 @@
       <a href="{{ Src::detail($s) }}" aria-label="{{ $s[0]['news_title'] ?? null }}">
         <figure>
           <div class="image-news">
-            
             @include('image', [
               'source' => $s,
               'force' => '212x115',
               'size' => '212x115',
               $s['news_title'] ?? null,
-          ])    
+          ])
           </div>
           <figcaption>{{ $s['news_title'] }}</figcaption>
-        </figure> 
+        </figure>
       </a>
     </div>
    @endforeach

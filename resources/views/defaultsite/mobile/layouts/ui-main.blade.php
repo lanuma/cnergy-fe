@@ -55,6 +55,20 @@
 
 </body>
 
-@yield('script-slider')
+<script>
+    const mainNav = document.querySelector('.nav-main');
+    const closeNav = document.querySelector('.nav-close');
+    const openNav = document.querySelector('.nav-open');
+
+    openNav.addEventListener('click',show);
+    closeNav.addEventListener('click',close);
+
+    function show(){
+        mainNav.style.transform =  'translateX(0)';
+    }
+    function close(){
+        mainNav.style.transform =  'translateX(-100%)';
+    }
+</script>
 
 </html>
