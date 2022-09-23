@@ -1,5 +1,6 @@
 <div class="slider-container">
-  <h4>Berita</h4>
+@if (count($hl) > 0)
+  <h4>{{ $title }}</h4>
   <div class="slider-content">
     @foreach ($hl as $s)
     <div class="slider-news">
@@ -19,4 +20,5 @@
     </div>
    @endforeach
   </div>
+@endif
 </div>

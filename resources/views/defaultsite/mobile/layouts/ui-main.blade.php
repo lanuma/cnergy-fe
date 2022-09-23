@@ -38,7 +38,7 @@
 
 <body>
 
-    <div>
+    <div class=" max-w-full">
         {{-- Header --}}
         @include('defaultsite.mobile.components-ui.navbar')
 

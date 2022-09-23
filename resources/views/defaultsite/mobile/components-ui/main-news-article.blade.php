@@ -7,9 +7,8 @@
             <img src={{ $row['news_image']['real'] }}>
         </div>
         <p>{{ $row['news_imageinfo'] ?? null }}</p>
-      
     </figure>
-</div>     
+</div>
 {{-- adds --}}
 @include('defaultsite.mobile.components-ui.ads-on')
 {{-- st-share --}}
@@ -17,18 +16,16 @@
 
 <div class="dt-paragraph">
     @php
-      function DOMinnerHTML(DOMNode $element) 
-      { 
-          $innerHTML = ""; 
+      function DOMinnerHTML(DOMNode $element){
+          $innerHTML = "";
           $children  = $element->childNodes;
 
-          foreach ($children as $child) 
-          { 
+          foreach ($children as $child){
               $innerHTML .= $element->ownerDocument->saveHTML($child);
           }
-
-          return $innerHTML; 
+          return $innerHTML;
       }
+
       function getEmbedYtb($str){
           $embedYtb=[];
           if(preg_match('/\/embed\/(.*?)"/', $str, $code) == 1) {
@@ -47,6 +44,7 @@
                       data-videoid="'.$embedYtb['code'].'">
                   </amp-youtube>';
       }
+
       function getEmbedTik($str){
           $embedTik=[];
           if(preg_match('/data-video-id="(.*?)"/', $str, $code) == 1) {
@@ -54,6 +52,7 @@
           }
           return $embedTik['code'];
       }
+
       function getEmbedIg($str){
           $embedIg=[];
           if(preg_match('/\/p\/(.*?)\//', $str, $code) == 1) {
@@ -61,6 +60,7 @@
           }
           return $embedIg['code'];
       }
+
       $doc = new DOMDocument();
       // set error level
       $internalErrors = libxml_use_internal_errors(true);
@@ -69,7 +69,6 @@
       libxml_use_internal_errors($internalErrors);
       if( $doc )
       {
-          
           //change tag br to tag p
           if ($doc->getElementsByTagName('br')[1]!=null) {
               libxml_use_internal_errors(true);

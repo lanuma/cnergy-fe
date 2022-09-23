@@ -151,6 +151,14 @@ nav img {
     line-height: 1.5;
 }
 
+.main-news-deskripsi h3 {
+    margin-bottom: 10px;
+}
+
+.main-news-deskripsi figure .image-news {
+    margin: 15px 0px;
+}
+
 .main-content-news-container .content-news .image-news,
 .main-news-container .image-news {
     position: relative;
@@ -214,7 +222,7 @@ nav img {
 
 .trending-tag-container .list-trending-tag a::after {
     content: "/";
-    margin-left: 10px;
+    margin: 0 10px;
 }
 
 .baca-juga-container a:last-child::after,
@@ -563,7 +571,8 @@ nav img {
 }
 
 .related-tag-container {
-    margin: 25px 50px;
+    margin: 0 20px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -580,7 +589,8 @@ nav img {
 
 .related-tag-container a::after {
     content: "/";
-    margin-left: 20px;
+    margin: 0 10px;
+    color: black;
 }
 
 .related-tag-container a:last-child {
@@ -633,6 +643,7 @@ nav img {
 
 .populer-container {
     background: #fff;
+    margin: 15px 20px;
 }
 
 .list-berita-populer {

@@ -1,9 +1,9 @@
-<div class="related-tag-container">
-  <a href="#">Lamborghini</a>
-  <a href="#">Suzuki Jimny</a>
-  <a href="#">bbm</a>
-  <a href="#">bbm</a>
-  <a href="#">bbm</a>
-  <a href="#">scoopy</a>
-  <a href="#">more tag</a>
-</div>
+@if ($trendingTag=collect(\Data::trendingTag())->slice(0, 4)??null)
+    @if( count($trendingTag) !== 0 )
+    <div class="related-tag-container">
+          @foreach ($trendingTag as $tag)
+              <a href="{{ Src::detailTag($tag) }}">{{$tag['title']}}</a>
+          @endforeach
+      </div>
+    @endif
+@endif
