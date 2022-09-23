@@ -59,10 +59,10 @@
                     $row['news_title'] ?? null,
                 ]) --}}
                 <img src={{ $row['news_image']['real'] }}>
-                <figcaption>{{ $row['news_imageinfo'] ?? null }}</figcaption>
             </figure>
+            <figcaption>{{ $row['news_imageinfo'] ?? null }}</figcaption>
         </a>
-        <div class="dt-paragraph">
+        <div class="dt-paragraph mt-3">
             {!! str_replace(
                 ['mce-mce-mce-mce-no/type', 'mce-no/type'],
                 '',
@@ -99,5 +99,31 @@
                 </script>
             @endpush
         </div>
+
+        {{-- RELATED TAG --}}
+        @include('defaultsite.desktop.components-ui.ui-related-tag')
+
+        {{-- credit --}}
+        @include('defaultsite.desktop.components-ui.ui-credit')
+        
+        {{-- SHARE NEWS --}}
+        @include('defaultsite.desktop.components-ui.ui-share-news')
+
+        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-body">
+                    {{-- FORM REPORT --}}
+                    @include('defaultsite.desktop.components-ui.ui-form-report')
+                </div>
+              </div>
+              
+            </div>
+        </div>
+
     </div>
 </div>
