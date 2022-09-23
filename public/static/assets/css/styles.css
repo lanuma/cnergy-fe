@@ -150,7 +150,11 @@ nav {
 
 .breaking-news-logo {
     background-color: #000000;
-    padding: 10px 15px;
+    padding: 0 15px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
     position: absolute;
     border-bottom-left-radius: 10px;
@@ -169,7 +173,9 @@ nav {
     z-index: -1;
     position: relative;
     background-color: #ca0000;
-    padding: 10px 15px;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -314,6 +320,7 @@ nav {
 
 .list-news-image {
     background-color: silver;
+    border-radius: 8px;
 }
 
 .list-news-image a img {
@@ -328,7 +335,7 @@ nav {
 
 .list-main-news-card img {
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 230px;
 }
 
@@ -360,17 +367,27 @@ nav {
     grid-row-gap: 0px;
 }
 
-.gallery-image-container .div2 img,
+.gallery-image-container .div2 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    padding: 0 0 2px 2px;
+    border-radius: 0 10px 0 0;
+}
+
 .gallery-image-container .div3 img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    padding: 0 0 0 2px;
+    border-radius: 0 0 10px 0;
 }
 
 .gallery-image-container .div1 img {
     width: 100%;
     height: 400px;
     object-fit: cover;
+    border-radius: 10px 0 0 10px;
 }
 
 .gallery-image-container .div1 {
@@ -421,6 +438,7 @@ nav {
 
 .promotion-card a figure img {
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .promotion-card a {
@@ -478,7 +496,7 @@ nav {
 
 .video-news-container iframe {
     margin-top: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 100%;
 }
 
@@ -577,6 +595,7 @@ nav {
 
 .berita-sidebar-container .image-content img {
     object-fit: cover;
+    width: 100%;
 }
 
 .berita-sidebar-container span {
@@ -630,11 +649,11 @@ nav {
 
 .list-populer-container .image-content img {
     object-fit: cover;
+    width: 100%;
 }
 
 .list-populer-container a {
     display: block;
-    margin-top: 10px;
     text-decoration: none;
 }
 
@@ -811,12 +830,21 @@ nav {
 }
 
 .main-content-news-container .content-news figure {
-    width: 100%;
+    margin: 0;
     height: auto;
+    background-color: silver;
+    width: 100%;
+    border-radius: 8px;
 }
 
 .main-content-news-container .content-news img {
     object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.main-content-news-container .content-news figcaption::first-letter {
+    text-transform: uppercase;
 }
 
 .main-content-news-container .content-news figcaption {
@@ -824,8 +852,9 @@ nav {
     font-weight: 400;
     font-size: 12px;
     color: #999999;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #e5e5e5;
+    font-style: italic;
 }
 
 .content-news .dt-paragraph {
@@ -886,7 +915,7 @@ nav {
     justify-content: start;
     gap: 10px;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .related-tag-container ul {
@@ -897,9 +926,9 @@ nav {
     gap: 15px;
 }
 
-.related-tag-container a {
+.related-tag-container ul li a {
     background-color: #ca0000;
-    color: white;
+    color: white !important;
     font-family: var(--lato-font);
     font-size: 14px;
     font-weight: 700;
@@ -928,6 +957,7 @@ nav {
 
 .credit-container .card-credit img {
     object-fit: cover;
+    width: 100%;
 }
 
 .credit-container h4,
@@ -978,26 +1008,17 @@ nav {
 }
 
 /* REPORT ARTICLE CSS */
-.report-article-container {
-    margin: 20px 0px;
-}
-
-.report-article-container a {
-    display: inline-block;
-    padding: 13px 20px;
-    background-color: #ffffff;
-    border: 1px solid #e5e5ee;
-    border-radius: 8px;
-}
-
-.report-article-container p {
-    display: inline-block;
+.report-btn {
     font-family: var(--lato-font);
     font-weight: 500;
     font-size: 14px;
     text-transform: uppercase;
-    color: #000000;
 }
+
+.desc-report {
+    width: 73px;
+}
+
 
 /* TAB NEWS CSS */
 .tab-news-container {
@@ -1130,7 +1151,6 @@ nav {
 
 .video-collection-container .card-video-content {
     display: flex;
-    align-items: center;
     gap: 15px;
     justify-content: space-between;
 }
@@ -1391,6 +1411,7 @@ nav {
 
 .berita-terkini-container .image-content img {
     object-fit: cover;
+    width: 100%;
 }
 
 .berita-terkini-container span {

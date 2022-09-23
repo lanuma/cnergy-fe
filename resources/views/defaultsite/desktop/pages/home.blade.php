@@ -51,26 +51,7 @@
 
             </div>
             <div class="col-4">
-                {{-- TRENDING TAG --}}
-                @include('defaultsite.desktop.components-ui.ui-trending-tag')
-
-                {{-- BERITA SIDEBAR --}}
-                @if ($feed[1]['news_id'] ?? null)
-                    @include('defaultsite.desktop.components-ui.ui-sidebar-news', ['sb' => $feed])
-                @endif
-
-                {{-- BERITA POPULER --}}
-                {{-- @dump($feed) --}}
-                @if ($feed[1]['news_id'] ?? null)
-                    @include('defaultsite.desktop.components-ui.ui-populer-news', ['populer' => $feed])
-                @endif
-
-                {{-- BERITA TERKINI --}}
-                {{-- @dump($feed) --}}
-                @if ($feed[1]['news_id'] ?? null)
-                    @include('defaultsite.desktop.components-ui.ui-latest-news', ['latest' => $feed])
-                @endif
-
+                @include('defaultsite.desktop.components-ui.ui-aside', ['reference' => $feed ?? null])
             </div>
         </div>
     </div>

@@ -70,28 +70,41 @@
     {{-- -------META DATA ENDED HERE----------- --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{ URL::asset('assets/css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>@yield('title')</title>
+
+    {{-- @if (config('app.enabled_turbolink'))
+        <script>
+            var initedJS = false;
+        </script>
+        <style>
+            .turbolinks-progress-bar {
+                height: 3px;
+                background-color: var(--color-primary);
+            }
+        </style>
+    @endif
+
+
+
+    <!--window kly object-->
+    @include('object_js') --}}
 </head>
 
 <body>
+
+    {{-- @include('object_nonjs') --}}
 
     <div class="container w-kly">
         {{-- Header --}}
         @include('defaultsite.desktop.components-ui.ui-header')
 
         {{-- Breaking news --}}
-        @if ($headline[0]['news_id'] ?? null)
-            @include('defaultsite.desktop.components-ui.ui-breaking-news', ['bn' => $headline])
-        @endif
+        @include('defaultsite.desktop.components-ui.ui-breaking-news')
 
         {{-- Content --}}
         @yield('content')
@@ -121,5 +134,133 @@
         })
     })
 </script>
+
+<script>
+    document.querySelectorAll('img').forEach((img) => {
+        img.onerror = function(e) {
+            let default_img = "{{ Src::mix('img/320x180_no_image.jpg') }}";
+
+            e.target.onerror = null;
+            e.currentTarget.parentNode.children[0].setAttribute('srcset', default_img)
+            e.currentTarget.parentNode.children[0].setAttribute('data-srcset', default_img)
+
+            e.currentTarget.parentNode.children[1].setAttribute('srcset', default_img)
+            e.currentTarget.parentNode.children[1].setAttribute('data-srcset', default_img)
+
+            e.currentTarget.parentNode.children[2].setAttribute('src', default_img)
+            e.currentTarget.parentNode.children[2].setAttribute('data-src', default_img)
+        }
+    });
+
+    setInterval(function() {
+        grecaptcha.ready(function() {
+            grecaptcha.execute('{{ config('recaptchav3.sitekey') }}', {
+                action: 'register'
+            }).then(function(token) {
+                document.querySelectorAll('input[name=g-recaptcha-response]')[0].value = token;
+            });
+        });
+    }, 60 * 1000);
+</script>
+{{-- <script>
+    @if (!config('app.enabled_turbolink'))
+        var initedJS = false;
+    @endif
+
+    window.addEventListener('scroll', function() {
+        initJS();
+    });
+    window.addEventListener('orientationchange', function() {
+        initJS();
+    });
+    window.addEventListener('resize', function() {
+        initJS();
+    });
+    window.addEventListener('click', function() {
+        initJS();
+    });
+    window.addEventListener('mouseover', function() {
+        initJS();
+    });
+    window.addEventListener('touchstart', function() {
+        initJS();
+    }, false);
+    document.addEventListener('hyperlocal:load', function() {
+        initJS();
+    }, false);
+
+    function initJS() {
+        if (initedJS) return false;
+
+        initedJS = true;
+
+        loadJS('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', 0, 1);
+        loadJS('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine-ie11.min.js', 0, 1);
+        loadJS('https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js', 1, 0);
+        loadJS('https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.3.2/swiper-bundle.min.js', 0, 1);
+        loadJS('{{ Src::mix('js/tailwindcss.js') }}', 0, 1);
+        loadJS('{{ Src::mix('js/main.js') }}', 0, 1);
+        loadJS('{{ Src::mix('js/report.js') }}', 0, 1);
+
+        @if (config('app.enabled_turbolink'))
+            loadJS('{{ Src::mix('js/turbolink.js') }}', 0, 1);
+        @endif
+
+        @stack('script_lazy')
+
+        // Create the event.
+        document.dispatchEvent(new Event("hyperlocal:loaded"));
+    }
+
+    function loadJS(src, async, defer) {
+        (function() {
+            var js = document.createElement('script');
+            js.type = 'text/javascript';
+            js.async = async;
+            js.defer = defer;
+            js.src = src;
+            var s = document.getElementsByTagName('script')[0];
+            //s.parentNode.insertBefore(js, s);
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(js)
+        })();
+    }
+</script> --}}
+
+@stack('script')
+
+{{-- <script>
+    document.querySelectorAll('img').forEach((img) => {
+        img.onerror = function(e) {
+            let default_img = "{{ Src::mix('img/320x180_no_image.jpg') }}";
+
+            e.target.onerror = null;
+            e.currentTarget.parentNode.children[0].setAttribute('srcset', default_img)
+            e.currentTarget.parentNode.children[0].setAttribute('data-srcset', default_img)
+
+            e.currentTarget.parentNode.children[1].setAttribute('srcset', default_img)
+            e.currentTarget.parentNode.children[1].setAttribute('data-srcset', default_img)
+
+            e.currentTarget.parentNode.children[2].setAttribute('src', default_img)
+            e.currentTarget.parentNode.children[2].setAttribute('data-src', default_img)
+        }
+    });
+
+    setInterval(function() {
+        grecaptcha.ready(function() {
+            grecaptcha.execute('{{ config('recaptchav3.sitekey') }}', {
+                action: 'register'
+            }).then(function(token) {
+                document.querySelectorAll('input[name=g-recaptcha-response]')[0].value = token;
+            });
+        });
+    }, 60 * 1000);
+</script> --}}
+
+
+
+
+{{-- @if (config('app.enabled_ads'))
+    {!! Util::getAds('after-body') !!}
+@endif --}}
 
 </html>
