@@ -44,7 +44,7 @@
 
         {{-- Breaking news --}}
         @if ($headline[2]['news_id'] ?? null)
-            @include('defaultsite.mobile.components-ui.breaking-news-home', ['bm' => $headline])
+            @include('defaultsite.mobile.components-ui.breaking-news', ['bn' => $headline[2]])
         @endif
 
         @yield('content')

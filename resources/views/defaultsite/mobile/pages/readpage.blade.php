@@ -3,7 +3,7 @@
 @section('content')
 
 {{-- breaking news --}}
-@include('defaultsite.mobile.components-ui.breaking-news')
+@include('defaultsite.mobile.components-ui.breaking-news', ['bn' => $row])
 
 {{-- headline news --}}    
 @include('defaultsite.mobile.components-ui.main-news-article')
