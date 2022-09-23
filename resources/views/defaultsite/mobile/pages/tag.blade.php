@@ -4,6 +4,25 @@
 
 @include('defaultsite.mobile.components-ui.main-content-index-m')
 
+{{-- list main news --}}
+
+{{-- @dump($headline) --}}
+@if ($popular = \Data::popular() ?? null)
+    @include('defaultsite.mobile.components-ui.list-main-news', ['listnews' => $popular])
+@endif
+
+{{-- highlight --}} 
+{{-- @dump($headline) --}}
+@include('defaultsite.mobile.components-ui.highlight-article')
+
+
+{{-- list main news --}}
+{{-- @dump($headline) --}}
+@if ($headline = \Data::headline() ?? null)
+    @include('defaultsite.mobile.components-ui.list-main-news', ['listnews' => $headline])
+@endif
+
+
 {{-- slider trending tapi data belum ada --}}
 @if ($popular = \Data::popular() ?? null)
     @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])

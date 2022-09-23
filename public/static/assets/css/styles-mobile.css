@@ -724,6 +724,32 @@ nav img {
     font-style: italic;
     font-weight: 700;
 }
+.highlight-article-container {
+    margin: 22px;
+}
+.image-new-article {
+    border-radius: 8px;
+}
+.p-hightlight {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
+    /* identical to box height */
+
+    color: #ca0000;
+}
+.item-desc-highlight {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    color: #000000;
+}
 
 .highlight-article-container img,
 .main-ads__container img,
