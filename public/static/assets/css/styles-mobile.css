@@ -384,6 +384,11 @@ nav img {
 .slider-container .slider-news:last-child {
     margin-right: 20px;
 }
+.silder-vector {
+    position: relative;
+    right: 15px;
+    bottom: 2px;
+}
 
 .footer-container {
     background-color: #000;

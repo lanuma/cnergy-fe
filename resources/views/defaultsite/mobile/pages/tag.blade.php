@@ -5,6 +5,12 @@
 @include('defaultsite.mobile.components-ui.main-content-index-m')
 
 
+{{-- Slider kumpulan foto --}}
+@if ($latest = \Data::latest() ?? null)
+    @include('defaultsite.mobile.components-ui.slider-kumpulan-foto', ['hl' => $latest, 'title' => 'Foto ' ])
+@endif
+
+
 {{-- adds-on --}}
 {{-- @if ($headline[2]['news_id'] ?? null)  --}}
  @include('defaultsite.mobile.components-ui.ads-on')
