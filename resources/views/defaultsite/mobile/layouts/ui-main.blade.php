@@ -44,7 +44,7 @@
 
         {{-- Breaking news --}}
         @if ($headline[2]['news_id'] ?? null)
-            @include('defaultsite.mobile.components-ui.breaking-news', ['bm' => $headline])
+            @include('defaultsite.mobile.components-ui.breaking-news-home', ['bm' => $headline])
         @endif
 
         @yield('content')
@@ -57,7 +57,7 @@
 
 </body>
 
-<script>
+ <script>
     const mainNav = document.querySelector('.nav-main');
     const closeNav = document.querySelector('.nav-close');
     const openNav = document.querySelector('.nav-open');

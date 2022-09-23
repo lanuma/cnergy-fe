@@ -8,9 +8,9 @@
 @endif
 
 {{-- Adds-1 --}}    
-{{-- @if ($headline[2]['news_id'] ?? null) --}}
-@include('defaultsite.mobile.components-ui.ads-on')
-{{-- @endif --}}
+@if ($headline[2]['news_id'] ?? null) 
+ @include('defaultsite.mobile.components-ui.ads-on')
+ @endif 
 
 {{-- trending tag --}}
 @include('defaultsite.mobile.components-ui.trending-tag')
