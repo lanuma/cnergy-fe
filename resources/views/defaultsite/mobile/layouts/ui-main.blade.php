@@ -66,6 +66,7 @@
     closeNav.addEventListener('click',close);
 
     function show(){
+        mainNav.style.transition= 'transform 0.5s ease';
         mainNav.style.transform =  'translateX(0)';
     }
     function close(){

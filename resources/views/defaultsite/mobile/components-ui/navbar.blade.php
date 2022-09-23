@@ -4,6 +4,7 @@
   <img src="{{ URL::asset('assets/icons/search-icon.svg') }}" alt="search-icon">
 
   <div class="nav-main">
+    <div class="nav-content">
     <div class="nav-header">
       <a href="/"><img src="{{ URL::asset('assets/images/logo.png') }}" alt="logo" width="200px" height="40px"></a>
       <img class="nav-close" src="{{ URL::asset('assets/icons/icon-close.svg') }}" alt="search-icon" width="30px" height="30px">
@@ -16,6 +17,6 @@
         <li>Halo Bandung</li>
         <li>Halo Bandung</li>
     </ul>
-
+    </div>
   </div>
 </nav>
