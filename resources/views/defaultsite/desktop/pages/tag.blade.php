@@ -13,6 +13,7 @@
 
                 {{-- MORE INFO --}}
                 {{-- @dump($headline) --}}
+                {{-- @dump($tag) --}}
                 @include('defaultsite.desktop.components-ui.ui-more-info')
 
                 {{-- PHOTO COLLECTION --}}
@@ -55,8 +56,6 @@
                         </div>
                     @endforeach
                 </div>
-
-
 
                 {{-- VIDEO NEWS --}}
                 {{-- @dump($rows) --}}

@@ -1,7 +1,9 @@
 <div class="more-info-container">
-    <p>{{ $headline['news_content'] ?? null }}</p>
-    <a href="#">Selengkapnya</a>
-
+    {{-- @dump($tag) --}}
+    <p>{{ $tag['content'] ?? null }}</p>
+    @if ($tag['content'] ?? null)
+        <a href="#">Selengkapnya</a>
+    @endif
     <div class="desc">
         <p><b>Tentang :</b>{{ $headline['news_synopsis'] ?? null }}</p>
         {{-- <p><b>Lokasi Pelaksanaan</b>: Bandung</p> --}}
