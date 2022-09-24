@@ -115,7 +115,7 @@ class NewsController extends Controller
             $page = intval(str_replace('page-', '', $page));
 
             $headline = $feed = null;
-
+         
             $rows = Data::headline($url_id);
 
             if(! ($rows[0]??null) ) return abort(404);
@@ -127,7 +127,7 @@ class NewsController extends Controller
 
                 $feed = collect($rows)->slice(1,6);
             }
-
+            
             $latest = Data::latest(
                 category: $url_id,
                 page: $page,
@@ -135,6 +135,7 @@ class NewsController extends Controller
                 ex_id: Util::getNewsExId($rows),
                 limit: Site::isMobile() ? 25 : 50
             );
+       
             if ($latest['attributes']['last_page']??null) {
                 if ($page>$latest['attributes']['last_page']) {
                     return redirect(url(implode('/',$params).'/page-'.$latest['attributes']['last_page']));

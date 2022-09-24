@@ -13,11 +13,14 @@
                 @include('defaultsite.desktop.components-ui.ui-main-content-news')
 
                 {{-- BERITA TERKAIT --}}
-                @include('ui.components.slider-news')
+                {{-- @dump($row['latest']) --}}
+                @include('defaultsite.desktop.components-ui.ui-related-news', ['latest' => $row['latest']])
 
             </div>
             <div class="col-4">
+                {{-- <div class="mx-4"> --}}
                 @include('defaultsite.desktop.components-ui.ui-aside', ['reference' => $row ?? null])
+                {{-- </div> --}}
             </div>
         </div>
     </div>

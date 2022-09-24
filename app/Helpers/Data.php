@@ -213,7 +213,7 @@ class Data {
             ]
         );
         
-        return $rows;
+        return $rows['data'] ?? [];
     }
 
     /**
