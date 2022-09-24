@@ -6,6 +6,7 @@
 
 
 {{-- Slider kumpulan foto --}}
+{{-- @dump($feed) --}}
 @if ($latest = \Data::latest() ?? null)
     @include('defaultsite.mobile.components-ui.slider-kumpulan-foto', ['hl' => $latest, 'title' => 'Foto ' ])
 @endif
