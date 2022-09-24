@@ -62,7 +62,7 @@
             <img src={{ $row['news_image']['real'] }}>
         </figure>
         <figcaption>{{ $row['news_imageinfo'] ?? null }}</figcaption>
-        <div class="dt-paragraph mt-3">
+        <div class="dt-paragraph mt-3 ">
             {!! str_replace(
                 ['mce-mce-mce-mce-no/type', 'mce-no/type'],
                 '',

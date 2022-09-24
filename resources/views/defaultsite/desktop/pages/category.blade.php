@@ -39,12 +39,6 @@
                             </a>
                         </div>
 
-
-
-
-
-
-
                         <div class="mt-4">
                             <h4 class="special-font-prompt text-uppercase fst-italic fw-bold"
                                 style="font-size: 16px; margin-left: 20px">
@@ -90,25 +84,26 @@
                             </section>
 
                         </div>
-
-
-                        {{-- @include('defaultsite.desktop.components-ui.ui-list-main-news', [
-                            'rows' => $latest['data'],
-                        ])
- --}}
-
-
-                    </div>
                 @endif
 
+                {{-- @dd($latest) --}}
+                @include('defaultsite.desktop.components-ui.ui-list-main-news', [
+                    'listnews' => $latest['data'],
+                ])
 
-
-
-
-
-
+                {{-- @dd($latest) --}}
+                @include('defaultsite.desktop.components-ui.ui-pagination', $latest['attributes'])
             </div>
+
+
+
+
+
+
+
+
         </div>
+    </div>
     </div>
 
 
