@@ -15,7 +15,7 @@
 
      <div class="main-news-deskripsi">
       <h3>{{ $row['news_title'] ?? null }}</h3>
-      <p>{{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+      <p>Oleh  <span style="color: #CA0000 ; margin:0px 5px;">{{$row['news_editor'][0]['name']??null}}</span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
      <figure>
         <div class="image-news">
             @include('image', [
