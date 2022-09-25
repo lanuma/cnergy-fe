@@ -72,24 +72,38 @@ nav {
     border-radius: 8px;
 }
 
+.nav-second_section ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0px;
+}
+
+#listItemNav {
+    display: flex;
+    gap: 15px;
+}
+
 .nav-second_section {
     margin-top: 28px;
 }
 
-.nav-second_section ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
+#list-nav-open {
+    display: none;
+}
+
+.open-nav,
+.open-nav ul {
+    display: flex !important;
+    gap: 15px;
 }
 
 .nav-second_section ul li {
     list-style-type: none;
 }
 
-.nav-second_section ul li a {
+.nav-second_section ul li a,
+.nav-second_section ul li button {
     display: block;
     text-decoration: none;
     font-family: var(--prompt-font);
@@ -205,6 +219,7 @@ nav {
     object-fit: cover;
     width: 100%;
 }
+
 /* 
 .main-news-container a:hover {
     text-decoration: none;
@@ -946,6 +961,7 @@ nav {
 .related-tag-container ul {
     display: flex;
     list-style-type: none;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     gap: 15px;
@@ -1187,7 +1203,6 @@ nav {
 }
 
 .video-collection-container .card-video-news img {
-    //IMG CHANGE TO IFRAME
     object-fit: cover;
     border-radius: 8px;
     width: 100%;
@@ -1501,24 +1516,44 @@ nav {
     font-size: 14px;
 }
 
-/* .related-news-container .card-news {
+/* PAGINATION CONTAINER */
+.pagination-container ul {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: lightpink;
-    margin: 8px;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
 }
 
-.card-news .title-news {
-    height: 100px;
-    width: 100%;
-    background: wheat;
-} */
+.paginationlist-item:not(:first-child) {
+    margin-left: 8px;
+}
 
-/* .parent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-} */
+.paginationlist-item a {
+    align-items: center;
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 36px;
+    min-width: 36px;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    color: white;
+}
+
+.paginationlist-item a .iconSVG {
+    height: 12px;
+    width: 12px;
+}
+
+.paginationlist-item a:hover,
+.paginationlist-item.active a {
+    background-color: #ca0000;
+    color: white !important;
+}
+
+.paginationlist-item a:hover .iconSVG,
+.paginationlist-item.active a .iconSVG {
+    fill: #ffffff;
+}

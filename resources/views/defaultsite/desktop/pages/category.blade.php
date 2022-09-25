@@ -22,8 +22,7 @@
 
                 {{-- @include('ui.components.list-main-news') --}}
 
-                {{-- UI      MAIN       NEWS      --}}
-                {{-- @dump($feed) --}}
+                {{-- UI MAIN NEWS --}}
                 @if ($headline)
                     <div class="main-news-container">
                         <figure>
@@ -86,21 +85,12 @@
                         </div>
                 @endif
 
-                {{-- @dd($latest) --}}
                 @include('defaultsite.desktop.components-ui.ui-list-main-news', [
                     'listnews' => $latest['data'],
                 ])
 
-                {{-- @dd($latest) --}}
                 @include('defaultsite.desktop.components-ui.ui-pagination', $latest['attributes'])
             </div>
-
-
-
-
-
-
-
 
         </div>
     </div>

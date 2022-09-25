@@ -12,6 +12,3 @@
 
 {{-- @dump($reference) --}}
 @include('defaultsite.desktop.components-ui.ui-populer-news')
-
-
-@include('defaultsite.desktop.components-ui.ui-latest-news')

@@ -12,25 +12,19 @@
             <div class="col-4">
 
                 {{-- MORE INFO --}}
-                {{-- @dump($headline) --}}
-                {{-- @dump($tag) --}}
                 @include('defaultsite.desktop.components-ui.ui-more-info')
 
                 {{-- PHOTO COLLECTION --}}
-                {{-- @dump($photo)  --}}
                 @include('defaultsite.desktop.components-ui.ui-photo-collection')
 
                 {{-- VIDEO COLLECTION --}}
-                {{-- @dump($video) --}}
                 @include('defaultsite.desktop.components-ui.ui-video-collection')
 
             </div>
             <div class="col-8">
 
                 {{-- LIST NEWS --}}
-                {{-- @dump($rows) --}}
                 <div class="list-main-news-container">
-
                     @foreach ($rows as $ln)
                         <div class="d-flex align-items-start gap-3 list-main-news-card">
                             <div class="list-news-image">
@@ -57,8 +51,14 @@
                     @endforeach
                 </div>
 
+                {{-- pagination --}}
+                @include('defaultsite.desktop.components-ui.ui-pagination', [
+                    'current_page' => $data['attributes']['current_page'],
+                    'last_page' => $data['attributes']['last_page'],
+                    'slug' => 'tag/'.$tag['slug']
+                ])
+
                 {{-- VIDEO NEWS --}}
-                {{-- @dump($rows) --}}
                 <div class="video-news-container">
                     <p>{{ $rows[1]['news_type'] }}</p>
                     <span>{{ $rows[1]['news_date_publish'] }}</span>
