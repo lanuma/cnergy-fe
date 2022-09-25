@@ -1,9 +1,8 @@
-@if ($trendingTag=collect(\Data::trendingTag())->slice(0, 4)??null)
-    @if( count($trendingTag) !== 0 )
+@if ($row['news_tag'] ?? null)
     <div class="related-tag-container">
-          @foreach ($trendingTag as $tag)
-              <a href="{{ Src::detailTag($tag) }}">{{$tag['title']}}</a>
-          @endforeach
+        @foreach ($row['news_tag'] as $r)
+              <a href="{{ Src::detailTag($r) }}">{{ $r['tag_name'] ?? null }}</a>
+        @endforeach
+        <a href="#">More Tag</a>
       </div>
-    @endif
 @endif

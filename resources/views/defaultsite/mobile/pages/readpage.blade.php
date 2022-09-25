@@ -17,6 +17,7 @@
 @if ($latest = \Data::popular() ?? null)
 @include('defaultsite.mobile.components-ui.related-article', ['news' => $latest, 'title' => 'Berita Terbaru']) 
 @endif
+
 {{-- trending tag --}}
 @include('defaultsite.mobile.components-ui.trending-tag')
 
