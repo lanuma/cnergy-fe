@@ -1,15 +1,8 @@
-@push('styles')
-    <link rel="preload" href="{{ Src::mix('css/paging.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ Src::mix('css/paging.css') }}" />
-    </noscript>
-@endpush
-
 @isset($current_page, $last_page)
     @if ($last_page > 1)
         @if ($pagination = Util::pagination($current_page, $last_page) ?? null)
-            <div class="section--pagination mt-8">
-                <ul class="paginationlist list-none flex items-center justify-center">
+            <div class="pagination-container mt-4">
+                <ul class="paginationlist">
                     @foreach ($pagination['list'] as $p)
                         @if ($pagination['current_page'] == $p['page'])
                             <li class="paginationlist-item active"><a
