@@ -72,24 +72,38 @@ nav {
     border-radius: 8px;
 }
 
+.nav-second_section ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0px;
+}
+
+#listItemNav {
+    display: flex;
+    gap: 15px;
+}
+
 .nav-second_section {
     margin-top: 28px;
 }
 
-.nav-second_section ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
+#list-nav-open {
+    display: none;
+}
+
+.open-nav,
+.open-nav ul {
+    display: flex !important;
+    gap: 15px;
 }
 
 .nav-second_section ul li {
     list-style-type: none;
 }
 
-.nav-second_section ul li a {
+.nav-second_section ul li a,
+.nav-second_section ul li button {
     display: block;
     text-decoration: none;
     font-family: var(--prompt-font);
