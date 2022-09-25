@@ -94,13 +94,6 @@
                 @include('defaultsite.desktop.components-ui.ui-pagination', $latest['attributes'])
             </div>
 
-
-
-
-
-
-
-
         </div>
     </div>
     </div>
