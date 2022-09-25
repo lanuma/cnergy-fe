@@ -22,8 +22,7 @@
 
                 {{-- @include('ui.components.list-main-news') --}}
 
-                {{-- UI      MAIN       NEWS      --}}
-                {{-- @dump($feed) --}}
+                {{-- UI MAIN NEWS --}}
                 @if ($headline)
                     <div class="main-news-container">
                         <figure>
