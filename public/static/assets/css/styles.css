@@ -961,6 +961,7 @@ nav {
 .related-tag-container ul {
     display: flex;
     list-style-type: none;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     gap: 15px;
