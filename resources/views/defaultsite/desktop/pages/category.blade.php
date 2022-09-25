@@ -85,12 +85,10 @@
                         </div>
                 @endif
 
-                {{-- @dd($latest) --}}
                 @include('defaultsite.desktop.components-ui.ui-list-main-news', [
                     'listnews' => $latest['data'],
                 ])
 
-                {{-- @dd($latest) --}}
                 @include('defaultsite.desktop.components-ui.ui-pagination', $latest['attributes'])
             </div>
 

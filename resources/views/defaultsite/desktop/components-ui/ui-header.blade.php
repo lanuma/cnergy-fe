@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="nav-second_section d-flex justify-content-between">
+  <div class="nav-second_section">
     @if ($menu = Data::menu())
     
         <ul>
@@ -62,29 +62,32 @@
                 }
             @endphp
 
-            @foreach (array_slice($menu, 0, 9) as $m)
-                @if (!filter_var($m['url'], FILTER_VALIDATE_URL))
-                    <li class="header-nav-item {{ trim(end($category_tree)['url'] ?? null, '/') == trim($m['url'], '/') || config('site.attributes.object.category.slug') == trim($m['url'], '/') ? 'active' : '' }}"><a href="{{ '/' . trim($m['url'], '/') }}">{{ $m['title'] }}</a></li>
-                @else
-                    <li class="header-nav-item {{ trim(end($category_tree)['url'] ?? null, '/') == trim($m['url'], '/') || config('site.attributes.object.category.slug') == trim($m['url'], '/') ? 'active' : '' }}"><a href="{{ $m['url'] }}">{{ $m['title'] }}</a></li>
-                @endif
-            @endforeach
+            <div id="listItemNav">
+                @foreach (array_slice($menu, 0, 9) as $m)
+                    @if (!filter_var($m['url'], FILTER_VALIDATE_URL))
+                        <li {{ trim(end($category_tree)['url'] ?? null, '/') == trim($m['url'], '/') || config('site.attributes.object.category.slug') == trim($m['url'], '/') ? 'active' : '' }}"><a href="{{ '/' . trim($m['url'], '/') }}">{{ $m['title'] }}</a></li>
+                    @else
+                        <li {{ trim(end($category_tree)['url'] ?? null, '/') == trim($m['url'], '/') || config('site.attributes.object.category.slug') == trim($m['url'], '/') ? 'active' : '' }}"><a href="{{ $m['url'] }}">{{ $m['title'] }}</a></li>
+                    @endif
+                @endforeach
+            </div>
+
             @if (count($menu) > 9)
-                <li class="header-nav-item">
-                    <button name="btn-avatar" aria-label="btn-avatar" class="header-nav-item flex items-center header-extra-nav">
-                        <span>{{ __('Lainnya') }}</span> <i class="icon icon--arrowright"></i>
+                <li>
+                    <button id="btnLainnya" style="border: none; background: none; margin-left: 15px" onclick="collapseLainnya()">
+                        <span>{{ __('Lainnya') }}</span> <i class="fa-sharp fa-solid fa-chevron-right"></i></i>
                     </button>
-                    <div class="header-nav-item-menu" style="padding-right:0">
-                        <ul class="header-nav-item-menu-list">
+                    <div id="list-nav-open" style="padding-right:0">
+                        <ul>
                             @foreach (array_slice($menu, 9) as $m)
                                 @if (!filter_var($m['url'], FILTER_VALIDATE_URL))
-                                    <li class="header-nav-item {{ trim(end($category_tree)['url'] ?? null, '/') == trim($m['url'], '/') || config('site.attributes.object.category.slug') == trim($m['url'], '/') ? 'active' : '' }}"><a href="{{ '/' . trim($m['url'], '/') }}">{{ $m['title'] }}</a></li>
+                                    <li {{ trim(end($category_tree)['url'] ?? null, '/') == trim($m['url'], '/') || config('site.attributes.object.category.slug') == trim($m['url'], '/') ? 'active' : '' }}"><a href="{{ '/' . trim($m['url'], '/') }}">{{ $m['title'] }}</a></li>
                                 @else
-                                    <li class="header-nav-item {{ trim(end($category_tree)['url'] ?? null, '/') == trim($m['url'], '/') || config('site.attributes.object.category.slug') == trim($m['url'], '/') ? 'active' : '' }}"><a href="{{ $m['url'] }}">{{ $m['title'] }}</a></li>
+                                    <li {{ trim(end($category_tree)['url'] ?? null, '/') == trim($m['url'], '/') || config('site.attributes.object.category.slug') == trim($m['url'], '/') ? 'active' : '' }}"><a href="{{ $m['url'] }}">{{ $m['title'] }}</a></li>
                                 @endif
                             @endforeach
                         </ul>
-                        <span class="header-extra-nav header-nav-item-menu-back"><i class="icon icon--arrowright rotate-180"></i></span>
+                        <span><i onclick="removeCollapse()" class="fa-sharp fa-solid fa-chevron-left" style="cursor: pointer"></i></span>
                     </div>
                 </li>
             @endif
@@ -119,16 +122,17 @@
   </div>
 </nav>
 
+<script>
+    function collapseLainnya() {
+        document.getElementById('listItemNav').style.display = "none";
+        document.getElementById('btnLainnya').style.display = "none";
+        document.getElementById('list-nav-open').classList.add("open-nav");
+    }
 
-{{-- <ul>
-  <li><a href="#">berita daerah</a></li>
-  <li><a href="#">ekonomi bisnis</a></li>
-  <li><a href="#">politik</a></li>
-  <li><a href="#">olahraga</a></li>
-  <li><a href="#">hukum & kriminal</a></li>
-  <li><a href="#">agri farming</a></li>
-  <li><a href="#">hiburan</a></li>
-  <li><a href="#">photo</a></li>
-  <li><a href="#">video</a></li>
-  <li><a href="#">lainnya ></a></li>
-</ul> --}}
+    function removeCollapse() {
+        document.getElementById('listItemNav').style.display = "flex";
+        document.getElementById('btnLainnya').style.display = "block";
+        document.getElementById('list-nav-open').classList.remove("open-nav");
+    }
+
+</script>
