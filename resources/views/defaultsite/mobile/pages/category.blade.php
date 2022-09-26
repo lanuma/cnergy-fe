@@ -17,9 +17,9 @@
                         </div>
                     </div> -->
                     <a class="item-img aspect-[16/9]" href="{{ Src::detail($headline) }}" aria-label="{{$headline['news_title']??null}}" >
-                        <div class="image-news">
+                        <div class="image-news" >
                             @include('image', [
-                                'source' => $headline,
+                                   'source' => $headline,
                                 'force' => '375x208',
                                 'size' => '375x208',
                                 $headline['news_title'] ?? null,

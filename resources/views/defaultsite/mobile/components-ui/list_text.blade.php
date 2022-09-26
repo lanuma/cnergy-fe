@@ -9,7 +9,7 @@
                 $r['news_title'] ?? null,
             ])
         </a>
-        <figcaption class=" mx-2" >
+        <figcaption class=" mx-4" >
             <div class="d-flex ">
                 <a class="text-category" href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}
                 </a>
