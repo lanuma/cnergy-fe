@@ -157,6 +157,22 @@
       }
   @endphp
   </div>
-  
+  {{-- report --}}
+  <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
+    class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
+
+<div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-body">
+            {{-- FORM REPORT --}}
+            @include('defaultsite.desktop.components-ui.ui-form-report')
+        </div>
+    </div>
+
+</div>
+</div>
   </div>
   
