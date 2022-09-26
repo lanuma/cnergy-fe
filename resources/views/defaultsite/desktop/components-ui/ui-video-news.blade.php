@@ -1,8 +1,18 @@
-<div class="video-news-container">
-    <p>{{ $r[1]['news_type'] }}</p>
-    <span>{{ $r[1]['news_date_publish'] }}</span>
-    <h4>{{ $r[1]['news_title'] }}</h4>
-    <iframe width="100%" height="500" src='{{ $r[1]['news_image']['real'] }}' title="YouTube video player"
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+<div id="{{ $r['news_id'] }}" class="video-news-container">
+    <a href="{{ Src::category($r) }}">
+        <p>{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}</p>
+    </a>
+    <span>{{ Util::date($r['news_date_publish'], 'ago') }}</span>
+    <a href="{{ Src::detail($r) }}">
+        <h4>{{ $r['news_title'] ?? null }}</h4>
+    </a>
+    <a href="{{ Src::detail($r) }}" class="item-img aspect-[16/9] rounded-lg"
+        aria-label="{{ $r['news_title'] ?? 'untitled' }}">
+        @include('image', [
+            'source' => $r,
+            'force' => '640x360',
+            'size' => '640x360',
+            $r['news_title'] ?? null,
+        ])
+    </a>
 </div>
