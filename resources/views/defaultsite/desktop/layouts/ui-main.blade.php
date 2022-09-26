@@ -76,6 +76,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>@yield('title')</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 
     {{-- @if (config('app.enabled_turbolink'))
         <script>
@@ -114,6 +115,8 @@
             @include('defaultsite.desktop.components-ui.ui-footer')
         @endif
     </div>
+
+    @yield('khusus-photo-detail')
 
 </body>
 <script>
