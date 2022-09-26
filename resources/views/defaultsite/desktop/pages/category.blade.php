@@ -85,9 +85,17 @@
                         </div>
                 @endif
 
-                @include('defaultsite.desktop.components-ui.ui-list-main-news', [
-                    'listnews' => $latest['data'],
+
+                {{-- @dump($latest['data']) --}}
+                @include('defaultsite.desktop.components-ui.ui-list-main-news-conf', [
+                    'rows' => $latest['data'],
                 ])
+
+
+
+                {{-- @include('defaultsite.desktop.components-ui.ui-list-main-news', [
+                    'listnews' => $latest['data'],
+                ]) --}}
 
                 @include('defaultsite.desktop.components-ui.ui-pagination', $latest['attributes'])
             </div>

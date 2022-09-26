@@ -38,16 +38,6 @@
                 target="_blank"><i class="icon icons--share icon--share-fb"></i></a>
             <a href="https://twitter.com/intent/tweet?text={{ urlencode(url()->current() . '?utm_source=Desktop&utm_medium=twitter&utm_campaign=Share_Top') }}"
                 target="_blank"><i class="icon icons--share icon--share-tweet"></i></a>
-            {{-- <a href="#"><img src="{{ URL::asset('assets/icons/google-shared.svg') }}" alt="google+"></a>
-            <a href="#"><img src="{{ URL::asset('assets/icons/mail-shared.svg') }}" alt="mail"></a>
-            <a href="#" class="total-comments">
-                <img src="{{ URL::asset('assets/icons/total-comments-shared.svg') }}" alt="total-comments">
-                <span class="text-white ms-1">312</span>
-            </a> --}}
-            {{-- <div class="total-shared">
-                <span>Share</span>
-                <p class="m-0 fw-bold">234.211</p>
-            </div> --}}
         </div>
     </div>
 

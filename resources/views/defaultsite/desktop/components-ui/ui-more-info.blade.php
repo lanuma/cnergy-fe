@@ -1,5 +1,6 @@
 <div class="more-info-container">
     {{-- @dump($tag) --}}
+
     <p>{{ $tag['content'] ?? null }}</p>
     @if ($tag['content'] ?? null)
         <a href="#">Selengkapnya</a>
