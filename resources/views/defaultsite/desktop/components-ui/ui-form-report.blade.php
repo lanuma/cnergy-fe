@@ -3,7 +3,7 @@
   <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
 </div>
 
-<div class="d-flex gap-3 mt-5">
+<div class="d-flex gap-5 mt-5">
   <div class="desc-report">
       @include('image', ['source'=>$row, 'size'=>'93x53', 'force' => '93x53', $row['news_title']??null])
   </div>
