@@ -11,6 +11,8 @@
     @include('defaultsite.mobile.components-ui.photo-collection', [ 'title' => 'Foto ' ])
 {{-- @endif --}}
 
+{{-- Kumpulan video --}}
+@include('defaultsite.mobile.components-ui.video-collection', [ 'title' => 'Video ' ])
 
 {{-- adds-on --}}
 {{-- @if ($headline[2]['news_id'] ?? null)  --}}
