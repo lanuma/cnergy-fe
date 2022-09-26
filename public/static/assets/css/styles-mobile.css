@@ -1094,3 +1094,107 @@ a {
     color: #000000;
     padding: 10px 0px;
 }
+/* pagination */
+/* PAGINATION CONTAINER */
+.pagination-container ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginationlist-item:not(:first-child) {
+    margin-left: 8px;
+}
+
+.paginationlist-item a {
+    align-items: center;
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 36px;
+    min-width: 36px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    color: #000;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.paginationlist-item a .iconSVG {
+    height: 12px;
+    width: 12px;
+}
+
+.paginationlist-item a:hover,
+.paginationlist-item.active a {
+    background-color: #ca0000;
+    color: white !important;
+}
+
+.paginationlist-item a:hover .iconSVG,
+.paginationlist-item.active a .iconSVG {
+    fill: #ffffff;
+}
+/* end pagination */
+
+/* list */
+.text-category {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 12px;
+    /* identical to box height */
+
+    color: #ca0000;
+}
+.text-dates {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 12px;
+    /* identical to box height */
+
+    color: #999999;
+}
+.text-title {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    /* or 138% */
+
+    color: #000000;
+}
+
+/* main-category */
+.publish_category {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #999999;
+}
+.item-desc-title-category {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 34px;
+    /* or 142% */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
