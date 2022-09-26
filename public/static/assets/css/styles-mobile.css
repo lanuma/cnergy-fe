@@ -386,7 +386,7 @@ nav img {
 }
 .silder-vector {
     position: relative;
-    right: 15px;
+    left: 6px;
     bottom: 2px;
 }
 
@@ -486,6 +486,19 @@ nav img {
     font-weight: 400;
     font-size: 12px;
     color: #000;
+}
+.photo-p {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+}
+a {
+    color: #000;
+}
+.photo-collection-container {
+    margin: 20px;
 }
 
 .main-content-news-container span {
