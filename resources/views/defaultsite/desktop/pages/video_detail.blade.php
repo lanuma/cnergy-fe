@@ -59,6 +59,9 @@
 
                     </div>
                 </div>
+                {{-- ?? BERITA TERKAIT ?? --}}
+                @include('defaultsite.desktop.components-ui.ui-related-news', ['latest' => $row['latest']])
+
             </div>
             <div class="col-4">
                 @include('defaultsite.desktop.components-ui.ui-aside', ['reference' => $row ?? null])
