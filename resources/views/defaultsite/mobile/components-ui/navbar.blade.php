@@ -1,7 +1,8 @@
 <nav>
   <img class="nav-open" src="{{ URL::asset('assets/icons/hamburger.svg') }}" alt="bar-icon" onclick="show()">
   <a href="/"><img src="{{ URL::asset('assets/images/logo.png') }}" alt="logo" width="142px" height="29px"></a>
-  <img src="{{ URL::asset('assets/icons/search-icon.svg') }}" alt="search-icon">
+  <img class="search-icon" src="{{ URL::asset('assets/icons/search-icon.svg') }}" alt="search-icon">
+</div>
 
   <div class="nav-main">
     <div class="nav-content">
@@ -107,13 +108,219 @@
                 @endif
             @endif
         @endif
-          <!-- <li>Halo Bandung</li>
-          <li>Halo Bandung</li>
-          <li>Halo Bandung</li>
-          <li>Halo Bandung</li>
-          <li>Halo Bandung</li> -->
       @endif
     </ul>
     </div>
   </div>
 </nav>
+
+<div class="search-container">
+<div class="search-box">
+    <div class="search-field" >
+        <img src="{{ URL::asset('assets/icons/search-icon.svg') }}" alt="search-icon" width="22px" height="22px">
+        <input type="search" placeholder="Search" aria-label="Search">
+
+        <style>
+            .gsc-search-button-v2 {
+                display: none;
+            }
+
+            .all-search-box {
+                background-color: var(--bg-gray);
+                min-width: 280px;
+                min-height: 34px;
+                border-radius: 8px;
+                overflow: hidden;
+                border: 1px solid var(--color-border);
+            }
+
+            form.gsc-search-box,
+            table.gsc-search-box {
+                margin-bottom: 0;
+            }
+
+            form.gsc-search-box {
+                display: table;
+                background: #EBEBEB;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+                position: relative;
+            }
+
+            .gsst_b {
+                padding: 0;
+            }
+
+            .gsib_a {
+                padding: 0 10px;
+                padding-left: 40px;
+            }
+
+            .gsst_a {
+                padding: 0;
+                vertical-align: middle;
+                line-height: 1em;
+                margin-top: -3px;
+            }
+
+            .gsst_a .gscb_a,
+            .gsst_a:hover .gscb_a,
+            .gsst_a:focus .gscb_a {
+                font-family: 'Open Sans', sans-serif;
+                color: #999;
+                display: block;
+                font-size: 32px;
+                font-weight: 300;
+            }
+
+            .gsc-input,
+            .gsc-input-box,
+            .gsc-input-box-hover,
+            .gsc-input-box-focus {
+                border: none;
+                box-shadow: none;
+                height: 100%;
+                background-color: transparent !important;
+                margin: 0 !important;
+            }
+
+            input.gsc-search-button,
+            input.gsc-search-button:hover,
+            input.gsc-search-button:focus {
+                padding: 0;
+                margin: 0;
+                border: 0;
+                border-radius: 0;
+                background-color: transparent;
+                cursor: pointer;
+                text-indent: -9999px;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                filter: alpha(opacity=50);
+                -moz-opacity: 0.5;
+                -khtml-opacity: 0.5;
+                opacity: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%
+            }
+
+            td.gsc-search-button {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                bottom: 0;
+                background-image: url(https://cdns.klimg.com/kapanlagi.com/v5/i/channel/entertainment/h2-search.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 40px;
+                height: 40px;
+                background-size: 16px;
+            }
+
+            .gsc-search-box-tools .gsc-search-box .gsc-input {
+                font-family: 'Noto Sans', sans-serif;
+                padding-right: 10px;
+                height: 40px !important;
+                line-height: normal;
+                color: var(--color-gray);
+                font-size: 14px;
+                background: #fff !important;
+                text-indent: 0 !important;
+            }
+
+            .gsc-search-box-tools .gsc-search-box .gsc-input::-webkit-input-placeholder {
+                opacity: 1;
+            }
+
+            .gsc-search-box-tools .gsc-search-box .gsc-input::-moz-placeholder {
+                opacity: 1;
+            }
+
+            .gsc-search-box-tools .gsc-search-box .gsc-input:-ms-input-placeholder {
+                opacity: 1;
+            }
+
+            .gsc-search-box-tools .gsc-search-box .gsc-input:-moz-placeholder {
+                opacity: 1;
+            }
+
+            td.gsc-search-button {
+                margin-left: 0;
+            }
+
+            td.gsc-search-button .gsc-search-button-v2,
+            td.gsc-search-button .gsc-search-button-v2:hover,
+            td.gsc-search-button .gsc-search-button-v2:focus {
+                background-color: transparent;
+                border: 0;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+            }
+
+            td.gsc-search-button .gsc-search-button-v2 svg {
+                display: none;
+            }
+        </style>
+
+        @push('script_lazy')
+            initCSE(false);
+        @endpush
+
+        @push('script')
+            <script>
+                var startGCS = false;
+
+                @if (request()->segment(1) == 'search')
+                    window.addEventListener('load', function() {
+
+                        initCSE(false)
+
+                    });
+                @endif
+
+                document.getElementsByClassName("header-btn--searchbar")[0].addEventListener("click", function() {
+                    initCSE(true)
+                });
+
+
+                function initCSE(focus) {
+                    if (startGCS) return false;
+
+                    startGCS = true;
+
+                    (function() {
+                        var cx = "{{ config('site.attributes.reldomain.cse_id') ?? null }}";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                    })();
+
+                    window.__gcse = {
+                        callback: function() {
+                            document.getElementsByClassName("gsc-input")[2].setAttribute("placeholder", "Berita apa yang ingin Anda cari?");
+
+                            if (focus) {
+                                document.getElementsByClassName("gsc-input")[2].focus()
+                            }
+                        }
+                    };
+                }
+            </script>
+        @endpush
+        <gcse:searchbox-only resultsUrl="{{ url('search') }}"></gcse:searchbox-only>
+
+    </div>
+</div>
+<div class="search-background"></div>
+</div>
+
+

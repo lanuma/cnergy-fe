@@ -33,6 +33,8 @@
     {{-- font awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <title>@yield('title')</title>
 </head>
 
@@ -70,6 +72,35 @@
     function close(){
         mainNav.style.transform =  'translateX(-100%)';
     }
+
+    const openSearch = document.querySelector('.search-container');
+    const closeSearch = document.querySelector('.search-background');
+    const iconSearch = document.querySelector('.search-icon');
+
+    iconSearch.addEventListener('click',openSearchHeader);
+    closeSearch.addEventListener('click',closeSearchHeader);
+
+    function openSearchHeader(){
+        openSearch.style['z-index'] = 10;
+        openSearch.style['opacity'] = 1;
+        openSearch.style['-webkit-transition'] = 'opacity 0.5s';
+        openSearch.style['-moz-transition'] = 'opacity 0.5s';
+        openSearch.style['transition'] = 'opacity 0.5s';
+
+    }
+
+    function closeSearchHeader(){
+        openSearch.style['z-index'] = -1;
+        openSearch.style['opacity'] = 0;
+    }
+    // z-index: 10;
+    // opacity: 1;
+    // -webkit-transition: opacity 3s;
+    // -moz-transition: opacity 3s;
+    // transition: opacity 3s;
+    // function close(){
+    //     mainNav.style.transform =  'translateX(-100%)';
+    // }
 </script>
 
 </html>

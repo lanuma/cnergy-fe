@@ -109,6 +109,57 @@ nav img {
     font-family: var(--lato-font);
 }
 
+.search-background {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.search-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    /* ini */
+    z-index: -1;
+    opacity: 0;
+}
+
+.search-box {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px silver solid;
+    padding: 10px;
+}
+
+.search-field input {
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+}
+
+.search-field input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    background: url(../icons/icon-close.svg);
+    height: 1em;
+    width: 1em;
+    background-size: contain;
+}
+
 .header-nav-item a {
     color: black;
 }
@@ -659,9 +710,9 @@ a {
     color: black;
 }
 
-.related-tag-container a:last-child {
+/* .related-tag-container a:last-child {
     color: #000;
-}
+} */
 
 .artikel-terkait-container {
     margin: 10px 24px;
