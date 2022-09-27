@@ -24,7 +24,7 @@
             <div class="col-8">
 
                 {{-- LIST NEWS --}}
-                <div class="list-main-news-container">
+                {{-- <div class="list-main-news-container">
                     @foreach ($rows as $ln)
                         <div class="d-flex align-items-start gap-3 list-main-news-card">
                             <div class="list-news-image">
@@ -49,17 +49,23 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
+                </div> --}}
+
+
+                @include('defaultsite.desktop.components-ui.ui-list-main-news-conf', [
+                    'rows' => $rows,
+                ])
 
                 {{-- pagination --}}
                 @include('defaultsite.desktop.components-ui.ui-pagination', [
                     'current_page' => $data['attributes']['current_page'],
                     'last_page' => $data['attributes']['last_page'],
-                    'slug' => 'tag/'.$tag['slug']
+                    'slug' => 'tag/' . $tag['slug'],
                 ])
 
+
                 {{-- VIDEO NEWS --}}
-                <div class="video-news-container">
+                {{-- <div class="video-news-container">
                     <p>{{ $rows[1]['news_type'] }}</p>
                     <span>{{ $rows[1]['news_date_publish'] }}</span>
                     <h4>{{ $rows[1]['news_title'] }}</h4>
@@ -67,7 +73,7 @@
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
-                </div>
+                </div> --}}
 
 
             </div>

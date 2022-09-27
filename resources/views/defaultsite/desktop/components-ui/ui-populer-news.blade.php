@@ -4,7 +4,7 @@
             <h4>populer</h4>
             <div class="list-populer-container">
                 <a href="{{ Src::detail($popular[1]) }}" aria-label="{{ $popular[1]['news_title'] ?? null }}">
-                    <article id="target class="image-content">
+                    <article id="target" class="image-content">
                         @include('image', [
                             'source' => $popular[1],
                             'force' => '300x172',
