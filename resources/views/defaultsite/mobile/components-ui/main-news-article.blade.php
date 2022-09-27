@@ -15,7 +15,7 @@
 
      <div class="main-news-deskripsi">
       <h3>{{ $row['news_title'] ?? null }}</h3>
-      <p>Oleh  <span style="color: #CA0000 ; margin:0px 5px;">{{$row['news_editor'][0]['name']??null}}</span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+      <p>Oleh  <span style="color: #CA0000 ; margin:0px 5px;"><a  href="#">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
      <figure>
         <div class="image-news">
             @include('image', [
@@ -157,6 +157,22 @@
       }
   @endphp
   </div>
-  
+  {{-- report --}}
+  <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
+    class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
+
+<div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-body">
+            {{-- FORM REPORT --}}
+            @include('defaultsite.desktop.components-ui.ui-form-report')
+        </div>
+    </div>
+
+</div>
+</div>
   </div>
   

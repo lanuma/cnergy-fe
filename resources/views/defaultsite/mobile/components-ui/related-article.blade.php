@@ -1,5 +1,5 @@
 <div class="artikel-terkait-container">
-   <h4>artikel terkait</h4>
+   <h4>{{$title}}</h4>
     @foreach ($news as $item)
     <figure>
     <a href="{{ Src::detail($item) }}" aria-label="{{ $item[0]['news_title'] ?? null }}">
