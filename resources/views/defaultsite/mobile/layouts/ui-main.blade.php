@@ -53,10 +53,11 @@
         @yield('content')
 
         {{-- Footer --}}
-        @if (config('site.use_footer', 'yes') == 'yes')
+        {{-- @if (config('site.use_footer', 'yes') == 'yes') --}}
             @include('defaultsite.mobile.components-ui.footer')
-        @endif
+        {{-- @endif --}}
     </div>
+    {{-- @yield('m-photo-detail') --}}
 
 </body>
 
