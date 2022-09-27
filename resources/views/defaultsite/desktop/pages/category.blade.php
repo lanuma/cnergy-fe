@@ -63,14 +63,16 @@
                                                     ])
                                                 </div>
                                                 <div class="slider-info">
-                                                    @if ($s['news_type'] == 'photonews')
-                                                        <i class="fa-sharp fa-solid fa-circle-camera"></i>
-                                                    @endif
-                                                    @if ($s['news_type'] == 'video')
-                                                        <i class="fa-solid fa-circle-play"></i>
-                                                    @endif
                                                     <div class="d-flex flex-column">
-                                                        <p>
+                                                        @if ($s['news_type'] == 'photonews')
+                                                            <i class="fa-sharp fa-solid fa-camera me-3"
+                                                                style="color: #CA0000"></i>
+                                                        @endif
+                                                        @if ($s['news_type'] == 'video')
+                                                            <i class="fa-solid fa-circle-play me-3"
+                                                                style="color: #CA0000"></i>
+                                                        @endif
+                                                        <p class="time-info">
                                                             {{ Util::date($s['news_date_publish'], 'ago') }}
                                                         </p>
                                                         <span class="slider-title">{{ $s['news_title'] }}</span>
@@ -81,9 +83,11 @@
                                     @endif
                                 </div>
                             </section>
-
                         </div>
+                    </div>
                 @endif
+
+
 
 
                 {{-- @dump($latest['data']) --}}
@@ -92,16 +96,15 @@
                 ])
 
 
-
                 {{-- @include('defaultsite.desktop.components-ui.ui-list-main-news', [
                     'listnews' => $latest['data'],
                 ]) --}}
 
                 @include('defaultsite.desktop.components-ui.ui-pagination', $latest['attributes'])
-            </div>
 
+
+            </div>
         </div>
-    </div>
     </div>
 
 

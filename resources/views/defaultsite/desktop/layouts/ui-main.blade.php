@@ -165,6 +165,7 @@
         });
     }, 60 * 1000);
 </script>
+
 {{-- <script>
     @if (!config('app.enabled_turbolink'))
         var initedJS = false;
@@ -230,6 +231,32 @@
 </script> --}}
 
 @stack('script')
+
+
+<script>
+    function callback(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const imgElement = entry.target.querySelector('img');
+                const realSrc = imgElement.dataset.src;
+                imgElement.setAttribute('src', realSrc);
+                imgElement.style.filter = 'blur(0px)';
+            }
+        });
+    }
+
+    const options = {
+        threshold: 0.4
+    }
+
+    let observer = new IntersectionObserver(callback, options);
+
+    const elements = document.querySelectorAll('article')
+
+    elements.forEach(target => {
+        observer.observe(target);
+    })
+</script>
 
 {{-- <script>
     document.querySelectorAll('img').forEach((img) => {
