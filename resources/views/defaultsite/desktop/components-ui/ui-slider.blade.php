@@ -1,14 +1,14 @@
-<div class="mt-4">
+<div class="slider-wrapper py-4">
     <h4 class="special-font-prompt text-uppercase fst-italic fw-bold" style="font-size: 16px; margin-left: 20px">
-        Spotlight</h4>
+        Berita
+        Utama Lainnya</h4>
     <section class="custom-slider">
         <button class="pre-btn"><img src="{{ URL::asset('assets/icons/prev.svg') }}" alt=""></button>
         <button class="nxt-btn"><img src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
         <div class="slider-container">
-            @foreach ($sl as $s)
-                <a href="{{ Src::detail($s) }}" aria-label="{{ $s['news_title'] ?? null }}" class="slider-card">
+            @foreach ($headline as $s)
+                <a href="{{ Src::detail($s) }}" aria-label="{{ $s[0]['news_title'] ?? null }}" class="slider-card">
                     <article id="target" class="slider-image">
-                        {{-- <img src="{{ $s['news_image']['real'] }}" class="slider-thumb" alt=""> --}}
                         @include('image', [
                             'source' => $s,
                             'force' => '212x115',
@@ -20,9 +20,8 @@
                         <div class="d-flex flex-column">
                             <div class="d-flex flex-row align-items-center">
                                 @if ($s['news_type'] == 'photonews')
-                                    <i class="fa-sharp fa-solid fa-circle-camera me-3" style="color: #CA0000"></i>
+                                    <i class="fa-sharp fa-solid fa-camera me-3" style="color: #CA0000"></i>
                                 @endif
-
                                 @if ($s['news_type'] == 'video')
                                     <i class="fa-solid fa-circle-play me-3" style="color: #CA0000"></i>
                                 @endif
