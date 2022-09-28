@@ -1,6 +1,6 @@
-<div class="text-news-container">
+<div class="list-main-news-container" style="margin: 25px 20px">
 <article id="{{$r['news_id']}}" class="articles articles--text">
-    <figure class="my-5 d-flex ">
+    <div class="card-news">
         <a href="{{ Src::detail($r) }}" aria-label="{{ $r['news_title'] ?? 'untitled' }}">
             @include('image', [
                 'source' => $r,
@@ -8,17 +8,14 @@
                 'size' => '85x85',
                 $r['news_title'] ?? null,
             ])
+        <div class="description" >
+            <div class="banner">
+                <p class="text-category" href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}</p>
+                <span>{{ Util::date($r['news_date_publish'], 'ago') }}</span>
+            </div>
+            <h4 class="text-title" href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</h4>
+        </div>
         </a>
-        <figcaption class=" mx-4" >
-            <div class="d-flex ">
-                <a class="text-category" href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}
-                </a>
-                <p class="ms-2 text-dates">{{ Util::date($r['news_date_publish'], 'ago') }}</p>
-            </div>
-            <div class="text-news-desc mt-2">
-                <a class="text-title" href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a>
-            </div>
-        </figcaption>
-    </figure>
+    </div>
 </article>
 </div>

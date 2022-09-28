@@ -1,5 +1,4 @@
 <div class="main-news-container">
-
     <ul class="main-breadcrumb flex items-center flex-wrap list-none m-4">
         <li class="main-breadcrumb-item"><a href="/">Home</a></li>
         @foreach ($row['news_category'] as $r)
@@ -15,7 +14,7 @@
 
      <div class="main-news-deskripsi">
       <h3>{{ $row['news_title'] ?? null }}</h3>
-      <p>Oleh  <span style="color: #CA0000 ; margin:0px 5px;"><a  href="#">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+      <p>Oleh<span style="margin:0px 5px;"><a href="{{ Src::author($row) }}" style="color: #CA0000;">{{$row['news_editor'][0]['name']??null}}</a></span>{{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
      <figure>
         <div class="image-news">
             @include('image', [
@@ -158,21 +157,24 @@
   @endphp
   </div>
   {{-- report --}}
-  <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
-    class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
 
-<div class="modal fade" id="myModal" role="dialog">
-<div class="modal-dialog">
+  <div style="margin:0px 20px;">
+    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
+        class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>LAPORKAN ARTIKEL</button>
 
-    <!-- Modal content-->
-    <div class="modal-content">
-        <div class="modal-body">
-            {{-- FORM REPORT --}}
-            @include('defaultsite.desktop.components-ui.ui-form-report')
+        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    {{-- FORM REPORT --}}
+                    @include('defaultsite.mobile.components-ui.form-report')
+                </div>
+            </div>
+
+        </div>
         </div>
     </div>
-
 </div>
-</div>
-  </div>
   
