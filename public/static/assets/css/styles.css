@@ -1782,12 +1782,7 @@ nav {
     font-weight: 700;
 }
 
-.header-photo-detail {
-    margin: 0 auto;
-    width: 1056px !important;
-    max-width: none !important;
-    height: 200px;
-}
+.header-photo-detail {}
 
 .content-photo-detail {
     flex-grow: 1;

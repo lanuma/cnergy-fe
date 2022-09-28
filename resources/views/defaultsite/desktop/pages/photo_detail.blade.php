@@ -11,8 +11,8 @@
 @endsection
 
 @section('khusus-photo-detail')
-<div class="photo-detail-section mt-4">
-    <div class="header-photo-detail">
+<div class="photo-detail-section">
+    <div class="container w-kly">
         {{-- Header --}}
         @include('defaultsite.desktop.components-ui.ui-header')
 
