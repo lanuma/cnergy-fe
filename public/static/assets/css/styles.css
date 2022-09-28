@@ -1681,6 +1681,12 @@ nav {
     margin-top: 20px;
 }
 
+.photo-detail-section {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
 .photo-detail-section .info-author a,
 .photo-detail-section .info-author span {
     color: #000000;
@@ -1722,7 +1728,6 @@ nav {
 .photo-scroll {
     overflow-x: hidden;
     overflow-y: auto;
-    height: 570px;
 }
 
 .vertical-scroll::-webkit-scrollbar {
@@ -1775,6 +1780,19 @@ nav {
     font-family: var(--lato-font);
     font-size: 14px;
     font-weight: 700;
+}
+
+.header-photo-detail {
+    margin: 0 auto;
+    width: 1056px !important;
+    max-width: none !important;
+    height: 200px;
+}
+
+.content-photo-detail {
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Photo Pages */
