@@ -2,14 +2,13 @@
 
 @section('content')
 
-<div class="main-body px-3">
-    <div class="main-article mt-3">
-
+<div class="main-body">
+    <div class="main-article">
         @if( $headline )
         <div class="section section--headline -mx-4">
             <div class="section--headline-top">
                 <figure class="item item--headline">
-                    <!-- 
+                    <!--
                     <div class="item-vidio">
                         <div class="item-vidio-inner">
                             <iframe class="vidio-embed lazyload" data-src="https://www.vidio.com/embed/2350967-spider-man-homecoming?autoplay=true&player_only=true&live_chat=false&enable_websocket=false&mute=false&" width="560" height="317" scrolling="no" frameborder="0" allowfullscreen allow="encrypted-media *;" title="video"></iframe>
@@ -26,7 +25,7 @@
                             ])
                         </div>
                     </a>
-                    <figcaption class="">
+                    <figcaption style="margin: 5px 20px;">
                         <span class="publish_category">{{ Util::date($headline['news_date_publish'], 'ago') }}</span>
                         <h1 class="item-desc-title-category ">
                             <a href="{{\Src::detail($headline)}}">{{$headline['news_title']??null}}</a>
@@ -47,24 +46,24 @@
             </div>
         </div>
         @endif
+
         {{-- trending tag --}}
-         @if ($latest['attributes']['current_page']==1)
-        @include('defaultsite.mobile.components-ui.trending-tag')
+        @if ($latest['attributes']['current_page']==1)
+            @include('defaultsite.mobile.components-ui.trending-tag')
         @endif
-         
+
         <div class="section section--infscroll">
             @if( $feed ??null )
-                
                 @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $feed,'page'=> 'category','data'=> 'headline'])
             @endif
-            @if( $latest ??null)            
+            @if( $latest ??null)
                 @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $latest['data'],'page'=> 'category','data'=> 'latest'])
-
-                <div class="section--infscroll-next flex flex-col items-center justify-end">
+                <!-- <div class="section--infscroll-next flex flex-col items-center justify-end">
                     <div class="section--infscroll-next-loading"><img src="{{ Src::asset('img/kmk.gif') }}" width="60" height="60" alt="gif"></div>
-                </div>
+                </div> -->
             @endif
-        </div> 
+        </div>
+
         <div style="margin: 20px">
               @include( 'defaultsite.mobile.components-ui.pagination',[
                     'current_page'=> $latest['attributes']['current_page'],
@@ -72,9 +71,6 @@
                     'slug'=> $slug
                 ])
         </div>
-      
-
-
     </div>
 </div>
 @endsection
