@@ -2,7 +2,7 @@
   @if (count($row['photonews']??[])>0)
     <div class="header-photo">
         <h3 class="photo-t">{{ $row['news_title'] ?? null }}</h3>
-        <p class="photo-author pt-2">Oleh  <a style="color: #CA0000 ; margin:0px 5px;"  href="#">{{$row['news_editor'][0]['name']??null}}</a> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+        <p class="photo-author pt-2">Oleh  <a style="color: #CA0000 ; margin:0px 5px;"  href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
       <p class="photo-synopsis pt-5 pb-4">{{$row['news_synopsis']??null}}</p>       
     </div>
       <div class="slider-content">

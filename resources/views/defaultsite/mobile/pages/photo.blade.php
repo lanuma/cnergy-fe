@@ -1,6 +1,6 @@
-@extends('defaultsite.mobile.layouts.main')
+@extends('defaultsite.mobile.layouts.ui-main')
 
-@push('styles')
+{{-- @push('styles')
 <style>
     .channel-ad_ad-headline{
         margin:15px 0;
@@ -12,21 +12,21 @@
         margin:15px 0;
     }
 </style>
-@endpush
+@endpush --}}
 
-@push('preload')
+{{-- @push('preload')
 @if( $headline[0]['news_id'] ?? null )
 <link rel="preload" as="image" href="{{ Src::imgNewsCdn($headline[0], '375x208', 'webp') }}" />
 @endif
-@endpush
+@endpush --}}
 
 @section('content')
-<div class="channel-ad channel-ad_ad-headline">
+{{-- <div class="channel-ad channel-ad_ad-headline">
     {!! Util::getAds('headline') !!}
-</div>
+</div> --}}
 <div class="main-body px-4">
     <div class="main-article">
-        @if( $headline[0]['news_id'] ?? null )
+        {{-- @if( $headline[0]['news_id'] ?? null )
         <div class="section section--headline -mx-4">
             <div class="section--headline-top">
                 <figure class="item item--headline">
@@ -50,22 +50,22 @@
                 </figure>
             </div>
         </div>
-        @endif
-        <div class="channel-ad channel-ad_ad-sc">
+        @endif --}}
+        {{-- <div class="channel-ad channel-ad_ad-sc">
             {!! Util::getAds('showcase-1') !!}
-        </div>
+        </div> --}}
         @if( $feed )
-            @include( 'defaultsite.mobile.components.listphoto', ['rows'=> $feed,'page'=> 'homepage','data'=> 'headline'])
+            @include( 'defaultsite.mobile.components-ui.listphoto', ['rows'=> $feed,'page'=> 'homepage','data'=> 'headline'])
         @endif
         @if( $popular )
-            @include( 'defaultsite.mobile.components.listphoto', ['rows'=> $popular,'page'=> 'homepage','data'=> 'popular'])
+            @include( 'defaultsite.mobile.components-ui.listphoto', ['rows'=> $popular,'page'=> 'homepage','data'=> 'popular'])
         @endif
         @if( $recommendation )
-            @include( 'defaultsite.mobile.components.listphoto', ['rows'=> $recommendation,'page'=> 'homepage','data'=> 'recommendation'])
+            @include( 'defaultsite.mobile.components-ui.listphoto', ['rows'=> $recommendation,'page'=> 'homepage','data'=> 'recommendation'])
         @endif
         @if( $latest )
-            @include( 'defaultsite.mobile.components.listphoto', ['rows'=> $latest,'page'=> 'homepage','data'=> 'latest'])
-        @endif
+            @include( 'defaultsite.mobile.components-ui.listphoto', ['rows'=> $latest,'page'=> 'homepage','data'=> 'latest'])
+        @endif 
         {{-- <div class="section section--infscroll">
             <div class="section--infscroll-next flex flex-col items-center justify-end">
                 <div class="section--infscroll-next-loading"><img class="lazyload" data-src="{{ Src::asset('img/kmk.gif') }}" width="60" height="60" alt="gif"></div>

@@ -1,7 +1,8 @@
+<article id="{{$r['news_id']}}">
 <div class="text-news-container">
 <article id="{{$r['news_id']}}" class="articles articles--text">
     <figure class="my-5 d-flex ">
-        <a href="{{ Src::detail($r) }}" aria-label="{{ $r['news_title'] ?? 'untitled' }}">
+        <a class="img-item" href="{{ Src::detail($r) }}" aria-label="{{ $r['news_title'] ?? 'untitled' }}" >
             @include('image', [
                 'source' => $r,
                 'force' => '85x85',
@@ -22,3 +23,5 @@
     </figure>
 </article>
 </div>
+
+</article>

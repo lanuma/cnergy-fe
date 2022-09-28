@@ -1,5 +1,5 @@
 @if( $rows )
-@push('styles')
+{{-- @push('styles')
     <style>
         .channel-ad_ad-sc,.channel-ad_ad-sc-2,.channel-ad_ad-exposer{
             margin-top:15px;
@@ -9,7 +9,7 @@
             display: unset!important;
         }
     </style>
-@endpush
+@endpush --}}
 <div class="section--infscroll-list-item" id="infscroll-{{ Str::uuid() }}">
 
     @foreach( $rows as $r )
@@ -20,11 +20,11 @@
 
         @elseif(($r['news_type']??null) == 'photonews'  )
 
-            @include('defaultsite.mobile.components._list_gallery')
+            @include('defaultsite.mobile.components-ui.list_gallery')
 
         @elseif( ($r['news_type']??null) == 'video'  )
             
-            @include('defaultsite.mobile.components._list_video')
+            @include('defaultsite.mobile.components-ui.list_video')
 
         @endif
         @if ($loop->index==3)

@@ -15,7 +15,7 @@
 
      <div class="main-news-deskripsi">
       <h3>{{ $row['news_title'] ?? null }}</h3>
-      <p>Oleh  <span style="color: #CA0000 ; margin:0px 5px;"><a  href="#">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+      <p>Oleh  <span style="color: #CA0000 ; margin:0px 5px;"><a  href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
      <figure>
         <div class="image-news">
             @include('image', [
@@ -158,7 +158,9 @@
   @endphp
   </div>
   {{-- report --}}
-  <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
+  <div class="mx-4">
+
+      <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
     class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
 
 <div class="modal fade" id="myModal" role="dialog">
@@ -174,5 +176,7 @@
 
 </div>
 </div>
+  </div>
+
   </div>
   

@@ -10,6 +10,9 @@
            'size' => '375x208',
            $new['news_title'] ?? null,
        ])
+         <span class="item-img-info">
+            <span class="item-img-data" >{{ count($new['photonews']??[])!=0?count($new['photonews']):($new['photonews_count']??0) }}</span>
+        </span>
      </div>
      {{-- @if(($new['news_type']??null) == 'photonews'  )
          <span class="item-img-info"> <i class="icon icon--maxphoto mr-1"></i> <span>{{ count($new['photonews']??[]) }}</span> </span>

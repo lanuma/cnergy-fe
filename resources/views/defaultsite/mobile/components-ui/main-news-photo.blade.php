@@ -27,7 +27,7 @@
 
 
   {{-- report --}}
-  <div class="pt-5 pb-5 mx-4">
+  <div class="pt-5 pb-5 mx-4 ">
 <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn "><i
     class="fa-solid fa-triangle-exclamation mx-2 " style="color: #ca0000"></i> LAPORKAN ARTIKEL</button>
 

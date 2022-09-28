@@ -14,7 +14,7 @@
                 <a href="{{ Src::detail($r) }}" class="item-img aspect-[16/9] rounded-lg" aria-label="{{ $r['news_title']??'untitled' }}">
                     @include('image', ['source'=>$r, 'size'=>'380x214', $r['news_title']??null])
                     <span class="item-img-info">
-                        <i class="icon icon--maxphoto mr-1"></i>
+                        <i class="fa-thin fa-camera"></i>
                         <span>{{ count($r['photonews']??[])!=0?count($r['photonews']):($r['photonews_count']??0) }}</span>
                     </span>
                 </a>
