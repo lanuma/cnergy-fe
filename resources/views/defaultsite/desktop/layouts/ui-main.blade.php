@@ -103,10 +103,14 @@
 
     <div class="container w-kly">
         {{-- Header --}}
-        @include('defaultsite.desktop.components-ui.ui-header')
+        @section('header')
+            @include('defaultsite.desktop.components-ui.ui-header')
+        @show
 
         {{-- Breaking news --}}
-        @include('defaultsite.desktop.components-ui.ui-breaking-news')
+        @section('breaking')
+            @include('defaultsite.desktop.components-ui.ui-breaking-news')
+        @show
 
         {{-- Content --}}
         @yield('content')
