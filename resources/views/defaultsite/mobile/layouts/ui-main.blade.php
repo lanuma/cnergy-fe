@@ -97,15 +97,27 @@
         openSearch.style['z-index'] = -1;
         openSearch.style['opacity'] = 0;
     }
-    // z-index: 10;
-    // opacity: 1;
-    // -webkit-transition: opacity 3s;
-    // -moz-transition: opacity 3s;
-    // transition: opacity 3s;
-    // function close(){
-    //     mainNav.style.transform =  'translateX(-100%)';
-    // }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+    (function() {
+        var cx = "{{ config('site.attributes.reldomain.cse_id') ?? null }}";
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
 
+    window.__gcse = {
+        callback: function() {
+            document.getElementsByClassName("gsc-input")[2].setAttribute("placeholder", "Berita apa yang ingin Anda cari?");
+
+            if (focus) {
+                document.getElementsByClassName("gsc-input")[2].focus()
+            }
+        }
+    };
+</script>
 </html>
