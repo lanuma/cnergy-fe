@@ -24,8 +24,37 @@
 {{-- <div class="channel-ad channel-ad_ad-headline">
     {!! Util::getAds('headline') !!}
 </div> --}}
-<div class="main-body px-4">
+<div class="main-body ">
     <div class="main-article">
+        @if( $headline[0]['news_id'] ?? null )
+        <div class="main-news-container">
+            <figure>
+              <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}">
+                <div class="image-news aspect-[16/9]" >
+                  @include('image', [
+                        'source' => $headline[0],
+                        'force' => '375x208',
+                        'size' => '375x208',
+                        $headline['news_title'] ?? null,
+                    ])
+                </div>
+              </a> 
+                <div class="item-desc-photo text-white" >
+                <p class="photo-desc-date">{{ Util::date($headline[0]['news_date_publish'], 'ago') }} </p>
+              <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}"><p class="photo-desc-p">{{ $headline[0]['news_title'] }}</p></a>
+              <span  class="item-desc-type text-10 mt-4 " style="color: white" >
+                @if( $headline[0]['news_type'] == 'video' )
+                <i class="icon icon--sm icon--video mr-1"> <p class="mx-2">Lihat Video</p></i>
+                @endif
+                @if( $headline[0]['news_type'] == 'photonews' )
+                <i class="fa-solid fa-camera bg-red ms-2"><p class="ms-5 photo-list">Lihat foto</p></i>
+                @endif
+            </span>
+            </div>
+            </figure>
+         
+          </div>
+          @endif
         {{-- @if( $headline[0]['news_id'] ?? null )
         <div class="section section--headline -mx-4">
             <div class="section--headline-top">
@@ -51,6 +80,10 @@
             </div>
         </div>
         @endif --}}
+        <div class="py-3">
+            @include('defaultsite.mobile.components-ui.ads-on')
+        </div>
+       
         {{-- <div class="channel-ad channel-ad_ad-sc">
             {!! Util::getAds('showcase-1') !!}
         </div> --}}
