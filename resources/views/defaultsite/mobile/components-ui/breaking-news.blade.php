@@ -2,14 +2,12 @@
     @if (count($breaking) > 0)
         <div class="breaking-news-container">
             <div class="breaking-news-logo">
-                <span>breaking news</span>
+                breaking news
             </div>
             <div class="breaking-text-marquee">
-                <span>
-                    <marquee direction="left">
-                        {{ $breaking[0]['news_title'] }}
-                    </marquee>
-                </span>
+                <marquee direction="left">
+                    {{ $breaking[0]['news_title'] }}
+                </marquee>
             </div>
         </div>
     @endif

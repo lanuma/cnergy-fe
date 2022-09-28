@@ -9,10 +9,9 @@
                 @endif
             @endif
         @endif
-        <article id="{{$r['news_id']}}" class="articles articles--galeri">
-            <figure class="item item--galeri">
+        <article id="{{$r['news_id']}}" class="artikel-terkait-container mb-5">
+            <figure class="image-news mb-3" >
                 <a href="{{ Src::detail($r) }}" aria-label="{{ $r[0]['news_title'] ?? null }}">
-                    <div class="image-news">
                         @include('image', [
                           'source' => $r,
                           'force' => '375x208',
@@ -20,17 +19,18 @@
                           $r['news_title'] ?? null,
                       ])
                     <span class="item-img-info">
-                        <span class="item-img-data" >{{ count($r['photonews']??[])!=0?count($r['photonews']):($r['photonews_count']??0) }}</span>
+                        <div class="item-img-data" >{{ count($r['photonews']??[])!=0?count($r['photonews']):($r['photonews_count']??0) }}</div>
                     </span>
                 </a>
-                <figcaption>
-                    <div class="d-flex"> <a class="text-category" href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}
-                    </a>
-                    <span class="item-desc-time">{{ Util::date(date('Y-M-d H:i:s', strtotime($r['news_date_publish'])), 'short') }}</span> </div>
-                   
-                    <h2 class="item-desc-title font-bold"><a  href="{{Src::detail($r)}}" >{{$r['news_title']??null}}</a></h2>
-                </figcaption>
             </figure>
+            <figcaption> 
+                <div class="d-flex "> 
+                     <a class="text-category" href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}
+                </a>
+                <p class="item-desc-time ms-3">{{ Util::date(date('Y-M-d H:i:s', strtotime($r['news_date_publish'])), 'short') }}</p> 
+                </div>
+                <h2 class="item-desc-title py-3"><a  href="{{Src::detail($r)}}" >{{$r['news_title']??null}}</a></h2>
+            </figcaption>
         </article>
         @if ($loop->index==3)
             @if (($page??null)=='homepage')

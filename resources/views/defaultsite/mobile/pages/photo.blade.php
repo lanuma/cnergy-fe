@@ -24,8 +24,37 @@
 {{-- <div class="channel-ad channel-ad_ad-headline">
     {!! Util::getAds('headline') !!}
 </div> --}}
-<div class="main-body px-4">
+<div class="main-body ">
     <div class="main-article">
+        @if( $headline[0]['news_id'] ?? null )
+        <div class="main-news-container photo-container">
+            <div class="photo-container">
+                <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}">
+                    <div class="image-news" >
+                    @include('image', [
+                            'source' => $headline[0],
+                            'force' => '375x208',
+                            'size' => '375x208',
+                            $headline['news_title'] ?? null,
+                        ])
+                    </div>
+                </a>
+                <div class="item-desc-photo text-white" >
+                    <p class="photo-desc-date">{{ Util::date($headline[0]['news_date_publish'], 'ago') }} </p>
+                    <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}"><p class="photo-desc-p">{{ $headline[0]['news_title'] }}</p></a>
+                    <div  class="item-desc-type text-10 mt-2 " style="color: white" >
+                        @if( $headline[0]['news_type'] == 'video' )
+                        <i class="icon icon--sm icon--video mr-1"> <p class="mx-2">Lihat Video</p></i>
+                        @endif
+                        @if( $headline[0]['news_type'] == 'photonews' )
+                        <i class="fa-solid fa-camera bg-red"><span class="photo-list">Lihat foto</span></i>
+                        @endif
+                    </div>
+                </div>
+            </div>
+          </div>
+          @endif
+
         {{-- @if( $headline[0]['news_id'] ?? null )
         <div class="section section--headline -mx-4">
             <div class="section--headline-top">
@@ -51,6 +80,11 @@
             </div>
         </div>
         @endif --}}
+
+        <div class="py-3">
+            @include('defaultsite.mobile.components-ui.ads-on')
+        </div>
+
         {{-- <div class="channel-ad channel-ad_ad-sc">
             {!! Util::getAds('showcase-1') !!}
         </div> --}}
@@ -65,7 +99,7 @@
         @endif
         @if( $latest )
             @include( 'defaultsite.mobile.components-ui.listphoto', ['rows'=> $latest,'page'=> 'homepage','data'=> 'latest'])
-        @endif 
+        @endif
         {{-- <div class="section section--infscroll">
             <div class="section--infscroll-next flex flex-col items-center justify-end">
                 <div class="section--infscroll-next-loading"><img class="lazyload" data-src="{{ Src::asset('img/kmk.gif') }}" width="60" height="60" alt="gif"></div>
