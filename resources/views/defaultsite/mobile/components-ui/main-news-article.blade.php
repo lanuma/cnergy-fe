@@ -157,14 +157,6 @@
   @endphp
   </div>
   {{-- report --}}
-<<<<<<< HEAD
-=======
-  <div class="mx-4">
-
-      <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
-    class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
->>>>>>> 660d8ab8e0cbc77ac46929a2e28d8712d7d1bc8e
-
   <div style="margin:0px 20px;">
     <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
         class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>LAPORKAN ARTIKEL</button>
@@ -184,10 +176,4 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-=======
-  </div>
-
-  </div>
->>>>>>> 660d8ab8e0cbc77ac46929a2e28d8712d7d1bc8e
   

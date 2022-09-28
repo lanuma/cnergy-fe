@@ -428,9 +428,6 @@ nav img {
 .item-img-data {
     margin: 10px;
 }
-/* .image-news {
-    position: relative;
-} */
 
 .slider-container .slider-news:first-child {
     margin-left: 20px;
@@ -919,9 +916,8 @@ a {
 .photo-collection-container .card-photo-content,
 .video-collection-container .card-video-content {
     margin-top: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
 }
 
@@ -1371,4 +1367,11 @@ a {
     opacity: 1;
 }
 
-/* list news */
+/* Category */
+.item-img .image-news img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
