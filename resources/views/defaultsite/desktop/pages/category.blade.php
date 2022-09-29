@@ -57,7 +57,6 @@
 
                                                     @include('image', [
                                                         'source' => $s,
-                                                        'force' => '212x115',
                                                         'size' => '212x115',
                                                         $s['news_title'] ?? null,
                                                     ])

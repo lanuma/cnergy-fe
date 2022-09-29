@@ -1,7 +1,11 @@
-@if ($latest = collect($latest)->slice(0, 18))
-    <div class="related-news-container">
-        @foreach ($latest as $r)
-            <div class="img-news">
+@if (count($rows) > 0)
+    <div class="video-action">
+        <h2>VIDEO TERBARU</h2>
+        <h4>Lihat Semua <a href="#"> > </a></h4>
+    </div>
+    <div class="related-video-container">
+        @foreach ($rows as $r)
+            <div class="video-frame">
                 <a href="{{ Src::detail($r) }}">
                     @include('image', [
                         'source' => $r,

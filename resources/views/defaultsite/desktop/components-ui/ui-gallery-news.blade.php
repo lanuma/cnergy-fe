@@ -4,7 +4,6 @@
             <div class="div1">
                 @include('image', [
                     'source' => $r,
-                    'force' => '426x238',
                     'size' => '426x238',
                     $r['news_title'] ?? null,
                 ])
@@ -15,40 +14,14 @@
                     {{ $loop->last && count($r['photonews']) - 2 > 0 ? 'data-photo=+' . count($r['photonews']) - 2 : '' }}>
                     @include('image', [
                         'source' => $p,
-                        'force' => '255x143',
                         'size' => '255x143',
                         $r['news_title'] ?? null,
                     ])
                 </span>
             @endforeach
         @endif
-        {{-- <a href="{{ Src::detail($headline[0]) }}" data-duration="{{ count($headline[0]['photonews'] ?? 0) }}"
-            aria-label="{{ $headline[0]['news_title'] ?? null }}">
-            <div class="div1">
-                @include('image', [
-                    'source' => $gl[1],
-                    'force' => '212x115',
-                    'size' => '212x115',
-                    $gl['news_title'] ?? null,
-                ])
-        </a> --}}
+
     </div>
-    {{-- <div class="div2">
-        @include('image', [
-            'source' => $gl[2],
-            'force' => '212x115',
-            'size' => '212x115',
-            $gl['news_title'] ?? null,
-        ])
-    </div>
-    <div class="div3">
-        @include('image', [
-            'source' => $gl[2],
-            'force' => '212x115',
-            'size' => '212x115',
-            $gl['news_title'] ?? null,
-        ])
-    </div> --}}
 </div>
 
 <div class="gallery-image-row-2">
