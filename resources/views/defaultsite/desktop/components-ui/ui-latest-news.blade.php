@@ -6,7 +6,6 @@
                 <div class="image-content">
                     @include('image', [
                         'source' => $latest[1],
-                        'force' => '300x172',
                         'size' => '300x172',
                         $latest[1]['news_title'] ?? null,
                     ])
@@ -21,7 +20,6 @@
                             <div class="image-content">
                                 @include('image', [
                                     'source' => $item,
-                                    'force' => '60x60',
                                     'size' => '60x60',
                                     $item['news_title'] ?? null,
                                 ])

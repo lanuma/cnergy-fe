@@ -7,7 +7,6 @@
                     <article id="target" class="image-content">
                         @include('image', [
                             'source' => $popular[1],
-                            'force' => '300x172',
                             'size' => '300x172',
                             $popular[1]['news_title'] ?? null,
                         ])

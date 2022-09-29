@@ -18,7 +18,6 @@
                                     aria-label="{{ $headline[0]['news_title'] ?? null }}">
                                     @include('image', [
                                         'source' => $headline[0],
-                                        'force' => '640x360',
                                         'size' => '640x360',
                                         $headline[0]['news_title'] ?? null,
                                     ])

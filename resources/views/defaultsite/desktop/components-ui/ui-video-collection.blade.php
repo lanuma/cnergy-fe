@@ -12,7 +12,6 @@
                         <i class="icon icon--play icon--big"></i>
                         @include('image', [
                             'source' => $r,
-                            'force' => '145x82',
                             'size' => '145x82',
                             $r['news_title'] ?? null,
                         ])

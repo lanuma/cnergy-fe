@@ -1,6 +1,6 @@
 <div class="main-content-news-container">
     <ul>
-        <li class="main-breadcrumb-item"><a href="/">Home</a></li>
+        <li><a href="/">Home</a></li>
         @foreach ($row['news_category'] as $r)
             @if ($loop->iteration == 1)
                 <li class="main-breadcrumb-item {{ $loop->count == 1 ? 'active' : '' }}"><a
@@ -43,13 +43,12 @@
 
     <div class="content-news mt-3">
         <figure>
-            {{-- @include('image', [
-                    'source' => $row,
-                    'force' => '300x172',
-                    'size' => '300x172',
-                    $row['news_title'] ?? null,
-                ]) --}}
-            <img src={{ $row['news_image']['real'] }}>
+            @include('image', [
+                'source' => $row,
+                'size' => '640x360',
+                $row['news_title'] ?? null,
+            ])
+            {{-- <img src={{ $row['news_image']['real'] }}> --}}
         </figure>
         <figcaption>{{ $row['news_imageinfo'] ?? null }}</figcaption>
         <div class="dt-paragraph mt-3 ">

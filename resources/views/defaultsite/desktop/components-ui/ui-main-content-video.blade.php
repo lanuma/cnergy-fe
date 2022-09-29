@@ -1,6 +1,6 @@
 <div class="main-content-video-container">
     <ul>
-        <li class="main-breadcrumb-item"><a href="/">Home</a></li>
+        <li><a href="/">Home</a></li>
         @foreach ($row['news_category'] as $r)
             @if ($loop->iteration == 1)
                 <li class="main-breadcrumb-item {{ $loop->count == 1 ? 'active' : '' }}"><a
@@ -42,20 +42,14 @@
 
     <div class="content-news mt-3">
         <figure>
-            {{-- @include('image', [
-                    'source' => $row,
-                    'force' => '300x172',
-                    'size' => '300x172',
-                    $row['news_title'] ?? null,
-                ]) --}}
-            <div class="item-vidio-inner"> {{-- ?? UNDEFINED CLASS NYA ?? --}}
+
+            <div>
                 {!! htmlspecialchars_decode($row['news_video']['video'] ?? null) !!}
-                {{-- <script src="//static-web-prod-vidio.akamaized.net/assets/javascripts/vidio-embed.js"></script> --}}
             </div>
         </figure>
         <figcaption>{{ $row['news_sub_title'] ?? null }}</figcaption>
 
-        <div class="dt-paragraph mt-3 ">
+        <div class="dt-paragraph mt-3 d-flex flex-column align-items-center">
 
             {!! str_replace(
                 ['mce-mce-mce-mce-no/type', 'mce-no/type'],

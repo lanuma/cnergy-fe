@@ -6,7 +6,6 @@
                 <article id="target" class="image-content">
                     @include('image', [
                         'source' => $sb[1],
-                        'force' => '300x172',
                         'size' => '300x172',
                         $sb[1]['news_title'] ?? null,
                     ])
@@ -20,7 +19,6 @@
                         <article id="target" class="image-content">
                             @include('image', [
                                 'source' => $sb[$i],
-                                'force' => '60x60',
                                 'size' => '60x60',
                                 $sb[$i]['news_title'] ?? null,
                             ])

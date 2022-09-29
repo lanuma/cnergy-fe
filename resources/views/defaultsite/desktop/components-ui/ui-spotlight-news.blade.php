@@ -8,10 +8,8 @@
             @foreach ($sl as $s)
                 <a href="{{ Src::detail($s) }}" aria-label="{{ $s['news_title'] ?? null }}" class="slider-card">
                     <article id="target" class="slider-image">
-                        {{-- <img src="{{ $s['news_image']['real'] }}" class="slider-thumb" alt=""> --}}
                         @include('image', [
                             'source' => $s,
-                            'force' => '212x115',
                             'size' => '212x115',
                             $s['news_title'] ?? null,
                         ])
