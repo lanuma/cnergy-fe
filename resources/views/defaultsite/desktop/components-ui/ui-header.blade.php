@@ -3,11 +3,161 @@
         <a href="/">
             <img src="{{ URL::asset('assets/images/logo.webp') }}" alt="logo" width="168px" height="34px">
         </a>
+        {{-- ?? GCSE ??  --}}
+
         <div class="search-container">
-            <input class="gsc-input" type="text">
-            <img src="{{ URL::asset('assets/icons/search-icon.svg') }}" alt="Search">
-            <gcse:searchbox-only resultsUrl="{{ url('search') }}"></gcse:searchbox-only>
+            <div style="width: 100%;">
+                {{-- ??   ?? --}}
+                <style>
+                    .gsc-search-button-v2 {
+                        display: none;
+                    }
+
+                    form.gsc-search-box,
+                    table.gsc-search-box {
+                        margin-bottom: 0;
+                    }
+
+
+                    form.gsc-search-box {
+                        display: table;
+                        background: #EBEBEB;
+                        -webkit-border-radius: 5px;
+                        border-radius: 5px;
+                        position: relative;
+                        border: 2px solid #E5E5E5;
+                    }
+
+                    .gsst_b {
+                        padding: 0;
+                    }
+
+                    .gsib_a {
+                        padding: 0 10px;
+                        padding-left: 40px;
+                    }
+
+                    .gsst_a {
+                        padding: 0;
+                        vertical-align: middle;
+                        line-height: 1em;
+                        margin-top: -3px;
+                    }
+
+                    .gsst_a .gscb_a,
+                    .gsst_a:hover .gscb_a,
+                    .gsst_a:focus .gscb_a {
+                        font-family: 'Open Sans', sans-serif;
+                        color: #999;
+                        display: block;
+                        font-size: 32px;
+                        font-weight: 300;
+                    }
+
+                    .gsc-input,
+                    .gsc-input-box,
+                    .gsc-input-box-hover,
+                    .gsc-input-box-focus {
+                        border: none;
+                        box-shadow: none;
+                        height: 100%;
+                        background-color: transparent !important;
+                        margin: 0 !important;
+                        width: 200px;
+                        background-color: yellow;
+                    }
+
+                    input.gsc-search-button,
+                    input.gsc-search-button:hover,
+                    input.gsc-search-button:focus {
+                        padding: 0;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0;
+                        background-color: transparent;
+                        cursor: pointer;
+                        text-indent: -9999px;
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                        filter: alpha(opacity=50);
+                        -moz-opacity: 0.5;
+                        -khtml-opacity: 0.5;
+                        opacity: 0;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    td.gsc-search-button {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        background-image: url(https://cdns.klimg.com/kapanlagi.com/v5/i/channel/entertainment/h2-search.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 40px;
+                        height: 40px;
+                        background-size: 16px;
+                    }
+
+                    .gsc-search-box-tools .gsc-search-box .gsc-input {
+                        font-family: 'Noto Sans', sans-serif;
+                        padding-right: 10px;
+                        height: 40px !important;
+                        line-height: normal;
+                        color: var(--color-gray);
+                        font-size: 14px;
+                        background: #fff !important;
+                        text-indent: 0 !important;
+                    }
+
+                    .gsc-search-box-tools .gsc-search-box .gsc-input::-webkit-input-placeholder {
+                        opacity: 1;
+                    }
+
+                    .gsc-search-box-tools .gsc-search-box .gsc-input::-moz-placeholder {
+                        opacity: 1;
+                    }
+
+                    .gsc-search-box-tools .gsc-search-box .gsc-input:-ms-input-placeholder {
+                        opacity: 1;
+                    }
+
+                    .gsc-search-box-tools .gsc-search-box .gsc-input:-moz-placeholder {
+                        opacity: 1;
+                    }
+
+                    td.gsc-search-button {
+                        margin-left: 0;
+                    }
+
+                    td.gsc-search-button .gsc-search-button-v2,
+                    td.gsc-search-button .gsc-search-button-v2:hover,
+                    td.gsc-search-button .gsc-search-button-v2:focus {
+                        background-color: transparent;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        border-radius: 0;
+                        cursor: pointer;
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    td.gsc-search-button .gsc-search-button-v2 svg {
+                        display: none;
+                    }
+                </style>
+
+
+                {{-- ??   ?? --}}
+            </div>
+            <gcse:searchbox-only style="border-radius: 8px;" resultsUrl="{{ url('search') }}"></gcse:searchbox-only>
         </div>
+
+        {{-- ?? END OF GCSE ??  --}}
     </div>
 
 

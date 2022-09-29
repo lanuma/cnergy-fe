@@ -8,20 +8,11 @@
     <div class="mt-4">
         <div class="row gx-5">
             <div class="col-4">
-
                 {{-- INDEX KANAL --}}
                 @include('defaultsite.desktop.components-ui.ui-index-kanal')
 
             </div>
             <div class="col-8">
-
-                {{-- SEARCH INDEX --}}
-                @include('defaultsite.desktop.components-ui.ui-search-index')
-
-                <h4 class="special-font-lato fw-bold text-uppercase fs-6 fst-italic">index news</h4>
-
-                {{-- @include('ui.components.list-main-news') --}}
-
                 {{-- UI MAIN NEWS --}}
                 @if ($headline)
                     <div class="main-news-container">
