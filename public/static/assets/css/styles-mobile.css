@@ -444,7 +444,7 @@ nav img {
 }
 
 .item-img-data {
-    text-align: center;
+    margin: 7px;
 }
 
 .slider-container .slider-news:first-child {
@@ -868,6 +868,7 @@ a {
 
     color: #ffffff;
 }
+
 .item-desc-type {
     /* margin-right: 10px; */
     position: relative;
