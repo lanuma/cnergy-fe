@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between">
-  <p class="special-font-prompt text-uppercase fs-3 fw-bold ms-5">Laporkan Artikel</p>
+  <p class="special-font-prompt text-uppercase fs-3 fw-bold ms-5" style="color: black;">Laporkan Artikel</p>
   <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
 </div>
 
@@ -7,7 +7,7 @@
   <div class="desc-report">
       @include('image', ['source'=>$row, 'size'=>'93x53', 'force' => '93x53', $row['news_title']??null])
   </div>
-  <p class="special-font-lato fs-5 fw-bold">{{$row['news_title']??null}}</p>
+  <p class="special-font-lato fs-5 fw-bold" style="color: black;">{{$row['news_title']??null}}</p>
 </div>
 
 <div class="form-report mt-3">
