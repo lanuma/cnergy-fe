@@ -4,7 +4,7 @@
         <h4>Lihat Semua <a href="#"> > </a></h4>
     </div>
     @foreach ($popular as $r)
-        <article id="target" class="video-trending-container">
+        <article class="video-trending-container">
             <figure class="my-5">
                 <div class="trending-video">
                     <a href="{{ Src::detail($r) }}" data-duration="{{ null }}"

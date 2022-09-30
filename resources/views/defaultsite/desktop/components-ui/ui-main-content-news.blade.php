@@ -1,23 +1,24 @@
 <div class="main-content-news-container">
     <ul>
         <li><a href="/">Home</a></li>
+        <span class="text-dark mx-1"> ></span>
         @foreach ($row['news_category'] as $r)
             @if ($loop->iteration == 1)
-                <li class="main-breadcrumb-item {{ $loop->count == 1 ? 'active' : '' }}"><a
+                <li class="top-bar-item {{ $loop->count == 1 ? 'active' : '' }}"><a
                         href="{{ url($row['news_category'][0]['url'] ?? '') }}">{{ $r['name'] ?? null }}</a></li>
             @elseif($loop->iteration == 2)
-                <li class="main-breadcrumb-item {{ $loop->count == 2 ? 'active' : '' }}"><a
+                <li class="top-bar-item {{ $loop->count == 2 ? 'active' : '' }}"><a
                         href="{{ url(($row['news_category'][0]['url'] ?? '') . '/' . ($row['news_category'][1]['url'] ?? '')) }}">{{ $r['name'] ?? null }}</a>
                 </li>
             @elseif($loop->iteration == 3)
-                <li class="main-breadcrumb-item {{ $loop->count == 3 ? 'active' : '' }}"><a
+                <li class="top-bar-item {{ $loop->count == 3 ? 'active' : '' }}"><a
                         href="{{ url(($row['news_category'][0]['url'] ?? '') . '/' . ($row['news_category'][1]['url'] ?? '') . '/' . ($row['news_category'][2]['url'] ?? '')) }}">{{ $r['name'] ?? null }}</a>
                 </li>
             @endif
         @endforeach
     </ul>
 
-    <h4>{{ $row['news_title'] ?? null }}</h4>
+    <h4 class="my-3">{{ $row['news_title'] ?? null }}</h4>
     <div class="account-shared-content my-4">
         <div class="account">
             <a href="{{ Src::author($row) }}">

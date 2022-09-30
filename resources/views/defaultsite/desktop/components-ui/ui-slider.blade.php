@@ -8,7 +8,7 @@
         <div class="slider-container">
             @foreach ($headline as $s)
                 <a href="{{ Src::detail($s) }}" aria-label="{{ $s[0]['news_title'] ?? null }}" class="slider-card">
-                    <article id="target" class="slider-image">
+                    <article class="slider-image">
                         @include('image', [
                             'source' => $s,
                             'size' => '212x115',
