@@ -2,15 +2,15 @@
   @if (count($row['photonews']??[])>0)
     <div class="header-photo">
         <h3 class="photo-t">{{ $row['news_title'] ?? null }}</h3>
-        <p class="photo-author pt-2">Oleh  <a style="color: #CA0000 ; margin:0px 5px;"  href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
-      <p class="photo-synopsis pt-5 pb-4">{{$row['news_synopsis']??null}}</p>       
+        <p class="photo-author pt-2">Oleh <a style="color: #CA0000 ;"  href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+      <p class="photo-synopsis"> {{$row['news_synopsis']??null}}</p>       
     </div>
       <div class="slider-content">
         @foreach ($row['photonews'] as $s)
         <div class="swiper-slide">
           <a href="{{ Src::detail($s) }}" aria-label="{{ $s[0]['news_title'] ?? null }}"> 
             <figure class="item">
-              <div class="item-img aspect-[9/5]>
+              <div class="item-img aspect-[9/5]">
                 @include('image', [
                   'source' => $s,
                   'force' => '426x238',

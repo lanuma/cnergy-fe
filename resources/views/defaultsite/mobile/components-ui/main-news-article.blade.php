@@ -1,5 +1,5 @@
 <div class="main-news-container">
-    <ul class="main-breadcrumb flex items-center flex-wrap list-none m-4">
+    <ul class="main-breadcrumb">
         <li class="main-breadcrumb-item"><a href="/">Home</a></li>
         @foreach ($row['news_category'] as $r)
             @if ($loop->iteration==1)
@@ -14,7 +14,7 @@
 
      <div class="main-news-deskripsi">
       <h3>{{ $row['news_title'] ?? null }}</h3>
-      <p>Oleh<span style="margin:0px 5px;"><a href="{{ Src::author($row) }}" style="color: #CA0000;">{{$row['news_editor'][0]['name']??null}}</a></span>{{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+      <p>Oleh <span><a href="{{ Src::author($row) }}" style="color: #CA0000;">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
      <figure>
         <div class="image-news">
             @include('image', [

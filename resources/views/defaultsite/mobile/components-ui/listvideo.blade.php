@@ -19,7 +19,7 @@
                           $r['news_title'] ?? null,
                       ])
                     <span class="item-video-info">
-                        <i class="fa-brands fa-youtube">{{null}}</i>
+                        <i class="fa-brands fa-youtube" style="width:auto;">{{null}}</i>
                     </span>
                 </a>
             </figure>

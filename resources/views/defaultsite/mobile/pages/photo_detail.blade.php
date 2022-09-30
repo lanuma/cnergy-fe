@@ -51,7 +51,7 @@ window.addEventListener('load', function(){
     {!! Util::getAds('headline') !!}
 </div> --}}
 
-{{-- <ul class="main-breadcrumb flex items-center flex-wrap list-none m-4">
+{{-- <ul class="main-breadcrumb">
     <li class="main-breadcrumb-item"><a href="/">Home</a></li>
     @foreach ($row['news_category'] as $r)
         @if ($loop->iteration==1)
@@ -63,29 +63,23 @@ window.addEventListener('load', function(){
         @endif
     @endforeach
 </ul> --}}
-<div class="main-body px-4">
+<div class="main-body">
     <div class="main-article">
         {{-- headline news --}}
     @include('defaultsite.mobile.components-ui.main-news-photo')
 
         {{-- related tag --}}
-        <p class="photo-title ms-4 mb-3 mt-3">TAG TERKAIT</p>
+        <p class="photo-title">TAG TERKAIT</p>
         @include('defaultsite.mobile.components-ui.related-tag')
 
-     {{-- trending tag --}}
+        {{-- trending tag --}}
         @include('defaultsite.mobile.components-ui.trending-tag')
-
-        
 
         {{-- <div class="channel-ad channel-ad_ad-sc-2">
             {!! Util::getAds('showcase-2') !!}
         </div> --}}
+        @include( 'defaultsite.mobile.components-ui.related-news',['news'=>$row['latest'], 'title' => 'Berita Terbaru'] )
 
-
-       
-            @include( 'defaultsite.mobile.components-ui.related-news',['news'=>$row['latest'], 'title' => 'Berita Terbaru'] )
-      
-       
     </div>
 </div>
 

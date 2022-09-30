@@ -2,10 +2,25 @@
 
 @section('title', $row['news_title'])
 
+{{-- Exlude Header --}}
+@section('header')
+@endsection
+
+{{-- Exclude Breaking News --}}
+@section('breaking')
+@endsection
+
 @section('khusus-photo-detail')
-{{-- @dump($row) --}}
-<div class="photo-detail-section mt-4">
-    <div class="d-flex">
+<div class="photo-detail-section">
+    <div class="container w-kly">
+        {{-- Header --}}
+        @include('defaultsite.desktop.components-ui.ui-header')
+
+        {{-- Breaking News --}}
+        @include('defaultsite.desktop.components-ui.ui-breaking-news')
+    </div>
+    
+    <div class="content-photo-detail d-flex mt-5">
         <div class="col-8 photo-scroll">
 
             <div class="black-bg-photo" id="photo-screen">

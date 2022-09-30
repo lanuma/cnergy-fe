@@ -1,14 +1,15 @@
-<div class="text-news-container">
+<article id="target" class="text-news-container">
     <figure class="my-5">
-        <a href="{{ Src::detail($r) }}" aria-label="{{ $r['news_title'] ?? 'untitled' }}">
-            @include('image', [
-                'source' => $r,
-                'force' => '200x112',
-                'size' => '200x112',
-                $r['news_title'] ?? null,
-            ])
-        </a>
-        <figcaption class="mx-4">
+        <div class="img-news-container">
+            <a href="{{ Src::detail($r) }}" aria-label="{{ $r['news_title'] ?? 'untitled' }}">
+                @include('image', [
+                    'source' => $r,
+                    'size' => '200x112',
+                    $r['news_title'] ?? null,
+                ])
+            </a>
+        </div>
+        <figcaption>
             <div class="text-news-time">
                 <a href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}
                 </a>
@@ -20,4 +21,4 @@
             </div>
         </figcaption>
     </figure>
-</div>
+</article>

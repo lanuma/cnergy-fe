@@ -21,7 +21,7 @@
 @endpush --}}
 
 @section('content')
-<ul class="main-breadcrumb flex items-center flex-wrap list-none m-4 pb-3" >
+<ul class="main-breadcrumb" style="margin:20px;">
     <li class="main-breadcrumb-item"><a href="/">Home</a></li>
     {{-- @foreach ($headline['news_category'] as $r) --}}
         {{-- @if ($loop->iteration==1) --}}
@@ -55,11 +55,8 @@
                     <p class="photo-desc-date">{{ Util::date($headline[0]['news_date_publish'], 'ago') }} </p>
                     <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}"><p class="photo-desc-p">{{ $headline[0]['news_title'] }}</p></a>
                     <div  class="item-desc-type-foto text-10 mt-2 " style="color: white" >
-                        @if( $headline[0]['news_type'] == 'video' )
-                        <i class="icon icon--sm icon--video mr-1"> <p class="mx-2">Lihat Video</p></i>
-                        @endif
                         @if( $headline[0]['news_type'] == 'photonews' )
-                        <i class="fa-solid fa-camera bg-red"><span class="photo-list">Lihat foto</span></i>
+                        <i class="fa-solid fa-camera"><span class="photo-list">Lihat foto</span></i>
                         @endif
                     </div>
                 </div>

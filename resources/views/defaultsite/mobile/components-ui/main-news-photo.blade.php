@@ -1,6 +1,6 @@
 <div class="main-news-container">
 
-    <ul class="main-breadcrumb flex items-center flex-wrap list-none m-4">
+    <ul class="main-breadcrumb">
         <li class="main-breadcrumb-item"><a href="/">Home</a></li>
         @foreach ($row['news_category'] as $r)
             @if ($loop->iteration==1)
@@ -16,9 +16,7 @@
 
 
 {{-- main --}}
-
-@include('defaultsite.mobile.components-ui.slider-kumpulan-foto', ['title' => 'Berita Terbaru'])
-   
+@include('defaultsite.mobile.components-ui.slider-kumpulan-foto')
 
 {{-- st-share --}}
 <div class="pt-5"> 
@@ -26,26 +24,23 @@
 </div>
 
 
-  {{-- report --}}
-  <div class="pt-5 pb-5 mx-4 ">
-<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn "><i
-    class="fa-solid fa-triangle-exclamation mx-2 " style="color: #ca0000"></i> LAPORKAN ARTIKEL</button>
+{{-- report --}}
+<div style="margin:20px;">
+<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
+    class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>LAPORKAN ARTIKEL</button>
 
-<div class="modal fade" id="myModal" role="dialog">
-<div class="modal-dialog">
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-        <div class="modal-body">
-            {{-- FORM REPORT --}}
-            @include('defaultsite.desktop.components-ui.ui-form-report')
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                {{-- FORM REPORT --}}
+                @include('defaultsite.mobile.components-ui.form-report')
+            </div>
         </div>
+
     </div>
-
+    </div>
 </div>
 </div>
-
-  </div>
-  
-  </div>
-  

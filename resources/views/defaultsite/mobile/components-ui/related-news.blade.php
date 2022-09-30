@@ -1,5 +1,5 @@
 <div class="artikel-terkait-container">
-  <h4>{{$title}}</h4>
+  <h4 class="py-4">{{$title}}</h4>
    @foreach ($news as $new)
    <figure>
    <a href="{{ Src::detail($new) }}" aria-label="{{ $new[0]['news_title'] ?? null }}">
@@ -11,7 +11,7 @@
            $new['news_title'] ?? null,
        ])
          <span class="item-img-info">
-            <span class="item-img-data" >{{ count($new['photonews']??[])!=0?count($new['photonews']):($new['photonews_count']??0) }}</span>
+            <div class="item-img-data" >{{ count($new['photonews']??[])!=0?count($new['photonews']):($new['photonews_count']??0) }}</div>
         </span>
      </div>
      {{-- @if(($new['news_type']??null) == 'photonews'  )

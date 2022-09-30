@@ -4,14 +4,13 @@
             <h4>populer</h4>
             <div class="list-populer-container">
                 <a href="{{ Src::detail($popular[1]) }}" aria-label="{{ $popular[1]['news_title'] ?? null }}">
-                    <div class="image-content">
+                    <article id="target" class="image-content">
                         @include('image', [
                             'source' => $popular[1],
-                            'force' => '300x172',
                             'size' => '300x172',
                             $popular[1]['news_title'] ?? null,
                         ])
-                    </div>
+                    </article>
                 </a>
                 <div class="list-berita-populer">
                     @foreach ($popular as $item)

@@ -18,7 +18,7 @@
 @endpush --}}
 
 @section('content')
-<ul class="main-breadcrumb flex items-center flex-wrap list-none m-4 pb-3" >
+<ul class="main-breadcrumb" style="margin:20px;">
     <li class="main-breadcrumb-item"><a href="/">Home</a></li>
     {{-- @foreach ($headline['news_category'] as $r) --}}
         {{-- @if ($loop->iteration==1) --}}
@@ -33,6 +33,7 @@
 {{-- <div class="channel-ad channel-ad_ad-headline">
     {!! Util::getAds('headline') !!}
 </div> --}}
+@dump($headline)
 <div class="main-body ">
     <div class="main-article">
         @if( $headline[0]['news_id'] ?? null )
@@ -42,7 +43,6 @@
                     <div class="image-news" >
                     @include('image', [
                             'source' => $headline[0],
-                            'force' => '375x208',
                             'size' => '375x208',
                             $headline['news_title'] ?? null,
                         ])
@@ -51,12 +51,9 @@
                 <div class="item-desc-photo text-white" >
                     <p class="photo-desc-date">{{ Util::date($headline[0]['news_date_publish'], 'ago') }} </p>
                     <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}"><p class="photo-desc-p">{{ $headline[0]['news_title'] }}</p></a>
-                    <div  class="item-desc-type  d-flex " style="color: white" >
+                    <div  class="item-desc-type-foto d-flex text-10 mt-3 " style="color: white" >
                         @if( $headline[0]['news_type'] == 'video' )
-                        <i class="ps-5 py-1 fa-brands fa-youtube"></i> <p class="video-list">Putar Video</p></i>
-                        @endif
-                        @if( $headline[0]['news_type'] == 'photonews' )
-                        <i class="fa-solid fa-camera bg-red"><span class="">Lihat foto</span></i>
+                        <i class="fa-brands fa-youtube" style="width:100%; height:100%;"><span class="video-list">Putar Video</span></i>
                         @endif
                     </div>
                 </div>
