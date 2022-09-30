@@ -12,7 +12,7 @@
             <div class="col-8">
                 @if ($headline)
                     <div class="main-news-container">
-                        <article id="target">
+                        <article>
                             <figure>
                                 <a href="{{ Src::detail($headline[0]) }}"
                                     aria-label="{{ $headline[0]['news_title'] ?? null }}">

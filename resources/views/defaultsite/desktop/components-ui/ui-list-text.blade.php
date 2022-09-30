@@ -1,6 +1,6 @@
-<article id="target" class="text-news-container">
+<article class="text-news-container">
     <figure class="my-5">
-        <div class="img-news-container">
+        <div class="img-wrapper">
             <a href="{{ Src::detail($r) }}" aria-label="{{ $r['news_title'] ?? 'untitled' }}">
                 @include('image', [
                     'source' => $r,
@@ -9,7 +9,8 @@
                 ])
             </a>
         </div>
-        <figcaption>
+
+        <figcaption class="mx-3">
             <div class="text-news-time">
                 <a href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}
                 </a>

@@ -3,7 +3,7 @@
         @if (count($sb) !== 0)
             <h4>berita sidebar</h4>
             <a href="{{ Src::detail($sb[1]) }}" aria-label="{{ $sb[1]['news_title'] ?? null }}">
-                <article id="target" class="image-content">
+                <article class="image-content">
                     @include('image', [
                         'source' => $sb[1],
                         'size' => '300x172',
@@ -16,7 +16,7 @@
                 @for ($i = 1; $i < 3; $i++)
                     <a href="{{ Src::detail($sb[$i]) }}" aria-label="{{ $sb[$i]['news_title'] ?? null }}"
                         class="d-flex align-items-center gap-3">
-                        <article id="target" class="image-content">
+                        <article class="image-content">
                             @include('image', [
                                 'source' => $sb[$i],
                                 'size' => '60x60',
