@@ -27,7 +27,7 @@
             @include('defaultsite.mobile.components-ui.list_video')
 
         @endif
-        @if ($loop->index==3)
+        {{-- @if ($loop->index==3)
             @if (($page??null)=='homepage'||($page??null)=='category')
                 @if (($data??null)=='headline')
                     <div class="channel-ad channel-ad_ad-exposer">
@@ -65,7 +65,7 @@
                     {!! Util::getAds('showcase-2') !!}
                 </div>
             @endif
-        @endif
+        @endif --}}
     @endforeach
 
 </div>
