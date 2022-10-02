@@ -4,7 +4,6 @@
             <div class="image-news" style="border-radius: 8px">
                 @include('image', [
                   'source' => $headline,
-                  'force' => '375x208',
                   'size' => '375x208',
                   $headline['news_title'] ?? null,
               ])

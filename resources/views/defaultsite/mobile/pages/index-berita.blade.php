@@ -1,16 +1,7 @@
 @extends('defaultsite.mobile.layouts.ui-main')
 
 @section('content')
-{{-- @push('styles')
-<style>
-    .channel-ad_ad-headline{
-        margin-top:15px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-    }
-</style>
-@endpush --}}
+
 <div class="main-body ">
     <div class="main-article">
      
@@ -27,7 +18,7 @@
                     </div> -->
                     <a  href="{{ Src::detail($headline) }}" aria-label="{{$headline['news_title']??null}}" >
                         <div class="image-news">
-                             @include('image', ['source'=>$headline,'force' => '375x208', 'size'=>'375x208', $headline['news_title']??null])
+                             @include('image', ['source'=>$headline, 'size'=>'375x208', $headline['news_title']??null])
                     
                         </div>
                        </a>
@@ -47,44 +38,12 @@
             </div>
         </div>
         @endif 
-        {{-- @if ($latest['attributes']['current_page']==1)
-            @include( 'defaultsite.mobile.components.trendingtag2')
-        @endif --}}
+    
         
 
 
-        {{-- highlight --}}     
-{{-- @dump() --}}
-
-{{-- @if ($headline['news_type'] == 'news' ?? null)
-@include('defaultsite.mobile.components-ui.highlight-article', ['r' => $headline])
-@endif
-         --}}
-        {{-- <div class="section section--infscroll">
-            @if( $feed ??null )
-                
-                @include( 'defaultsite.mobile.components.latest', ['rows'=> $feed,'page'=> 'category','data'=> 'headline'])
-            @endif
-            @if( $latest ??null)            
-                @include( 'defaultsite.mobile.components.latest', ['rows'=> $latest['data'],'page'=> 'category','data'=> 'latest'])
-
-                <div class="section--infscroll-next flex flex-col items-center justify-end">
-                    <div class="section--infscroll-next-loading"><img src="{{ Src::asset('img/kmk.gif') }}" width="60" height="60" alt="gif"></div>
-                </div>
-            @endif
-        </div> --}}
-        
-        {{-- <div class="section section--infscroll"> --}}
-            {{-- @if( $feed ??null )
-                @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $feed,'page'=> 'category','data'=> 'headline'])
-            @endif --}}
-            {{-- @if( $latest ??null)
-                @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $latest['data'],'page'=> 'category','data'=> 'latest'])
-                 <div class="section--infscroll-next flex flex-col items-center justify-end"> --}}
-                 {{-- <div class="section--infscroll-next-loading"><img src="{{ Src::asset('img/kmk.gif') }}" width="60" height="60" alt="gif"></div>  --}}
-                {{-- </div> 
-             @endif
-        </div>  --}}
+ 
+          
         <div class="section section--infscroll">
             @if( $feed ??null )
                 @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $feed,'page'=> 'category','data'=> 'headline'])
@@ -92,7 +51,7 @@
             @if( $latest ??null)
                 @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $latest['data'],'page'=> 'category','data'=> 'latest'])
                 <!-- <div class="section--infscroll-next flex flex-col items-center justify-end">
-                    <div class="section--infscroll-next-loading"><img src="{{ Src::asset('img/kmk.gif') }}" width="60" height="60" alt="gif"></div>
+                    {{-- <div class="section--infscroll-next-loading"><img src="{{ Src::asset('img/kmk.gif') }}" width="60" height="60" alt="gif"></div> --}}
                 </div> -->
             @endif
         </div>
@@ -104,11 +63,7 @@
             'slug'=> $slug
         ])
         </div>
-        {{-- @include( 'defaultsite.desktop.components.pagination',[
-                    'current_page'=> $latest['attributes']['current_page'],
-                    'last_page'=> $latest['attributes']['last_page'],
-                    'slug'=> $slug
-                ]) --}}
+      
                 {{-- slider trending tapi data belum ada --}}
 @if ($popular = \Data::popular() ?? null)
 @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])

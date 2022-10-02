@@ -19,7 +19,6 @@
         <div class="image-news">
             @include('image', [
                 'source' => $row,
-                'force' => '380x214',
                 'size' => '380x214',
                 $row['news_title'] ?? null,
             ])
