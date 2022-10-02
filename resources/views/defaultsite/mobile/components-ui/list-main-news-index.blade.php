@@ -1,15 +1,5 @@
 @if( $rows )
-{{-- @push('styles')
-    <style>
-        .channel-ad_ad-sc,.channel-ad_ad-sc-2,.channel-ad_ad-exposer{
-            margin-top:15px;
-            margin-bottom:15px;
-        }
-        .section--infscroll-list-item{
-            display: unset!important;
-        }
-    </style>
-@endpush --}}
+
 <div class="section--infscroll-list-item" id="infscroll-{{ Str::uuid() }}">
 
     @foreach( $rows as $r )

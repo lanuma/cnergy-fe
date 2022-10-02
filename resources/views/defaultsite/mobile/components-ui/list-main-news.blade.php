@@ -4,7 +4,6 @@
       <a  href="{{ Src::detail($ln) }}" aria-label="{{ $ln['news_title'] ?? null }}">
           @include('image', [
               'source' => $ln,
-              'force' => '85x85',
               'size' => '85x85',
               $ln['news_title'] ?? null,
           ])

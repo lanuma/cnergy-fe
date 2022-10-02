@@ -1,16 +1,16 @@
 @extends('defaultsite.mobile.layouts.ui-main')
 
-@push('preload')
+{{-- @push('preload')
 <link rel="ampHtml" href="{{config('site.attributes.object.ampUrl')??null}}"/>
 <link rel="preload" as="image" href="{{ Src::imgNewsCdn($row, '375x208', 'webp') }}" />
 {!! RecaptchaV3::initJs() !!}
-@endpush
+@endpush --}}
 
-@push('styles')
+{{-- @push('styles')
 <link rel="preload" href="{{ Src::mix('css/detail.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ Src::mix('css/detail.css') }}" /></noscript>
 
-@endpush
+@endpush --}}
 
 @if( config('app.enabled_tracking') )
     @push('script')

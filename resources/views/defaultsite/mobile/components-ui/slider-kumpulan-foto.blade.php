@@ -13,7 +13,6 @@
               <div class="item-img aspect-[9/5]">
                 @include('image', [
                   'source' => $s,
-                  'force' => '426x238',
                   'size' => '426x238',
                   $s['news_title'] ?? null,
               ])
