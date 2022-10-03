@@ -49,12 +49,14 @@
                 @foreach ($feed as $r)
                     <div class="video-item-gallery">
                         <a href="{{ Src::detail($r) }}" data-duration="{{ null }}">
-                            <i class="fa-solid fa-circle-play me-3" style="color: #CA0000"></i>
-                            @include('image', [
-                                'source' => $r,
-                                'size' => '212x115',
-                                $r['news_title'] ?? null,
-                            ])
+                            <div class="video-button">
+                                @include('image', [
+                                    'source' => $r,
+                                    'size' => '212x115',
+                                    $r['news_title'] ?? null,
+                                ])
+                                <i class="icon-play fa-solid fa-circle-play" style="color: #CA0000"></i>
+                            </div>
                         </a>
                         <div class="video-desc">
                             <a>
@@ -76,7 +78,7 @@
 
 
         <div class="col-4">
-            @dump($popular)
+            {{-- @dump($popular) --}}
             {{-- @include('defaultsite.desktop.components-ui.ui-trending-video', ['popular' => $latest]) --}}
         </div>
     </div>

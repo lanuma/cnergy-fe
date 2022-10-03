@@ -1948,6 +1948,18 @@ p {
     line-height: 1.3em;
 }
 
+.video-item-gallery .video-button {
+    position: relative;
+}
+
+.video-item-gallery .video-button .icon-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    transform: translate(-50%, -50%);
+}
+
 /* TRENDING VIDEO */
 .trending-video-action {
     display: flex;
