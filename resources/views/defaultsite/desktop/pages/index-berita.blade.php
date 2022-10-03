@@ -32,9 +32,9 @@
                         </article>
                         <div class="main-news-deskripsi">
                             <a href="{{ Src::detail($headline) }}" aria-label="{{ $headline['news_title'] ?? null }}">
-                                <h3>{{ $headline['news_title'] }}</h3>
-                                <p>{{ $headline['news_synopsis'] }}</p>
+                                <h3 class="text-dark">{{ $headline['news_title'] }}</h3>
                             </a>
+                            <p>{{ $headline['news_synopsis'] }}</p>
                         </div>
                     </div>
                     @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])

@@ -37,10 +37,9 @@
                             </figure>
                         </article>
                         <div class="main-news-deskripsi">
-                            <h3 href="{{ Src::detail($headline[0]) }}"
-                                aria-label="{{ $headline[0]['news_title'] ?? null }}">
-                                <a class="text-dark">{{ $headline[0]['news_title'] }}</a>
-                            </h3>
+                            <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}">
+                                <h3 class="text-dark">{{ $headline[0]['news_title'] }}</h3>
+                            </a>
                             <p>{{ $headline[0]['news_synopsis'] }}</p>
                         </div>
                     </div>
