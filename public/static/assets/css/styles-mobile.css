@@ -206,7 +206,10 @@ nav img {
 .main-breadcrumb .main-breadcrumb-item:last-child::after {
     content: "";
 }
-
+.main-news-deskripsi h3:hover {
+    color: #dc3545;
+    text-decoration: none;
+}
 .main-news-deskripsi {
     margin: 25px 0px;
     line-height: 2;
@@ -277,6 +280,10 @@ nav img {
     text-transform: uppercase;
 }
 
+.list-trending-tag a:hover {
+    color: #dc3545 !important;
+}
+
 .trending-tag-container .list-trending-tag {
     margin-top: 20px;
     display: flex;
@@ -344,7 +351,9 @@ nav img {
     font-size: 10px;
     color: #999;
 }
-
+.description h4:hover {
+    color: #dc3545 !important;
+}
 .list-main-news-container .card-news .description h4 {
     margin-top: 4px;
     font-family: var(--lato-font);
@@ -378,6 +387,9 @@ nav img {
 
 .slider-container .slider-content::-webkit-scrollbar {
     display: none;
+}
+.slider-news figcaption:hover {
+    color: #dc3545 !important;
 }
 
 .slider-container .slider-news figure {
@@ -703,6 +715,9 @@ a {
     font-size: 14px;
     text-align: justify;
 }
+a:hover {
+    color: #dc3545 !important;
+}
 
 .related-tag-container {
     margin: 0 20px;
@@ -775,6 +790,9 @@ a {
     background: #fff;
     margin: 15px 20px;
 }
+.list-berita-populer p:hover {
+    color: #dc3545 !important;
+}
 
 .list-berita-populer {
     margin-top: 20px;
@@ -843,6 +861,9 @@ a {
         rgba(255, 255, 255, 0) 0%,
         rgba(0, 0, 0, 1) 85%
     );
+}
+.item-desc-photo p:hover {
+    color: #dc3545 !important;
 }
 
 .photo-desc-p {
@@ -1080,6 +1101,9 @@ a {
 .main-ads__container {
     margin: 25px;
     --aspect-ratio: 6/5;
+}
+.item-desc-highlight:hover {
+    color: #dc3545 !important;
 }
 
 .highlight-article-container .banner {
