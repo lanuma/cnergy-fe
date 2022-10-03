@@ -123,6 +123,8 @@
 
     @yield('khusus-photo-detail')
 
+    <a id="btn-back-toTop"></a>
+
 </body>
 <script>
     const sliderContainers = [...document.querySelectorAll('.slider-container')];
@@ -183,6 +185,25 @@
             }
         }
     };
+</script>
+
+<script>
+    var btn = $('#btn-back-toTop');
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+
+    btn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, '300');
+    });
 </script>
 
 {{-- 
