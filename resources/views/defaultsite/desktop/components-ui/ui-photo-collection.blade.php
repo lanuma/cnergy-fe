@@ -18,7 +18,9 @@
                                     $r['news_title'] ?? null,
                                 ])
                             </a>
-                            <p><a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a></p>
+                            <p>
+                                <a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a>
+                            </p>
                         </figure>
                     </div>
                 @endforeach

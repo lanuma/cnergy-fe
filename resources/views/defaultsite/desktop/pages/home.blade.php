@@ -37,10 +37,11 @@
                             </figure>
                         </article>
                         <div class="main-news-deskripsi">
-                            <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}">
-                                <h3>{{ $headline[0]['news_title'] }}</h3>
-                                <p>{{ $headline[0]['news_synopsis'] }}</p>
-                            </a>
+                            <h3 href="{{ Src::detail($headline[0]) }}"
+                                aria-label="{{ $headline[0]['news_title'] ?? null }}">
+                                <a class="text-dark">{{ $headline[0]['news_title'] }}</a>
+                            </h3>
+                            <p>{{ $headline[0]['news_synopsis'] }}</p>
                         </div>
                     </div>
                     @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])

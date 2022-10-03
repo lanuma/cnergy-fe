@@ -3,7 +3,7 @@
         @if (count($sb) !== 0)
             <h4>berita sidebar</h4>
             <a href="{{ Src::detail($sb[1]) }}" aria-label="{{ $sb[1]['news_title'] ?? null }}">
-                <article class="image-content">
+                <article class="image-content mb-2">
                     @include('image', [
                         'source' => $sb[1],
                         'size' => '300x172',
