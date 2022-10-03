@@ -1398,6 +1398,7 @@ nav {
     font-weight: 700;
     color: black;
 }
+
 .index-kanal-container .index-kanal-content a:last-child {
     border: none;
 }
@@ -2170,4 +2171,34 @@ p {
 
 .static-container .static-text p {
     color: #000000 !important;
+}
+
+/* Kontak Kami CSS */
+.contact-us-container {
+    margin-top: 20px;
+}
+
+.contact-us-container h4,
+.contact-us-container p {
+    font-family: var(--lato-font);
+    color: black;
+}
+
+.contact-us-container h4 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-us-container p {
+    font-size: 14px;
+}
+
+.contact-us-container .form-contact {
+    margin-top: 20px;
+}
+
+.contact-us-container .form-contact .form-button button {
+    background-color: #ca0000;
+    color: white;
 }
