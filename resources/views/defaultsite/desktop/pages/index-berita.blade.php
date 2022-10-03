@@ -45,6 +45,14 @@
 
                 {{-- !! END OF HEADLINE !! --}}
 
+                {{-- **BERITA SPOTLIGHT** --}}
+                {{-- @dump($latest['data']) --}}
+                @if ($latest['data'] ?? null)
+                    @include('defaultsite.desktop.components-ui.ui-spotlight-news', [
+                        'sl' => $latest['data'],
+                    ])
+                @endif
+
 
 
                 {{-- @dump($latest['data']) --}}
