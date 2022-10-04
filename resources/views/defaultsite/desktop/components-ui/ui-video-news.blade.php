@@ -1,17 +1,20 @@
 <div id="{{ $r['news_id'] }}" class="video-news-container">
-    <a href="{{ Src::category($r) }}">
-        <p>{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}</p>
-    </a>
-    <span>{{ Util::date($r['news_date_publish'], 'ago') }}</span>
-    <a href="{{ Src::detail($r) }}">
-        <h4>{{ $r['news_title'] ?? null }}</h4>
-    </a>
-    <a href="{{ Src::detail($r) }}" class="item-img aspect-[16/9] rounded-lg"
-        aria-label="{{ $r['news_title'] ?? 'untitled' }}">
-        @include('image', [
-            'source' => $r,
-            'size' => '640x360',
-            $r['news_title'] ?? null,
-        ])
-    </a>
+    <div class="d-flex align-items-center gap-3">
+        <p>
+            <a href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}</a>
+        </p>
+        <span>{{ Util::date($r['news_date_publish'], 'ago') }}</span>
+    </div>
+    <h4 class="my-3" href="{{ Src::detail($r) }}">
+        <a href="{{ Src::detail($r) }}"">{{ $r['news_title'] ?? null }}</a>
+    </h4>
+    <div class="img-wrapper">
+        <a href="{{ Src::detail($r) }}" aria-label="{{ $r['news_title'] ?? 'untitled' }}">
+            @include('image', [
+                'source' => $r,
+                'size' => '640x360',
+                $r['news_title'] ?? null,
+            ])
+        </a>
+    </div>
 </div>

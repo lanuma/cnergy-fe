@@ -1,6 +1,6 @@
-<article id="target" class="text-news-container">
+<article class="text-news-container">
     <figure class="my-5">
-        <div class="img-news-container">
+        <div class="img-wrapper">
             <a href="{{ Src::detail($r) }}" aria-label="{{ $r['news_title'] ?? 'untitled' }}">
                 @include('image', [
                     'source' => $r,
@@ -9,15 +9,18 @@
                 ])
             </a>
         </div>
-        <figcaption>
+
+        <figcaption class="mx-4">
             <div class="text-news-time">
                 <a href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}
                 </a>
-                <p class="ms-3">{{ Util::date($r['news_date_publish'], 'ago') }}</p>
+                <span class="ms-3">{{ Util::date($r['news_date_publish'], 'ago') }}</span>
             </div>
-            <div class="text-news-desc mt-2">
-                <a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a>
-                <p class="mt-2">{{ $r['news_synopsis'] }}</p>
+            <div class="text-news-desc my-2">
+                <p>
+                    <a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a>
+                </p>
+                <span class="mt-2">{{ $r['news_synopsis'] }}</span>
             </div>
         </figcaption>
     </figure>

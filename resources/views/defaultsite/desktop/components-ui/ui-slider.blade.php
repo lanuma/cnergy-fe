@@ -6,9 +6,9 @@
         <button class="pre-btn"><img src="{{ URL::asset('assets/icons/prev.svg') }}" alt=""></button>
         <button class="nxt-btn"><img src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
         <div class="slider-container">
-            @foreach ($headline as $s)
+            @foreach ($fd as $s)
                 <a href="{{ Src::detail($s) }}" aria-label="{{ $s[0]['news_title'] ?? null }}" class="slider-card">
-                    <article id="target" class="slider-image">
+                    <article class="slider-image">
                         @include('image', [
                             'source' => $s,
                             'size' => '212x115',
