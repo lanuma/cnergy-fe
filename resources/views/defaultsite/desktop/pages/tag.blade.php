@@ -5,8 +5,6 @@
 @section('content')
 
 
-    @include('defaultsite.desktop.components-ui.ui-tab-news')
-
     <div class="mt-4">
         <div class="row gx-5">
             <div class="col-4">

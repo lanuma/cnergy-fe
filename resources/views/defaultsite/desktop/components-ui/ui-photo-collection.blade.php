@@ -1,9 +1,9 @@
 @if (count($photo) > 0)
     <div class="photo-collection-container">
-        <div class="d-flex mb-2">
+        <a class="d-flex mb-2" href="/photo">
             <h4>Foto </h4>
-            <i class="fa-solid fa-circle-chevron-right ms-2"></i>
-        </div>
+            <i class="fa-solid fa-circle-chevron-right ms-2" style="color: #CA0000"></i>
+        </a>
         <div class="img-wrapper">
             <div class="card-photo-content mt-2">
                 @foreach ($photo as $r)
