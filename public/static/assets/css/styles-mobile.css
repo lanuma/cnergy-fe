@@ -1515,11 +1515,6 @@ a:hover {
 }
 
 /* slider kumpulan foto */
-
-/* .slider-container .slider-news figure {
-    width: 200px;
-} */
-
 .slider-content .swiper-slide .image-news-slider {
     position: relative;
     --aspect-ratio: 23/14;
