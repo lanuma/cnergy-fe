@@ -1271,11 +1271,11 @@ nav {
     margin-bottom: 20px;
     font-family: var(--lato-font);
     font-size: 14px;
-    color: #000000;
 }
 
 .more-info-container p {
     margin-top: 20px;
+    color: #000000;
 }
 
 .more-info-container a {
