@@ -14,6 +14,7 @@
 @endif
 
 {{-- related tag --}}
+<p class="photo-title">TAG TERKAIT</p>
 @include('defaultsite.mobile.components-ui.related-tag')
 
 {{-- related artikel --}}
