@@ -1,17 +1,26 @@
 <div class="photo-collection-container">
-  <h4>Foto <span>></span></h4>
-  <div class="card-photo-content">
-    <div class="card-photo-news">
-      <div class="image-news">
-        <img src="{{ URL::asset('assets/images/photo-collection.webp') }}" alt="photo">
-      </div>
-      <p>Waskita Beton Siap Dukung Pemindahan Ibu Kota ke Kalimantan Timur</p>
-    </div>
-    <div class="card-photo-news">
-      <div class="image-news">
-        <img src="{{ URL::asset('assets/images/photo-collection.webp') }}" alt="photo">
-      </div>
-      <p>Waskita Beton Siap Dukung Pemindahan Ibu Kota ke Kalimantan Timur</p>
-    </div>
+  @if (count($photo) > 0)
+  <div style="display: flex">
+    <h4>{{ $title }}</h4>
+    <img class="silder-vector" src="{{ URL::asset('assets/images/vector-red.svg') }}" /> 
   </div>
+  <div class="card-photo-content">
+    @foreach ($photo as $r)
+    <div class="card-photo-news">
+      <div class="image-news">
+        <a href="{{ Src::detail($r) }}" data-duration="{{ null }}"
+            data-duration="{{ count($r['photonews'] ?? []) != 0 ? count($r['photonews']) : $r['photonews_count'] ?? 0 }}"
+            aria-label="{{ $r['news_title'] ?? null }}">
+            @include('image', [
+                'source' => $r,
+                'size' => '145x82',
+                $r['news_title'] ?? null,
+            ])
+        </a>
+      </div>
+      <p class="photo-p"><a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a></p>
+    </div>
+    @endforeach
+  </div>
+  @endif
 </div>

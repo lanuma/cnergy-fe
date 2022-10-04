@@ -1,9 +1,7 @@
-<div class="related-tag-container">
-  <a href="#">Lamborghini</a>
-  <a href="#">Suzuki Jimny</a>
-  <a href="#">bbm</a>
-  <a href="#">bbm</a>
-  <a href="#">bbm</a>
-  <a href="#">scoopy</a>
-  <a href="#">more tag</a>
-</div>
+@if ($row['news_tag'] ?? null)
+    <div class="related-tag-container">
+        @foreach ($row['news_tag'] as $r)
+            <a class="btn btn-related mx-2 my-2"  href="{{ Src::detailTag($r) }}">{{ $r['tag_name'] ?? null }}</a>
+        @endforeach
+      </div>
+@endif

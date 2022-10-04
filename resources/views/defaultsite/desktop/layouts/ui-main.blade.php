@@ -121,11 +121,11 @@
 
     window.__gcse = {
         callback: function() {
-            document.getElementsByClassName("gsc-input")[0].setAttribute("placeholder",
+            document.getElementsByClassName("gsc-input")[2].setAttribute("placeholder",
                 "Berita apa yang ingin Anda cari?");
 
             if (focus) {
-                document.getElementsByClassName("gsc-input")[0].focus()
+                document.getElementsByClassName("gsc-input")[2].focus()
             }
         }
     };

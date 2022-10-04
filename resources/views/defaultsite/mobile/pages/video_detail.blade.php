@@ -1,34 +1,16 @@
-@extends('defaultsite.mobile.layouts.main')
+@extends('defaultsite.mobile.layouts.ui-main')
 
-@push('preload')
+{{-- @push('preload')
 <link rel="ampHtml" href="{{config('site.attributes.object.ampUrl')??null}}"/>
 <link rel="preload" as="image" href="{{ Src::imgNewsCdn($row, '375x208', 'webp') }}" />
 {!! RecaptchaV3::initJs() !!}
-@endpush
+@endpush --}}
 
-@push('styles')
+{{-- @push('styles')
 <link rel="preload" href="{{ Src::mix('css/detail.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ Src::mix('css/detail.css') }}" /></noscript>
-<style>
-    iframe {
-        max-width: 100%;
-        margin: auto;
-    }
-    .channel-ad_ad-sc,.channel-ad_ad-sc-2,.channel-ad_ad-exposer{
-        margin-top:15px;
-        margin-bottom:15px;
-    }
-    .channel-ad_ad-headline{
-        margin:15px 0;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-    }
-    .instagram-media-rendered{
-        margin: 5px auto!important;
-    }
-</style>
-@endpush
+
+@endpush --}}
 
 @if( config('app.enabled_tracking') )
     @push('script')
@@ -44,15 +26,11 @@
 
 @section('content')
 
-<div class="channel-ad channel-ad_ad-headline">
-    {!! Util::getAds('headline') !!}
-</div>
-
-<ul class="main-breadcrumb flex items-center flex-wrap list-none m-4">
+<ul class="main-breadcrumb" style="margin:20px;">
     <li class="main-breadcrumb-item"><a href="/">Home</a></li>
     @foreach ($row['news_category'] as $r)
         @if ($loop->iteration==1)
-            <li class="main-breadcrumb-item {{$loop->count==1?'active':''}}"><a href="{{ Src::category($row) }}">{{$r['name']??null}}</a></li>
+            <li class="main-breadcrumb-item {{$loop->count==1?'active':''}}"><a href="{{ url(( $row['news_category'][0]['url']??'' )) }}">{{$r['name']??null}}</a></li>
         @elseif($loop->iteration==2)
             <li class="main-breadcrumb-item {{$loop->count==2?'active':''}}"><a href="{{ url(( $row['news_category'][0]['url']??'' ).'/'.( $row['news_category'][1]['url']??'' )) }}">{{$r['name']??null}}</a></li>
         @elseif($loop->iteration==3)
@@ -60,264 +38,184 @@
         @endif
     @endforeach
 </ul>
-<div class="main-body px-4">
-    <div class="main-article">
-        <div class="dt">
-            <div class="dt-pages">
-                <div class="dt-pages-item">
-                    <div class="dt-header">
-                        <h1 class="dt-title text-24 font-black mb-1">{{$row['news_title']??null}}</h1>
-                        <div class="dt-info mb-4">
-                            <span class="dt-info-detail text-12">Oleh <a class="dt-info-link" href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a> pada {{Util::date($row['news_date_publish']??null,'long_time')}}</span>
-                        </div>
-                    </div>
-                    <div class="dt-body">
-                        <div class="dt-body-pages">
-                            <div id="pages-intro" class="dt-body-pages-item">
-                                <div class="dt-image mb-6">      
-                                    <figure class="item -mx-4">
-                                        <div class="item-vidio rounded-lg">
-                                            <div class="item-vidio-inner">
-                                                {!! htmlspecialchars_decode($row['news_video']['video']??null)!!}
-                                                {{-- <script src="//static-web-prod-vidio.akamaized.net/assets/javascripts/vidio-embed.js"></script> --}}
-                                            </div>
-                                        </div>
-                                    </figure>                                      
-                                    {{-- <figure class="item -mx-4">
-                                        <span class="item-img aspect-[9/5]" aria-label="{{$row['news_title']??null}}">
-                                             @include('image', ['source'=>$row, 'size'=>'375x208', $row['news_title']??null])
-                                        </span>
-                                        <figcaption class="item-desc pt-2">
-                                            <p class="item-desc-copyright text-12 px-3 text-gray">{{$row['news_imageinfo']??null}}</p>
-                                        </figcaption>
-                                    </figure> --}}
-                                </div>
-                                <div class="dt-share">
-                                    <div class="share flex flex-wrap items-center mb-4">
-                                        <div class="share-item share-item--fb"><a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current().'?utm_source=Mobile&utm_medium=facebook&utm_campaign=Share_Bottom' )}}" target="_blank"><i class="icon icons--share icon--share-fb"></i></a></div>
-                                        <div class="share-item share-item--wa"><a href="https://wa.me/?text={{ urlencode(url()->current() .'?utm_source=Mobile&utm_medium=whatsapp&utm_campaign=Share_Bottom') }}" target="_blank"><i class="icon icons--share icon--share-wa"></i></a></div>
-                                        {{-- <div class="share-item share-item--line"><a href="/"><i class="icon icons--share icon--share-line"></i></a></div> --}}
-                                        <div class="share-item share-item--tweet"><a href="https://twitter.com/intent/tweet?u={{ urlencode(url()->current() .'?utm_source=Mobile&utm_medium=twitter&utm_campaign=Share_Bottom' )}}" target="_blank"><i class="icon icons--share icon--share-tweet"></i></a></div>
-                                        {{-- <div class="share-item share-item--pin"><a href="/"><i class="icon icons--share icon--share-pin"></i></a></div> --}}
-                                        {{-- <div class="share-item share-item--gplus"><a href="/"><i class="icon icons--share icon--share-gplus"></i></a></div> --}}
-                                        {{-- <div class="share-item share-item--mail"><a href="/"><i class="icon icons--share icon--share-mail"></i></a></div> --}}
-                                    </div>
-                                </div>
-                                <h2 class="dt-title text-24 font-bold mb-6">{{$row['news_sub_title']??null}}</h2>
-                                <div class="dt-paragraph">
-                                        {!! str_replace([
-                                                    'mce-mce-mce-mce-no/type', 'mce-no/type'
-                                                ], '', 
-                                                htmlspecialchars_decode($row['news_content']??null)) !!}
-                                    
-                                    @push('script')
-                                        <script>
-                                            if( document.getElementsByClassName('dt-paragraph') )
-                                            {
-                                                //change tag br to tag p
-                                                if (document.getElementsByClassName('dt-paragraph')[0].getElementsByTagName('br')[0]!=null) {
-                                                    document.getElementsByClassName('dt-paragraph')[0].innerHTML=document.getElementsByClassName('dt-paragraph')[0].innerHTML.replace(/<br>\\*/g,'</p><p>')
-                                                }
-                                                //add ads
-                                                if( document.getElementsByClassName('dt-paragraph')[0].getElementsByTagName('p')[0]!=null )
-                                                {
-                                                    //get 2 paragraf before add ads
-                                                    var lis = document.getElementsByClassName('dt-paragraph')[0].getElementsByTagName('p')
-                                                    var counter = 0
 
-                                                    for (var i = 0; i < lis.length - 1; i++) {
-                                                        if (lis[i].innerHTML !== "") {
-                                                            counter++
-                                                            if (counter==2) {
-                                                                document.getElementsByClassName('dt-paragraph')[0].getElementsByTagName('p')[i].insertAdjacentHTML('afterend', ('<div class="channel-ad channel-ad_ad-exposer">  {!! str_replace("script", "scr+ipt", Util::getAds('exposer')) !!} </div>').replaceAll('+', ''));
-                                                                break
-                                                            }
-                                                        } 
-                                                    }
-                                                }
-                                            }
-                                        </script>
-                                    @endpush
-                                        
-                                    {{-- <p><a href="#">Otosia.com</a> Belum lama ini beredar sebuah foto yang diduga sebagai wujud Yamaha Nmax facelift. Tentu hal ini menggegerkan media sosial, terlebih para pecinta sepeda motor.</p>
-                                    <p>Foto tersebut diunggah oleh pemilik akun Facebook bernama <a href="/">Yachya Doank</a>. Pada gambar itu tampak Yamaha Nmax facelift sedang melakoni uji jalan di jalur Indramayu-Cirebon, Jawa Barat.</p>
-                                    <div class="dt-box dt-box--crosslink p-4">
-                                        <h1 class="dt-box-title font-bold mb-4">BACA JUGA:</h1>
-                                        <ul class="dt-box--crosslink-list font-bold pl-5">
-                                            <li class="dt-box--crosslink-list-item py-3"><a href="/">Honda BeAT Sudah Kekinian, Yamaha: Mio Tergantung Konsumen</a></li>
-                                            <li class="dt-box--crosslink-list-item py-3"><a href="/">Sepeda Motor Yamaha TMax 20th Anniversary</a></li>
-                                            <li class="dt-box--crosslink-list-item py-3"><a href="/">Yamaha Luncurkan XMax dan Aerox Edisi MAXI Signature</a></li>
-                                        </ul>
-                                    </div>
-                                    <p>Terlihat jelas bagian belakang Yamaha Nmax facelift dibekali lampu belakang baru. Secara detail tampak beberapa baris LED.</p> --}}
-                                </div>
-                            </div>                                            
-                            {{-- <div id="pages-1" class="dt-body-pages-item">
-                                <h2 class="dt-title text-24 font-bold mb-6">Eksterior Mobil Daihatsu Rocky</h2>
-                                <div class="dt-image mb-6">
-                                    <figure class="item -mx-4">
-                                        <span class="item-img aspect-[16/9]"><img class="lazyload" data-src="http://placehold.it/640x358" width="640" height="358" alt="image"></span>
-                                        <figcaption class="item-desc pt-2">
-                                            <p class="item-desc-copyright text-12 px-3 text-gray">Spyshot Yamaha Nmax facelift (Facebook.com/ Yachya Doank)</p>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="dt-paragraph">
-                                    <p>Komponen tersebut diapit lampu sein yang kemungkinan juga sudah mengunakan LED. Selain itu, desain spakbornya juga berubah, tampak lebih lebar.</p>
-                                    <p>Sayangnya, bagian paling menarik dari Yamaha Nmax facelift ini tak terlalu. Di spion, sektor depan skutik gambot tersebut tampak mengintip.</p>
-                                    <p>Meski demikian, terlihat bahwa Yamaha Nmax facelift akan memiliki LED headlight baru mirip kakaknya, Yamaha Xmax. Lantas, kapan motor ini dirilis? Kita tunggu saja.</p>
-                                </div>
-                            </div> --}}
-                        </div>    
-                        @if (($row['has_paging']??null)==1)
-                            @include( 'defaultsite.mobile.components.pagination2',[
-                                'current_page'=> $row['current_page'],
-                                'last_page'=> $row['last_page'],
-                                'slug'=> $row['slug']
-                            ])
-                        @endif
-                        @if ($row['news_tag']??null)
-                            <div class="dt-box dt-box--tag" x-data="{ open: false }">
-                                <h2 class="text-16 font-bold mb-4" >Tag Terkait</h2>
-                                <ul class="section--trending-bredcrumb list-none flex items-center flex-wrap flex-1" :class="open ? 'show' : ''">
-                                        @foreach ($row['news_tag'] as $r)
-                                            <li class="section--trending-bredcrumb-item"><a href="{{Src::detailTag($r)}}">{{$r['tag_name']??null}}</a></li>
-                                            @if ( $loop->index ==3)
-                                                <li class="section--trending-bredcrumb-item" id="more_tag" x-show="!open" @click="open = ! open"><span>More Tag</span></li>
-                                            @endif
-                                        @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                    </div>
-                    <div class="section section--report">
-<button data-toggle-open="rModal" class="btn btn--report py-3 px-4 border rounded-md inline-block"><img class="object-contain inline-block -mt-1 mr-1" src="{{ Src::asset('img/error.e43b81ee4b1c02e23191db01caefee9e.svg') }}" width="15" height="17"> LAPORKAN ARTIKEL</button> 
-                    </div>
-    
-                    <div data-toggle="rModal" class="modal section--report">
-                        <div class="modal-inner">
-                            <div class="modal-inner-body">
-                                <a data-toggle-close="rModal" class="modal-close" href="#"><img class="object-contain" src="{{ Src::asset('img/close-modal.a1c4fbc08020baeabc3c2f1fcd229bcc.svg') }}" width="14" height="14"></a>
-                                <div class="modal-main">
-    
-                                    <!--modal.form-->
-                                    <div class="modal-form">
-                                        <h1 class="modal-title mb-4">LAPORKAN ARTIKEL</h1>
-                                        <div class="form-box flex items-center">
-                                            <div class="report-img">
-                                                @include('image', ['source'=>$row, 'size'=>'640x360', $row['news_title']??null])
-                                            </div>
-                                            <div class="report-title">{{$row['news_title']??null}}</div>
-                                        </div>
-                                        <div class="modal-form-body">
-                                            <form class="form-submit" id="form-report">
-                                                <div class="form-box">
-                                                    <input type="hidden" class="form-control" value="{{url()->current()}}" name="url" hidden readonly>
-                                                </div>
-                                                <div class="form-box">
-                                                    <input type="text" class="form-control " placeholder="Nama Depan" value="" name="name">
-                                                    <label id="name-error" class="error label-error" for="name"></label>
-                                                </div>
-                                                <div class="form-box">
-                                                    <input type="email" class="form-control  " placeholder="Email" value="" name="from"  required='required' >
-                                                    <label id="from-error" class="error label-error" for="from"></label>
-                                                </div>
-                                                <div class="form-box">
-                                                    <input type="text" class="form-control  " placeholder="Nomor HP" value="" name="phone" rule='[^0-9]' required='required' minlength='9' maxlength='12'>
-                                                    <label id="phone-error" class="error label-error" for="phone"></label>
-                                                </div>
-                                                <div class="form-box">
-                                                    <select class="form-control" name="type">
-                                                        <option value="Complaint">Complaint</option>
-                                                        <option value="Feedback">Feedback</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-box">
-                                                    <input type="text" class="form-control  " placeholder="Judul Laporan" value="" name="subject"  required='required'>
-                                                    <label id="subject-error" class="error label-error" for="subject"></label>
-                                                </div>
-                                                <div class="form-box">
-                                                    <textarea class="form-control " rows="5" placeholder="Detail Laporan" value="" name="content"  required='required'></textarea>
-                                                    <label id="content-error" class="error label-error" for="content"></label>
-                                                </div>
-                                                <div class="form-box flex justify-between items-center">
-                                                    <div class="form-recapthca" >
-                                                        <div hidden class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-                                                            {!! RecaptchaV3::field('register') !!}
-                                                            @if ($errors->has('g-recaptcha-response'))
-                                                                <span class="help-block">
-                                                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                                                </span>
-                                                            @endif
-                                                        </div>
-                                                        <div class="flex">
-                                                            <img class="object-contain inline-block mr-1 google-captcha-error" style="display: none" src="{{ Src::asset('img/error.e43b81ee4b1c02e23191db01caefee9e.svg') }}" width="15" height="17">
-                                                            <label id="g-recaptcha-response-error" class="error label-error" for="g-recaptcha-response"></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-button">
-                                                        <button type="submit" class="btn btn--submit py-2 px-6 rounded-md">Kirim</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-    
-                                    <!--modal.alert-->
-                                    <div class="modal-alert hidden">
-                                        <div class="modal-alert-body flex items-center justify-center flex-col" style="min-height: 300px">
-                                            <img class="modal-icon object-contain mb-4" src="{{ Src::asset('img/checkmark-modal.f381295fc0b9b93ca76855ce5a5b507e.svg') }}" width="74" height="64">
-                                            <h1 class="modal-title">BERHASIL</h1>
-                                            <p class="modal-text">Laporan Anda berhasil dikirim</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dt-foot pt-6">
-                        <div class="tabs -mx-4" x-data="{ openTab: 1 }">
-                            <ul class="tabs-btn w-full flex">
-                                <li class="tabs-btn-item p-3 flex-1" @click="openTab = 1" :class="{'active' : openTab === 1}">
-                                    <span>Rekomendasi</span>
-                                </li>
-                                <li class="tabs-btn-item p-3 flex-1" @click="openTab = 2" :class="{'active' : openTab === 2}">
-                                    <span>Kredit</span>
-                                    {{-- <span class="tabs-btn-item-info">1</span> --}}
-                                </li>
-                            </ul>
-                            <div class="tabs-content w-full px-4">
-                                <div class="tabs-content-item pt-4" x-show="openTab === 1">
-                                    @include( 'defaultsite.mobile.components.latestbig',['news'=>\Data::recommendation($row),'page'=> 'readpage','data'=> 'recommendation'])
-                                </div>
-                                <div class="tabs-content-item pt-4" x-show="openTab === 2">
-                                    <div class="dt-user flex items-center">
-                                        <a class="dt-user-image rounded-full" href="{{ Src::author($row) }}">
-                                            <img class="aspect-square rounded-full" src="{{$row['news_editor'][0]['image'] ??'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AgJCiccVLvelQAABVVJREFUeNrtnG1v0zwUhm87WdqsCUm00nWgMgZMQrSbxJ/nZ6xSpexTAakbhdFutDSN17yZD6jTxsN49mKnHviW8jknl2/7HMcnIaenpxxadxbVCDTAlcpUKRhCyJXrsjjnVy4N8BdxzvHt2zdMJhPMZjMwxpBl2c8gTRO2bcN1Xfi+D9/3/wN4ZYO+qiRiGAYYYxiPxzg9PcV0OkWe5zdyoGEY8DwPGxsbqNfrsG0beZ7/OwA553j//j1OTk7uPR0JIdjc3MTLly9X4srSAY7HY3z48AHn5+egVEwOK4oC1WoVL168QL1e/zsBGoaBMAwxHo+l3qder6Pdbpc2pUsBmGUZer0eoigS5ro/udFxHOzv78M05edI6XUg5xy9Xg9xHEuHBwCUUsRxjF6vV0q5I/2Jut0u5vN56Yv7fD5Ht9t92AD7/T7m8/lqsiMhmM/n6Pf7Dw8gIQRRFGE4HK604CWEYDgcIooiaXFIAVgUBcIwLGXNu8maGIYhiqJ4GAAJIRgMBkiSRJn9apIkGAwGUlwoHGCaphiNRsrsVZeDOhqNkKap+gAZY2CMQTXJiksoQEopjo+PoaqOj4+Fr8vCHTgej5WavpensYxtJBUZ4GQykZbtRFUHk8lE6AALdeBsNlPSfZcHeTabqevAVe06VhmjUAcuFgvlAS4WC3WTyPIMQ2WJjpGKHmHVJTpGoQDX1taUByg6RqEAK5WKUme2v4pzjkqloiZAzjlqtZryAEXHKNSBrusqD9B1XXUd6Hme8mWM53nqOpBzjo2NDSVdKCs24QCbzaayAGXEJhyg4ziwLEs5gJZlwXEctQEuA63VasoBrNVqUgZWOEBKKba2tpSaxpxzbG1tSTnkojKCbTQaqFarSkDknKNaraLRaEiJh8oK+vXr18oAlBmLNICO4yAIgpUDDIJASvKQCnBZtG5vb6/0FX9RFNje3pZa3FPZo99qtVYCsSgKtFot6bNAKsA8z/H8+fOVTOUgCLCzsyO90VJ68wohBLu7uzAMozR4hmFgd3e3lHuV0v2zvr6Ovb290hos9/b2sL6+/vcAXLbddjodqRAppeh0OnAcp7R1t9T+M9/30W63YVmW0LKCcw7LstBut+H7fqlrbWkACSHgnCMIAnQ6HaH7Usuy0Ol0EAQBOOelvpOU0qW//NIoSRIwxnB+fo7v378jiiJEUYQ0TYV30GdZhrW1NTiOA8dx8OjRI1SrVdi2feF4GcW0UICUUhRFga9fv+LLly9gjCHPcxRFUaozlveilMIwDNi2jWaziUajcRGjEgCXQBaLBeI4xufPnzEaja64UJW3MUv3PX78GM1mE7Va7eKE7j7OvDNA0zQxmUxwdHSE2Wx20TKh+uH6ElalUoHrumi1WvB9/84dC7cGWBQFGGPo9/uYTqdKNJLft8TyPA+vXr2Cbdu3fp4bAzRNEycnJ/j06ROm0+mDcNttXel5Hp4+fYrNzc0bO/JGAJMkweHhofL9f6Jguq6LN2/e3KjUuhYgIQRZlmEwGGA4HKIoir8e3mWIlFI8efIEz549g2ma1yaa3wJcNiL2er0H0bImU6ZpYn9//9qWkN8CPDo6wsePHx98ghCZaHZ2dtBqtf4MkHOObreLOI41tWveKr19+/bKUkaXU5YxhoODAw3vD4rjGAcHB2CMXUAkZ2dnfDqdIgxDZFn2zySK+yQY0zTRbrfheR5oFEUIw/DilyNa/799zfMcYRj+/Iz23bt3PEkSDe8OTrQsCzRNUw3vjk5M01T/fOy+0gA1QA1QA9QAtTRADVAD1AC1NEANUAPUALU0QA1QA/x39AMzx8A5MRN2GAAAAABJRU5ErkJggg=='}}" width="34" height="34" alt="user">
-                                        </a>
-                                        <div class="dt-user-desc flex flex-col ml-3">
-                                            <a class="dt-user-desc-link font-bold" href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a>
-                                            <span class="dt-user-desc-role text-12 text-gray">Author</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div>
+    <div class="header-photo">
+        <h3 class="photo-t">{{ $row['news_title'] ?? null }}</h3>
+        <p class="photo-author pt-2">Oleh <a style="color: #CA0000 ;"  href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+    </div> 
+        <figure class="">
+        <style>
+                        iframe {
+                            aspect-ratio: 16 / 9;
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        .item-vidio-inner{
+                            position: relative;
+                            height: auto;
+                            width: 100%;
+                        }
+                    </style>
+                <div class="item-vidio-inner">
+                    {!! htmlspecialchars_decode($row['news_video']['video']??null)!!}
+                </div>
+        </figure>
+        <h2 class="dt-title text-24 font-bold mb-6">{{$row['news_sub_title']??null}}</h2>
+</div>
+
+@include( 'defaultsite.mobile.components-ui.dt-share')
+
+<div class="main-news-container">
+    <div class="dt-paragraph">
+        @php
+            function DOMinnerHTML(DOMNode $element){
+                $innerHTML = "";
+                $children  = $element->childNodes;
+
+                foreach ($children as $child){
+                    $innerHTML .= $element->ownerDocument->saveHTML($child);
+                }
+                return $innerHTML;
+            }
+
+            function getEmbedYtb($str){
+                $embedYtb=[];
+                if(preg_match('/\/embed\/(.*?)"/', $str, $code) == 1) {
+                    $embedYtb['code']=$code[1]??null;
+                }
+                if(preg_match('/height="(.*?)"/', $str, $height) == 1) {
+                    $embedYtb['height']=$height[1]??9;
+                }
+                if(preg_match('/width="(.*?)"/', $str, $width) == 1) {
+                    $embedYtb['width']=$width[1]??16;
+                }
+                return '<amp-youtube 
+                            width="'.($embedYtb['width']).'"
+                            height="'.($embedYtb['height']).'"
+                            layout="responsive"
+                            data-videoid="'.$embedYtb['code'].'">
+                        </amp-youtube>';
+            }
+
+            function getEmbedTik($str){
+                $embedTik=[];
+                if(preg_match('/data-video-id="(.*?)"/', $str, $code) == 1) {
+                    $embedTik['code']=$code[1]??null;
+                }
+                return $embedTik['code'];
+            }
+
+            function getEmbedIg($str){
+                $embedIg=[];
+                if(preg_match('/\/p\/(.*?)\//', $str, $code) == 1) {
+                    $embedIg['code']=$code[1]??null;
+                }
+                return $embedIg['code'];
+            }
+
+            $doc = new DOMDocument();
+            // set error level
+            $internalErrors = libxml_use_internal_errors(true);
+            $doc->loadHTML(htmlspecialchars_decode($row['news_content']??null));
+            // Restore error level
+            libxml_use_internal_errors($internalErrors);
+            if( $doc )
+            {
+                //change tag br to tag p
+                if ($doc->getElementsByTagName('br')[1]!=null) {
+                    libxml_use_internal_errors(true);
+                    $doc->loadHTML(preg_replace('#(?:<br\s*/?>\s*?){2,}#', '</p><p>', $doc->saveHTML()));
+                    libxml_clear_errors();
+                }
+                //embed ig and tiktok (blockquote)
+                if ($doc->getElementsByTagName('blockquote')[0]!=null) {
+                    $blockquote = $doc->getElementsByTagName('blockquote');
+                    for ($i = 0; $i <= $blockquote->length - 1; $i) {
+                        $tag=$blockquote[$i]->ownerDocument->saveHtml($blockquote[$i]);
+                        $old = $blockquote->item($i);
+
+                        if (strstr($tag,'instagram.com')) {
+                            $new = $doc->createElement("p");
+                            $old->parentNode->replaceChild($new, $old);
+                            $link = $doc->createElement("amp-instagram");
+                            $link->setAttribute('data-shortcode', getEmbedIg($tag));
+                            $link->setAttribute('data-captioned',true);
+                            $link->setAttribute('width', 1);
+                            $link->setAttribute('height', 1);
+                            $link->setAttribute('layout', 'responsive');
+                            $new->appendChild($link);
+                        } elseif(strstr($tag,'tiktok.com')){
+                            $new = $doc->createElement("p");
+                            $old->parentNode->replaceChild($new, $old);
+                            $link = $doc->createElement("amp-tiktok");
+                            $link->setAttribute('data-src', getEmbedTik($tag));
+                            // $link->setAttribute('width', 1);
+                            $link->setAttribute('height', 1);
+                            $new->appendChild($link);
+                        } else{
+                            $i++;
+                        }
+                    }
+                    // dd($doc->saveHtml());
+
+                }
+                //add ads
+                if( $doc->getElementsByTagName('p')[0]!=null )
+                {
+                    //get 2 paragraf before add ads
+                    $lis = $doc->getElementsByTagName('p');
+                    $counter = 0;
+                    
+                    for ($i = 0; $i <= $lis->length - 1; $i++) {
+                        $p=DOMinnerHTML($lis[$i]);
+                        if($p){
+                            if (strstr($p,'/iframe>')) {
+                                if (strstr($p,'youtube.com')) {
+                                    echo getEmbedYtb($p);
+                                } else {
+                                    echo '<p>'.str_replace("iframe", "amp-iframe",$p).'<p>';
+                                }
+                            } else {
+                                echo '<p>'.$p.'<p>';
+                            }
+                        $counter++;
+                        if ($counter==2) 
+                        {
+                            $exposer1 = str_replace("script", "scr+ipt", str_replace('+', '',Util::getAds("exposer-1")));
+                            echo '<div class="channel-ad channel-ad_ad-exposer">'.$exposer1.'</div>';
+                        }
+                        }; 
+                    }
+                }
+            }
+        @endphp
+    </div>
+</div>
+
+<p class="photo-title">TAG TERKAIT</p>
+@include('defaultsite.mobile.components-ui.related-tag')
+
+{{-- report --}}
+<div style="margin:0px 20px 30px;">
+    <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
+        class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>LAPORKAN ARTIKEL</button>
+
+        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    {{-- FORM REPORT --}}
+                    @include('defaultsite.mobile.components-ui.form-report')
                 </div>
             </div>
-        </div>
-        @include('defaultsite/mobile/components/trendingtag')
-        
 
-        <div class="channel-ad channel-ad_ad-sc-2">
-            {!! Util::getAds('showcase-2') !!}
         </div>
-
-        <div class="section section--index">
-            <h2 class="section-title text-16 mb-4">BERITA TERBARU</h2>
-            @include( 'defaultsite.mobile.components.latestbig',['news'=>$row['latest']])
         </div>
     </div>
 </div>
+
 @endsection

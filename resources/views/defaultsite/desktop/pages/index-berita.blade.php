@@ -2,6 +2,7 @@
 
 
 @section('content')
+
     <div class="mt-4">
         <div class="row gx-5">
             <div class="col-8">
@@ -25,6 +26,7 @@
                                         <span class="item-img-info">
                                             <i class="icon icon--video icon--white mr-1"></i> Putar Video
                                         </span>
+
                                     @endif
                                 </a>
                                 <figcaption> {{ Util::date($headline['news_date_publish'], 'ago') }} </figcaption>

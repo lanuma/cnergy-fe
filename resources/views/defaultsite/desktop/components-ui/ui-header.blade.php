@@ -6,11 +6,19 @@
         {{-- ?? GCSE ??  --}}
 
         <div class="search-container">
-            <div style="width: 100%;">
+            <div class="all-search-box">
                 {{-- ??   ?? --}}
                 <style>
                     .gsc-search-button-v2 {
                         display: none;
+                    }
+
+                    .all-search-box{
+                        min-width: 300px;
+                        min-height: 34px;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        border: 2px solid #ececec;
                     }
 
                     form.gsc-search-box,
@@ -21,11 +29,7 @@
 
                     form.gsc-search-box {
                         display: table;
-                        background: #EBEBEB;
-                        -webkit-border-radius: 5px;
-                        border-radius: 5px;
                         position: relative;
-                        border: 2px solid #E5E5E5;
                     }
 
                     .gsst_b {
@@ -63,7 +67,7 @@
                         height: 100%;
                         background-color: transparent !important;
                         margin: 0 !important;
-                        width: 200px;
+                        width: 100%;
                         background-color: yellow;
                     }
 
@@ -153,8 +157,9 @@
 
 
                 {{-- ??   ?? --}}
-            </div>
+           
             <gcse:searchbox-only style="border-radius: 8px;" resultsUrl="{{ url('search') }}"></gcse:searchbox-only>
+            </div>
         </div>
 
         {{-- ?? END OF GCSE ??  --}}

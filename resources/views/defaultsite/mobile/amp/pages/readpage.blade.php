@@ -22,7 +22,7 @@
 @section('content')
 
           <!--main.body-->
-          <ul class="main-breadcrumb flex items-center flex-wrap list-none m-4">
+          <ul class="main-breadcrumb">
             <li class="main-breadcrumb-item"><a href="/">Home</a></li>
             @foreach ($row['news_category'] as $r)
                 @if ($loop->iteration==1)

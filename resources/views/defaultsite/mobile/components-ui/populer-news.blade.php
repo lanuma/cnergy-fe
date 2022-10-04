@@ -1,26 +1,17 @@
-<div style="margin: 15px 0" class="populer-container">
+<div class="populer-container">
     <h4>populer</h4>
     <div class="list-berita-populer">
-        <a href="#">
-            <h1>1</h1>
-            <div class="berita-populer-deskripsi">
-                <span>news</span>
-                <p>Manisnya, 3 Zodiak Ini Paling Romantis Saat Jadi Pasangan</p>
-            </div>
-        </a>
-        <a href="#">
-            <h1>2</h1>
-            <div class="berita-populer-deskripsi">
-                <span>news</span>
-                <p>Manisnya, 3 Zodiak Ini Paling Romantis Saat Jadi Pasangan</p>
-            </div>
-        </a>
-        <a href="#">
-            <h1>3</h1>
-            <div class="berita-populer-deskripsi">
-                <span>news</span>
-                <p>Manisnya, 3 Zodiak Ini Paling Romantis Saat Jadi Pasangan</p>
-            </div>
-        </a>
+        @foreach ($popular as $item)
+            <a href="{{ Src::detail($item) }}" aria-label="{{ $item['news_title'] ?? null }}">
+                <div>
+                    <h1>{{ $loop->iteration }}</h1>
+                </div>
+                <div class="berita-populer-deskripsi">
+                    <span>{{ $item['category_name'] }}</span>
+                    <p>{{ $item['news_title'] }}</p>
+                </div>
+            </a>
+        @endforeach
     </div>
 </div>
+

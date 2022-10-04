@@ -6,7 +6,6 @@
     @foreach ($tag as $r)
     <a href="{{Src::detailTag($r)}}">{{$r['title']??null}}</a>
      @endforeach
-    
   </div>
 </div>
 @endif
