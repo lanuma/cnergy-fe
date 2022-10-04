@@ -33,8 +33,7 @@ pre {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    transition: background-color .3s,
-        opacity .5s, visibility .5s;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
@@ -80,7 +79,7 @@ pre {
 /* NAVBAR CSS */
 nav {
     padding: 25px 20px;
-    border-bottom: 1px solid #e5e5e5;
+    /* border-bottom: 1px solid #e5e5e5; */
 }
 
 .search-container {
@@ -1683,13 +1682,6 @@ nav {
     font-weight: 700;
     font-size: 14px;
     color: #000000;
-}
-
-.video-action {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
 }
 
 /* PAGINATION CONTAINER */

@@ -1,7 +1,9 @@
 @if (count($rows) > 0)
-    <div class="video-action">
-        <h2>VIDEO TERBARU</h2>
-        <h4>Lihat Semua <a href="#"> > </a></h4>
+    <div class="d-flex align-items-center justify-content-between">
+        <p class="text-dark fs-1">VIDEO TERBARU</p>
+        {{-- <a class="btn-latest-video text-dark fs-3" href="">
+            Lihat Semua >
+        </a> --}}
     </div>
     <div class="related-video-container">
         @foreach ($rows as $r)
