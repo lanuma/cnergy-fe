@@ -121,5 +121,32 @@
     };
 </script>
 
+<script>
+    const slider = document.querySelector('.slider-content');
+    const counter = document.querySelector('#sliderCounter');
+    const widthSlider = slider.offsetWidth;
+    var count = 1;
+    var after = widthSlider;
+    var before= 0;
+
+    counter.innerHTML =count;
+    slider.addEventListener('scroll',countNumber);
+
+    function countNumber (){
+        if (slider.scrollLeft > after){
+            count = count+1;
+            before = after;
+            after = widthSlider*count;
+            counter.innerHTML =count;
+        }
+        if (slider.scrollLeft+250 < before && count != 0){
+            count = count-1;
+            after = before;
+            before = widthSlider*(count-1);
+            counter.innerHTML =count;
+        }
+    }
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
 </html>

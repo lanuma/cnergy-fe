@@ -23,11 +23,6 @@
 {{-- <div class="channel-ad channel-ad_ad-headline">
     {!! Util::getAds('headline') !!}
 </div> --}}
-<<<<<<< HEAD
-
-=======
-{{-- @dump($headline) --}}
->>>>>>> 6a1319e37ae92adf2415ee47a3d5560fa4376232
 <div class="main-body ">
     <div class="main-article">  
         @if( $headline[0]['news_id'] ?? null )

@@ -320,9 +320,21 @@ nav img {
     align-items: flex-start;
 }
 
+.list-main-news-container .card-news .image-news {
+    background-color: silver;
+    padding: 45px;
+    position: relative;
+    border-radius: 4px;
+}
+
 .list-main-news-container .card-news a img {
     object-fit: cover;
     border-radius: 4px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .list-main-news-container .card-news .banner {
@@ -894,6 +906,10 @@ a {
     object-fit: cover;
 }
 
+.highlight-article-container img {
+    border-radius: 4px;
+}
+
 .highlight-article-container p,
 .highlight-article-container span,
 .ringkas-container a {
@@ -1442,12 +1458,20 @@ a {
 }
 
 /* Category */
+.item-img .image-news {
+    position: relative;
+    --aspect-ratio: 23/14;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+    background-color: silver;
+}
+
 .item-img .image-news img {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
 }
 
 .item-desc-time {
@@ -1459,4 +1483,34 @@ a {
     /* identical to box height */
 
     color: #999999;
+}
+
+/* slider kumpulan foto */
+
+/* .slider-container .slider-news figure {
+    width: 200px;
+} */
+
+.slider-content .swiper-slide .image-news-slider {
+    position: relative;
+    --aspect-ratio: 23/14;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+    width: 100vw;
+    max-width: 720px;
+    background-color: silver;
+}
+
+.slider-content .swiper-slide .image-news-slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-counter {
+    text-align: center;
+    padding: 10px 0 0;
+    font-size: 16px;
 }
