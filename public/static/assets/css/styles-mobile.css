@@ -732,15 +732,20 @@ a:hover {
     font-family: var(--lato-font);
     font-size: 12px;
     font-weight: 700;
-    color: #ca0000;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
-.related-tag-container a::after {
+.btn-related {
+    background-color: #ca0000;
+    border-radius: 8px;
+}
+
+/* .related-tag-container a::after {
     content: "/";
     margin: 0 10px;
     color: black;
-}
+} */
 
 /* .related-tag-container a:last-child {
     color: #000;
