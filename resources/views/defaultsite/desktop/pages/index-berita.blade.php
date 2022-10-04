@@ -9,10 +9,10 @@
                 <div class="section section--headline rounded-border">
                     <div class="section--headline-top">
                         <figure class="item item--headline">
-                            <a class="item-img aspect-[16/9]" href="{{ Src::detail($headline) }}" aria-label="{{$headline['news_title']??null}}">
-                                
-                                @include('image', ['source'=>$headline, 'size'=>'375x208', $headline['news_title']??null])
-                                
+                            <a class="item-img" href="{{ Src::detail($headline) }}" aria-label="{{$headline['news_title']??null}}">
+                                <div class="image-news">
+                                    @include('image', ['source'=>$headline, 'size'=>'375x208', $headline['news_title']??null])
+                                </div>
                                 @if( $headline['news_type'] == 'photonews' )
                                 <span class="item-img-info">
                                     <i class="icon icon--photo icon--white mr-1"></i> Lihat Foto

@@ -8,14 +8,7 @@
         <div class="section section--headline -mx-4">
             <div class="section--headline-top">
                 <figure class="item item--headline">
-                    <!--
-                    <div class="item-vidio">
-                        <div class="item-vidio-inner">
-                            <iframe class="vidio-embed lazyload" data-src="https://www.vidio.com/embed/2350967-spider-man-homecoming?autoplay=true&player_only=true&live_chat=false&enable_websocket=false&mute=false&" width="560" height="317" scrolling="no" frameborder="0" allowfullscreen allow="encrypted-media *;" title="video"></iframe>
-                            <script src="//static-web-prod-vidio.akamaized.net/assets/javascripts/vidio-embed.js"></script>
-                        </div>
-                    </div> -->
-                    <a class="item-img aspect-[16/9]" href="{{ Src::detail($headline) }}" aria-label="{{$headline['news_title']??null}}" >
+                    <a class="item-img" href="{{ Src::detail($headline) }}" aria-label="{{$headline['news_title']??null}}" >
                         <div class="image-news" >
                             @include('image', [
                                    'source' => $headline,
