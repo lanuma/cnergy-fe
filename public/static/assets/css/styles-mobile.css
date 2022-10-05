@@ -11,6 +11,10 @@ ul {
     padding: 0;
 }
 
+html:not([amp4ads]) body {
+    margin: auto !important;
+}
+
 .breaking-news-logo {
     background-color: #000000;
     height: 100%;
