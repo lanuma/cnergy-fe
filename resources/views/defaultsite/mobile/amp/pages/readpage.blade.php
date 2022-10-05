@@ -4,40 +4,40 @@
 
 {{-- headline news --}}
 
-@include('defaultsite.mobile.components-ui.main-news-article')
+@include('defaultsite.mobile.amp.components-ui.main-news-article')
 
 
 
 {{-- read too list --}}
 @if ($popular = \Data::popular() ?? null)
-    @include('defaultsite.mobile.components-ui.read-too-list' , ['news' => $popular])
+    @include('defaultsite.mobile.amp.components-ui.read-too-list' , ['news' => $popular])
 @endif
 
 {{-- related tag --}}
 <p class="photo-title">TAG TERKAIT</p>
-@include('defaultsite.mobile.components-ui.related-tag')
+@include('defaultsite.mobile.amp.components-ui.related-tag')
 
 {{-- related artikel --}}
 @if ($latest = \Data::popular() ?? null)
-@include('defaultsite.mobile.components-ui.related-article', ['news' => $latest, 'title' => 'Berita Terbaru']) 
+@include('defaultsite.mobile.amp.components-ui.related-article', ['news' => $latest, 'title' => 'Berita Terbaru']) 
 @endif
 
 {{-- trending tag --}}
-@include('defaultsite.mobile.components-ui.trending-tag')
+@include('defaultsite.mobile.amp.components-ui.trending-tag')
 
 {{-- slider latest news --}}
 @if ($popular = \Data::popular() ?? null)
-    @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])
+    @include('defaultsite.mobile.amp.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])
 @endif
 
 {{--list populer news--}}
 @if ($popular = \Data::popular() ?? null)
-    @include('defaultsite.mobile.components-ui.populer-news', ['hl' => $popular])
+    @include('defaultsite.mobile.amp.components-ui.populer-news', ['hl' => $popular])
 @endif
 
 {{-- slider latest news --}}
 @if ($latest = \Data::latest() ?? null)
-    @include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Berita Terbaru'])
+    @include('defaultsite.mobile.amp.components-ui.slider', ['hl' => $latest, 'title' => 'Berita Terbaru'])
 @endif
 
-@endsection
+@endsection 

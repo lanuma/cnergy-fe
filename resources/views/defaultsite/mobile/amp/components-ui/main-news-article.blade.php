@@ -16,20 +16,21 @@
       <h3>{{ $row['news_title'] ?? null }}</h3>
       <p>Oleh <span><a href="{{ Src::author($row) }}" style="color: #CA0000;">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
      <figure>
-        <div class="image-news">
-            @include('image', [
+        <div class="image-news ">
+            @include('defaultsite/mobile/amp/image', [
                 'source' => $row,
-                'size' => '380x214',
+                'sizeW' => '375',
+                'sizeH' => '208',
                 $row['news_title'] ?? null,
             ])
+          
         </div>
         <p>{{ $row['news_imageinfo'] ?? null }}</p>
     </figure>
 </div>
-{{-- adds --}}
-@include('defaultsite.mobile.components-ui.ads-on')
+
 {{-- st-share --}}
-@include('defaultsite.mobile.components-ui.dt-share')
+@include('defaultsite.mobile.amp.components-ui.dt-share')
 
 <div class="dt-paragraph">
     @php
@@ -167,7 +168,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     {{-- FORM REPORT --}}
-                    @include('defaultsite.mobile.components-ui.form-report')
+                    @include('defaultsite.mobile.amp.components-ui.form-report')
                 </div>
             </div>
 
