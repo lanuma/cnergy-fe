@@ -248,22 +248,22 @@ nav {
     border-top-left-radius: 8px;
 }
 
-.main-news-deskripsi {
+.main-news-container .main-news-deskripsi {
     padding: 0px 20px;
-    margin-top: 5px;
 }
 
-.main-news-deskripsi a h3 {
+.main-news-container .main-news-deskripsi a h3 {
     font-family: var(--lato-font);
     font-size: 30px;
     font-weight: 900;
+    margin-top: 10px;
 }
 
-.main-news-deskripsi a h3:hover {
+.main-news-container .main-news-deskripsi a h3:hover {
     color: #dc3545 !important;
 }
 
-.main-news-deskripsi p {
+.main-news-container .main-news-deskripsi p {
     margin: 6px 0px 0px 0px;
     font-family: var(--lato-font);
     font-weight: 400;
@@ -953,10 +953,10 @@ nav {
     color: #999999;
 }
 
-/* .main-content-news-container ul li:first-child a,
-.main-content-video-container ul li:first-child a {
-    color: #ca0000;
-} */
+.main-content-news-container ul li a:hover,
+.main-content-video-container ul li a:hover {
+    color: #dc3545;
+}
 
 .main-content-news-container h4,
 .main-content-video-container h4 {
@@ -981,7 +981,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 
 .account .account-detail {
@@ -990,7 +990,18 @@ nav {
     gap: 5px;
 }
 
-.account-shared-content .account h5,
+.account .account-detail p a {
+    font-family: var(--lato-font);
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+}
+
+.account .account-detail p a:hover {
+    color: #dc3545;
+}
+
+.account-shared-content .account p,
 .account-shared-content .account span {
     font-family: var(--lato-font);
     font-weight: 400;
@@ -1159,14 +1170,18 @@ nav {
 }
 
 .credit-container h4,
-.credit-container p {
+.credit-container .card-credit p a {
     font-family: var(--lato-font);
     font-size: 12px;
     font-weight: 700;
     color: #000000;
 }
 
-.credit-container .card-credit .desc-info p {
+.credit-container .card-credit p a:hover {
+    color: #dc3545;
+}
+
+.credit-container .card-credit .desc-info span {
     color: #999999;
 }
 
@@ -1669,9 +1684,6 @@ nav {
 .related-video-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px; */
     gap: 1.5em;
 }
 
@@ -1694,6 +1706,11 @@ nav {
     font-weight: 700;
     font-size: 14px;
     color: #000000;
+}
+
+.related-video-container .video-frame p:hover,
+.related-news-container .img-news p:hover {
+    color: #dc3545;
 }
 
 /* PAGINATION CONTAINER */
@@ -1984,14 +2001,18 @@ p {
     object-fit: cover;
 }
 
-.video-item-gallery .video-desc h3 {
+.video-item-gallery .video-desc p a {
     font-family: var(--lato-font);
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    color: #333333 !important;
+    color: #333333;
     margin-top: 10px;
     line-height: 1.3em;
+}
+
+.video-item-gallery .video-desc p a:hover {
+    color: #d8056f;
 }
 
 .video-item-gallery .video-button {

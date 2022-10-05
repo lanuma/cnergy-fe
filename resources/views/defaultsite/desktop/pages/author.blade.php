@@ -3,24 +3,7 @@
 @section('title', 'Article Page')
 
 @section('content')
-    {{-- @push('styles')
-        <link rel="preload" href="{{ Src::mix('css/tag.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript>
-            <link rel="stylesheet" href="{{ Src::mix('css/tag.css') }}" />
-        </noscript>
-        <style>
-            .channel-ad_ad-sc,
-            .channel-ad_ad-sc2,
-            .channel-ad_ad-hl {
-                margin-top: 15px;
-                margin-bottom: 15px;
-            }
 
-            .main-aside {
-                position: unset
-            }
-        </style>
-    @endpush --}}
 
     <div class="mt-4" role="main">
         <div class="row gx-5">

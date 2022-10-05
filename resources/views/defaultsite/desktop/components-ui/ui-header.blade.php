@@ -4,7 +4,6 @@
             <img src="{{ URL::asset('assets/images/logo.webp') }}" alt="logo" width="168px" height="34px">
         </a>
         {{-- ?? GCSE ??  --}}
-
         <div class="search-container">
             <div class="all-search-box">
                 {{-- ??   ?? --}}
@@ -13,7 +12,7 @@
                         display: none;
                     }
 
-                    .all-search-box{
+                    .all-search-box {
                         min-width: 300px;
                         min-height: 34px;
                         border-radius: 8px;
@@ -157,11 +156,10 @@
 
 
                 {{-- ??   ?? --}}
-           
-            <gcse:searchbox-only style="border-radius: 8px;" resultsUrl="{{ url('search') }}"></gcse:searchbox-only>
+
+                <gcse:searchbox-only style="border-radius: 8px;" resultsUrl="{{ url('search') }}"></gcse:searchbox-only>
             </div>
         </div>
-
         {{-- ?? END OF GCSE ??  --}}
     </div>
 
@@ -291,11 +289,7 @@
                     @endif
                 @endif
             @endif
-
         @endif
-        {{-- <div class="route_login">
-      <a href="#">masuk</a>
-    </div> --}}
     </div>
 </nav>
 
