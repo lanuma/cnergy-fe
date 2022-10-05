@@ -11,8 +11,54 @@ ul {
     padding: 0;
 }
 
+a {
+    color: #000;
+}
+
 html:not([amp4ads]) body {
     margin: auto !important;
+}
+
+#btn-back-toTop {
+    display: inline-block;
+    background-color: #ca0000;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#btn-back-toTop::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#btn-back-toTop:hover {
+    text-decoration: none;
+}
+
+#btn-back-toTop:active {
+    background-color: silver;
+    color: #ca0000;
+    text-decoration: none;
+}
+
+#btn-back-toTop.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 .breaking-news-logo {
@@ -100,6 +146,10 @@ nav img {
     cursor: pointer;
 }
 
+.nav-menus .active a {
+    color: #ca0000 !important;
+}
+
 .nav-main {
     height: 100vh;
     position: fixed;
@@ -171,12 +221,9 @@ nav img {
     padding: 20px;
 }
 
-.header-nav-item a {
-    color: black;
-}
-
 .header-nav-item a:hover {
     color: #cd2027;
+    text-decoration: none;
 }
 
 .main-breadcrumb {
@@ -306,6 +353,7 @@ nav img {
 .trending-tag-container .list-trending-tag a::after {
     content: "/";
     margin-left: 15px;
+    color: #000 !important;
 }
 
 .baca-juga-container a:last-child::after,
@@ -606,9 +654,7 @@ nav img {
     font-size: 12px;
     line-height: 17px;
 }
-a {
-    color: #000;
-}
+
 .photo-collection-container {
     margin: 20px;
 }

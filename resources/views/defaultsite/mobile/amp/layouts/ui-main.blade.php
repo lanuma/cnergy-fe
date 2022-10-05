@@ -724,6 +724,7 @@ a {
     </div>
     {{-- @yield('m-photo-detail') --}}
 
+    <a id="btn-back-toTop"></a>
 </body>
 
  <script>
