@@ -18,7 +18,7 @@
                         </a>
                         <p>
                             <a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a>
-                            </h>
+                        </p>
                     </figure>
                 </div>
             @endforeach

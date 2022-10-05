@@ -18,7 +18,6 @@
         @endforeach
     </ul>
     <h4 class="my-3">{{ $row['news_title'] ?? null }}</h4>
-
     <div class="account-shared-content my-4">
         <div class="account">
             <a class="dt-info-user-image rounded-full" href="#">
@@ -27,9 +26,9 @@
                     width="40" height="40" alt="user">
             </a>
             <div class="account-detail">
-                <a href="{{ Src::author($row) }}">
-                    <h5 href="{{ Src::author($row) }}">{{ $row['news_editor'][0]['name'] ?? null }}</h5>
-                </a>
+                <p href="{{ Src::author($row) }}">
+                    <a href="{{ Src::author($row) }}">{{ $row['news_editor'][0]['name'] ?? null }}</a>
+                </p>
                 <span>{{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</span>
             </div>
         </div>
@@ -43,7 +42,6 @@
 
     <div class="content-news mt-3">
         <figure>
-
             <div>
                 {!! htmlspecialchars_decode($row['news_video']['video'] ?? null) !!}
             </div>

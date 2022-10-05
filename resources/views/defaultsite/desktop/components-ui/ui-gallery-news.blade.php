@@ -20,7 +20,6 @@
                 </span>
             @endforeach
         @endif
-
     </div>
 </div>
 
@@ -30,11 +29,6 @@
         <span>{{ Util::date($r['news_date_publish'], 'ago') }}</span>
     </a>
     <h4><a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a></h4>
-    {{-- <a href="{{ Src::detail($headline[0]) }}" data-duration="{{ count($headline[0]['photonews'] ?? 0) }}"
-        aria-label="{{ $headline[0]['news_title'] ?? null }}">
-        <p>{{ $gl[1]['news_type'] }}</p>
-        <span>{{ Util::date($gl[1]['news_date_publish'], 'ago') }}</span>
-        <h4>{{ $gl[1]['news_title'] }}</h4>
-    </a> --}}
+
 </div>
 </div>

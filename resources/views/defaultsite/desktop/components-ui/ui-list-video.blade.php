@@ -1,9 +1,6 @@
 @if (count($rows) > 0)
     <div class="d-flex align-items-center justify-content-between">
         <p class="text-dark fs-1">VIDEO TERBARU</p>
-        {{-- <a class="btn-latest-video text-dark fs-3" href="">
-            Lihat Semua >
-        </a> --}}
     </div>
     <div class="related-video-container">
         @foreach ($rows as $r)

@@ -8,10 +8,10 @@
                     width="40" height="40" alt="user" title="{{ $row['news_editor'][0]['name'] ?? null }}">
             </a>
             <div class="desc-info">
-                <a href="{{ Src::author($row) }}">
-                    <h4 href="{{ Src::author($row) }}">{{ $row['news_editor'][0]['name'] ?? null }}</h4>
-                </a>
-                <p>Editor</p>
+                <p href="{{ Src::author($row) }}">
+                    <a href="{{ Src::author($row) }}">{{ $row['news_editor'][0]['name'] ?? null }}</a>
+                </p>
+                <span>Editor</span>
             </div>
         </div>
     </div>

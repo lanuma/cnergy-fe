@@ -58,10 +58,10 @@
                                 <i class="icon-play fa-solid fa-circle-play" style="color: #CA0000"></i>
                             </div>
                         </a>
-                        <div class="video-desc">
-                            <a>
-                                <h3 href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</h3>
-                            </a>
+                        <div class="video-desc mt-2">
+                            <p>
+                                <a href="{{ Src::detail($r) }}">{{ $r['news_title'] ?? null }}</a>
+                            </p>
                         </div>
                     </div>
                 @endforeach
@@ -71,8 +71,6 @@
 
     <div class="row gx-5">
         <div class="col-8">
-            {{-- @dump($rows) --}}
-
             @include('defaultsite.desktop.components-ui.ui-list-video', ['rows' => $latest])
         </div>
 

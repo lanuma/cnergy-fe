@@ -1,6 +1,5 @@
 @if ($rows)
-    <div class="section--infscroll-list-item" id="infscroll-{{ Str::uuid() }}">
-
+    <div id="{{ Str::uuid() }}">
         @foreach ($rows as $r)
             @if ($r['news_type'] == 'news')
                 @include('defaultsite.desktop.components-ui.ui-list-text')
