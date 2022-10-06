@@ -1,11 +1,5 @@
 @extends('defaultsite.desktop.layouts.ui-main')
 
-{{-- @push('preload')
-    @if ($headline[0]['news_id'] ?? null)
-        <link rel="preload" as="image" href="{{ Src::imgNewsCdn($headline[0] ?? null, '640x360', 'webp') }}" />
-    @endif
-@endpush --}}
-
 @section('content')
     <div class="mt-4">
         <div class="row gx-5">
@@ -21,15 +15,14 @@
                                         'size' => '640x360',
                                         $headline[0]['news_title'] ?? null,
                                     ])
-
                                     @if ($headline[0]['news_type'] == 'photonews')
-                                        <span class="item-img-info">
-                                            <i class="icon icon--photo icon--white mr-1"></i> Lihat Foto
+                                        <span class="img-info"> Lihat Foto
+                                            <i class="fa-sharp fa-solid fa-camera ms-2" style="color: #CA0000"></i>
                                         </span>
                                     @endif
                                     @if ($headline[0]['news_type'] == 'video')
-                                        <span class="item-img-info">
-                                            <i class="icon icon--video icon--white mr-1"></i> Putar Video
+                                        <span class="video-info"> Lihat Video
+                                            <i class="fa-solid fa-circle-play ms-2" style="color: #CA0000"></i>
                                         </span>
                                     @endif
                                 </a>
@@ -42,10 +35,11 @@
                             </a>
                             <p>{{ $headline[0]['news_synopsis'] }}</p>
                         </div>
+                        @if (count($feed) > 0 ?? null)
+                            @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])
+                        @endif
                     </div>
-                    @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])
                 @endif
-
 
 
 
@@ -56,19 +50,18 @@
                     @include('defaultsite.desktop.components-ui.ui-spotlight-news', ['sl' => $latest])
                 @endif
 
-                {{-- @dump($latest) --}}
                 @include('defaultsite.desktop.components-ui.ui-list-main-news-conf', [
                     'rows' => $latest,
                 ])
 
+                <div class="d-flex justify-content-center align-content-center my-4"><a href="/index-berita"
+                        class="border border-danger p-3 px-4 text-danger">Indeks Berita</a>
+                </div>
             </div>
             <div class="col-4">
                 @include('defaultsite.desktop.components-ui.ui-aside', ['reference' => $feed ?? null])
             </div>
 
-            <div class="d-flex justify-content-center align-content-center my-4"><a href="/index-berita"
-                    class="border border-danger p-3 px-4 text-danger">Indeks Berita</a>
-            </div>
         </div>
     </div>
 @endsection

@@ -1,7 +1,9 @@
 <div class="slider-wrapper py-4">
-    <h4 class="special-font-prompt text-uppercase fst-italic fw-bold" style="font-size: 16px; margin-left: 20px">
-        Berita
-        Utama Lainnya</h4>
+    <div class="slider-thumb">
+        <h4>
+            Berita
+            Utama Lainnya</h4>
+    </div>
     <section class="custom-slider">
         <button class="pre-btn"><img src="{{ URL::asset('assets/icons/prev.svg') }}" alt=""></button>
         <button class="nxt-btn"><img src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
