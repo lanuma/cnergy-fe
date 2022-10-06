@@ -1,7 +1,7 @@
 @if ($sb = \Data::recommendation($reference) ?? null)
     <div class="berita-sidebar-container">
         @if (count($sb) !== 0)
-            <h4>berita sidebar</h4>
+            <h4>Side News</h4>
             <a href="{{ Src::detail($sb[1]) }}" aria-label="{{ $sb[1]['news_title'] ?? null }}">
                 <article class="image-content mb-2">
                     @include('image', [

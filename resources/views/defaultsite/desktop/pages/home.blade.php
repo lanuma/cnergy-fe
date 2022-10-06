@@ -39,16 +39,20 @@
                             @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])
                         @endif
                     </div>
-                @endif
 
+                    {{-- **BERITA SPOTLIGHT** --}}
+                    <div class="spotlight-wrapper">
+                        @if ($latest[0]['news_id'] ?? null)
+                            @include('defaultsite.desktop.components-ui.ui-spotlight-news', [
+                                'sl' => $latest,
+                            ])
+                        @endif
+                    </div>
+                @endif
 
 
                 {{-- !! END OF HEADLINE !! --}}
 
-                {{-- **BERITA SPOTLIGHT** --}}
-                @if ($latest[0]['news_id'] ?? null)
-                    @include('defaultsite.desktop.components-ui.ui-spotlight-news', ['sl' => $latest])
-                @endif
 
                 @include('defaultsite.desktop.components-ui.ui-list-main-news-conf', [
                     'rows' => $latest,

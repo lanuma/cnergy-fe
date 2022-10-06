@@ -4,7 +4,7 @@
         <a href="#">Selengkapnya</a>
     @endif
     <div class="desc">
-        <p><b>Tentang :</b>{{ $headline['news_synopsis'] ?? null }}</p>
-        <p><b>Tanggal Pelaksanaan</b> {{ Util::date($headline['news_entry'], 'ago') }} </p>
+        <p><b>About : </b>{{ $headline['news_synopsis'] ?? null }}</p>
+        <p><b>Date :</b> {{ Util::date($headline['news_entry'], 'ago') }} </p>
     </div>
 </div>
