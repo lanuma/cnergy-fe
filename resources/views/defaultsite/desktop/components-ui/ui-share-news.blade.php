@@ -1,6 +1,6 @@
 <div class="share-news-container">
     <h4>Share</h4>
-    <div class="icons mt-2">
+    <div class="icons mt-3">
         <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current() . '?utm_source=Desktop&utm_medium=facebook&utm_campaign=Share_Bottom') }}"
             target="_blank"><i class="fa-brands fa-facebook fa-2xl" style="color: #4A6DB4"></i></a>
         <a href="https://twitter.com/intent/tweet?text={{ urlencode(url()->current() . '?utm_source=Desktop&utm_medium=twitter&utm_campaign=Share_Bottom') }}"

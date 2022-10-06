@@ -1,5 +1,4 @@
 <div class="footer-container">
-
     <a href="/" class="m-auto mb-4"><img src="{{ URL::asset('assets/images/logo.webp') }}" alt="logo"
             width="168px" height="34px"></a>
     <div class="first-link-footer mt-3 d-flex flex-row justify-content-center">
@@ -13,9 +12,7 @@
             </ul>
         @endif
     </div>
-
     <p class="special-font-lato mt-5" style="color: #999999; font-size: 12px;">{!! nl2br(config('site.attributes.address')) !!}</p>
-
     <div class="social-media-container mt-3">
         <ul>
             @if ($socmed->fb ?? null)

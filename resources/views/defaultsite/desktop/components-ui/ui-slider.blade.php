@@ -1,7 +1,9 @@
 <div class="slider-wrapper py-4">
-    <h4 class="special-font-prompt text-uppercase fst-italic fw-bold" style="font-size: 16px; margin-left: 20px">
-        Berita
-        Utama Lainnya</h4>
+    <div class="slider-thumb">
+        <h4>
+            Berita
+            Utama Lainnya</h4>
+    </div>
     <section class="custom-slider">
         <button class="pre-btn"><img src="{{ URL::asset('assets/icons/prev.svg') }}" alt=""></button>
         <button class="nxt-btn"><img src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
@@ -19,7 +21,7 @@
                         <div class="d-flex flex-column">
                             <div class="d-flex flex-row align-items-center">
                                 @if ($s['news_type'] == 'photonews')
-                                    <i class="fa-sharp fa-solid fa-camera me-3" style="color: #CA0000"></i>
+                                    <i class="fa-sharp fa-solid fa-circle-camera me-3" style="color: #CA0000"></i>
                                 @endif
                                 @if ($s['news_type'] == 'video')
                                     <i class="fa-solid fa-circle-play me-3" style="color: #CA0000"></i>
