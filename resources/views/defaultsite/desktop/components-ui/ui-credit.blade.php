@@ -1,6 +1,6 @@
 <div class="credit-container">
     <h4>Credits</h4>
-    <div class="row-card mt-2">
+    <div class="row-card mt-3">
         <div class="card-credit">
             <a href="{{ Src::author($row) }}">
                 <img class="aspect-square"

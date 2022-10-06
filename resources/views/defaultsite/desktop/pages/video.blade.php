@@ -9,14 +9,10 @@
         @if ($headline[0]['news_id'] ?? null)
             <div class="video-bar my-3">
                 <ul>
-                    <a href="#">
-                        <li>Home
-                            <li />
-                    </a>
+                    <li><a href="/">Home</a></li>
                     <span class="text-dark mx-1"> ></span>
-                    <a href="/video" class="text-danger">
-                        <li>Video</li>
-                    </a>
+                    <li><a href="/video" class="text-danger">Video</a>
+                        <li />
                 </ul>
             </div>
             <div class="video-container">
@@ -31,14 +27,13 @@
                         </a>
                     </figure>
                     <figcaption class="d-flex flex-column mx-4 my-3">
-                        <a href="/">
-                            <h4 class="mt-3">TIPS TRIK</h4>
-                        </a>
+                        <h4>
+                            <a href="/" class="mt-3">TIPS TRIK</a>
+                        </h4>
                         <span class="my-2">{{ Util::date($headline[0]['news_date_publish'] ?? null, 'long_time') }}</span>
-                        <a href="{{ Src::detail($headline[0]) }}"">
-                            <h2>{{ $headline[0]['news_title'] ?? null }}
-                            </h2>
-                        </a>
+                        <h2>
+                            <a href="{{ Src::detail($headline[0]) }}">{{ $headline[0]['news_title'] ?? null }}</a>
+                        </h2>
                         <p>{{ $headline[0]['news_synopsis'] }}</p>
                     </figcaption>
                 </div>
