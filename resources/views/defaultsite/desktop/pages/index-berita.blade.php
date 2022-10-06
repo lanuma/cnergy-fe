@@ -37,25 +37,23 @@
                             </a>
                             <p>{{ $headline['news_synopsis'] }}</p>
                         </div>
+                        {{-- **BERITA SLIDE** --}}
                         @if (count($feed) > 0 ?? null)
                             @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])
                         @endif
                     </div>
+
+                    {{-- **BERITA SPOTLIGHT** --}}
+                    <div class="spotlight-wrapper">
+                        @if ($latest['data'] ?? null)
+                            @include('defaultsite.desktop.components-ui.ui-spotlight-news', [
+                                'sl' => $latest['data'],
+                            ])
+                        @endif
+                    </div>
                 @endif
-
-
 
                 {{-- !! END OF HEADLINE !! --}}
-
-                {{-- **BERITA SPOTLIGHT** --}}
-                {{-- @dump($latest['data']) --}}
-                @if ($latest['data'] ?? null)
-                    @include('defaultsite.desktop.components-ui.ui-spotlight-news', [
-                        'sl' => $latest['data'],
-                    ])
-                @endif
-
-
 
                 {{-- @dump($latest['data']) --}}
                 @include('defaultsite.desktop.components-ui.ui-list-main-news-conf', [
