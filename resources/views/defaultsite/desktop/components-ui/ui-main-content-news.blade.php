@@ -27,9 +27,9 @@
                     width="40" height="40" alt="user">
             </a>
             <div class="account-detail">
-                <a href="{{ Src::author($row) }}">
-                    <h5 href="{{ Src::author($row) }}">{{ $row['news_editor'][0]['name'] ?? null }}</h5>
-                </a>
+                <p href="{{ Src::author($row) }}">
+                    <a href="{{ Src::author($row) }}">{{ $row['news_editor'][0]['name'] ?? null }}</a>
+                </p>
                 <span>{{ Util::date($row['news_date_publish'] ?? null, 'ago') }}</span>
             </div>
         </div>
@@ -49,7 +49,6 @@
                 'size' => '640x360',
                 $row['news_title'] ?? null,
             ])
-            {{-- <img src={{ $row['news_image']['real'] }}> --}}
         </figure>
         <figcaption>{{ $row['news_imageinfo'] ?? null }}</figcaption>
         <div class="dt-paragraph mt-3 ">

@@ -41,7 +41,4 @@
             </article>
         </a>
     </div>
-
-
-
 </div>
