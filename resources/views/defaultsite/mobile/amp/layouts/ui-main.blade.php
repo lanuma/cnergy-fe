@@ -235,17 +235,28 @@ a {
 }
 /* end breadcrump */
 /* main-article */
+
 .main-news-deskripsi h3 {
     font-family: var(--lato-font);
     color: #000;
     font-size: 24px;
     font-weight: bolder;
+    line-height: 1.5;
+    margin: 0 20px;
+}
+.main-news-deskripsi h3:hover {
+    color: #dc3545;
 }
 .main-news-deskripsi p {
     font-family: var(--lato-font);
     font-weight: 400;
     font-size: 12px;
     color: #999;
+    line-height: 1.5;
+    margin: 0 20px;
+}
+.main-news-deskripsi a {
+    text-decoration: none !important;
 }
  .image-news {
     position: relative;

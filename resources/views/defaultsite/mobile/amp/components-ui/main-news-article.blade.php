@@ -12,8 +12,8 @@
         @endforeach
     </ul>
 
-     <div class="main-news-deskripsi">
-      <h3>{{ $row['news_title'] ?? null }}</h3>
+     <div class="main-news-deskripsi ">
+      <h3 style="margin: 0px 20px">{{ $row['news_title'] ?? null }}</h3>
       <p>Oleh <span><a href="{{ Src::author($row) }}" style="color: #CA0000;">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
      <figure>
         <div class="image-news ">
