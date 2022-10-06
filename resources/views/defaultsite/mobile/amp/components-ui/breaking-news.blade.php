@@ -5,9 +5,11 @@
                 breaking news
             </div>
             <div class="breaking-text-marquee">
-                <marquee direction="left">
-                    {{ $breaking[0]['news_title'] }}
-                </marquee>
+                <div class="marquee-left" >
+                    <span>{{ $breaking[0]['news_title'] }}</span>
+                    <span>{{ $breaking[0]['news_title'] }}</span>
+                    
+                </div>
             </div>
         </div>
     @endif
