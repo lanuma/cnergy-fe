@@ -24,7 +24,9 @@
     @endif
 
     {{-- Headline Photo Page --}}
-    @if ($headline[0]['news_id'] ?? null)
+
+    @if (count($headline) > 4 ?? null)
+
         <div class="mt-3 photo-headline topFoto">
             <div class="topFoto-item item rounded-3">
                 <a href="{{ Src::detail($headline[0]) }}" class="item-img item-img--main"
@@ -99,11 +101,12 @@
 
     {{-- Recomendation News Photo Page --}}
     {{-- @if (count($popular) > 0)
-    <div class="mt-4">
-        <h1 class="special-font-lato fs-2 fw-bold">POPULER</h1>
-        @include( 'defaultsite.desktop.components-ui.ui-listphoto', ['rows'=> $popular])
-    </div>
-@endif --}}
+
+        <div class="mt-4">
+            <h1 class="special-font-lato fs-2 fw-bold">POPULER</h1>
+            @include('defaultsite.desktop.components-ui.ui-listphoto', ['rows' => $popular])
+        </div>
+    @endif --}}
 
     @if (count($recommendation) > 0)
         <div class="mt-5">
