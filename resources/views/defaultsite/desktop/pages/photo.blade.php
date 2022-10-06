@@ -25,8 +25,7 @@
 
     {{-- Headline Photo Page --}}
 
-    @if (count($headline) > 4 ?? null)
-
+    @if (count($headline) > 3 ?? null)
         <div class="mt-3 photo-headline topFoto">
             <div class="topFoto-item item rounded-3">
                 <a href="{{ Src::detail($headline[0]) }}" class="item-img item-img--main"
