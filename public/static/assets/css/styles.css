@@ -505,6 +505,7 @@ nav {
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: auto auto;
+    grid-gap: 3px;
 }
 
 .photo-headline-gallery {
@@ -543,7 +544,14 @@ nav {
 
 .photo-gallery-overlay {
     position: relative;
-    background-color: red;
+}
+
+.photo-gallery-overlay:last-child {
+    margin-top: 3px;
+}
+
+.photo-gallery-overlay a img:first-child {
+    margin-bottom: 3px;
 }
 
 .photo-gallery-overlay h1 {
