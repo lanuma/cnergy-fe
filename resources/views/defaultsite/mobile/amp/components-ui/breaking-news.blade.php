@@ -7,8 +7,6 @@
             <div class="breaking-text-marquee">
                 <div class="marquee-left" >
                     <span>{{ $breaking[0]['news_title'] }}</span>
-                    <span>{{ $breaking[0]['news_title'] }}</span>
-                    
                 </div>
             </div>
         </div>

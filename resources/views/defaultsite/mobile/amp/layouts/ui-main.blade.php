@@ -483,9 +483,6 @@ a {
     line-height: 1.5;
     margin: 0 20px;
 }
-.main-news-deskripsi h3:hover {
-    color: #dc3545;
-}
 .main-news-deskripsi p {
     font-family: var(--lato-font);
     font-weight: 400;
@@ -494,17 +491,34 @@ a {
     line-height: 1.5;
     margin: 0 20px;
 }
+.main-news-deskripsi h3:hover {
+    color: #dc3545;
+}
 .main-news-deskripsi a {
     text-decoration: none ;
 }
- .image-news {
-    position: relative;
-    /* --aspect-ratio: 23/14;
-    padding-bottom: calc(100% / (var(--aspect-ratio)));
-    background-color: silver; */
-    
-
+.main-news-deskripsi {
+    margin: 25px 0px;
+    line-height: 2;
 }
+.main-news-deskripsi .image-news {
+    position: relative;
+    --aspect-ratio: 23/14;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+    background-color: silver;
+}
+.main-news-deskripsi figure .image-news {
+    margin: 15px 0px;
+}
+.main-news-deskripsi .image-news amp-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* dt-share */
 .dt-share-container {
     padding: 10px 20px;
@@ -535,16 +549,14 @@ a {
 /* end dt-share */
 
 /* dt-paragraf */
-.dt-body-pages-item .dt-paragraph {
+.main-news-deskripsi .dt-paragraph p {
     font-family: var(--lato-font);
     font-weight: 500;
     font-size: 16px;
-    /* margin-right: 2px; */
     line-height: 230%;
     color: #000000;
     text-align: justify;
     margin: 20px;
-    text-align: justify;
 }
 
 .dt-paragraph p {
@@ -643,6 +655,7 @@ a {
     margin-bottom: 30px;
     display: flex;
     flex-direction: row;
+    gap: 10px;
     flex-wrap: wrap;
     line-height: 200%;
 }
@@ -655,7 +668,13 @@ a {
     text-transform: uppercase;
     padding: 0 10px
 }
-
+.photo-title {
+    font-family: "Lato";
+    font-weight: bolder;
+    font-size: 14px;
+    margin: 10px 20px;
+    color: #000000;
+}
 .btn-related {
     background-color: #ca0000;
     border-radius: 8px;
@@ -675,12 +694,12 @@ a {
 }
 .artikel-terkait-container .image-news {
     position: relative;
-    /* --aspect-ratio: 23/13;
+    --aspect-ratio: 23/13;
     padding-bottom: calc(100% / (var(--aspect-ratio)));
-    background-color: silver; */
+    background-color: silver;
     border-radius: 8px;
 }
-.artikel-terkait-container .image-news img{
+.artikel-terkait-container .image-news amp-img{
     position: absolute;
     top: 0;
     left: 0;
@@ -695,7 +714,10 @@ a {
     color: #000;
     font-weight: 700;
     margin-top: 10px;
-}   
+}
+.artikel-terkait-container figure {
+    margin-bottom: 30px;
+}
 .item-desc-title {
     font-family: "Lato";
     font-style: normal;
@@ -970,7 +992,7 @@ a {
         @include('defaultsite.mobile.amp.components-ui.breaking-news')
     
         <!--main-->
-        <main class="main pb-8" role="main">
+        <main>
           <div class="container max-w-full">
             @yield('content')
           </div>
@@ -985,3 +1007,4 @@ a {
     @endif
   </body>
 </html>
+
