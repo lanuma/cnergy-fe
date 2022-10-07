@@ -33,7 +33,6 @@
         <div class="row gx-5">
             <div class="col-8">
                 {{-- ?? BERITA UTAMA ?? --}}
-                @dump($rows)
                 @include('defaultsite.desktop.components-ui.ui-main-content-video')
 
                 {{-- ?? RELATED TAG ?? --}}
