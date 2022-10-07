@@ -25,7 +25,7 @@
 
     {{-- Headline Photo Page --}}
 
-    @if (count($headline) > 3 ?? null)
+    @if (count($headline) > 0 ?? null)
         <div class="mt-3 photo-headline topFoto">
             <div class="topFoto-item item rounded-3">
                 <a href="{{ Src::detail($headline[0]) }}" class="item-img item-img--main"
@@ -49,51 +49,59 @@
                     </span>
                 </a>
 
-                <a href="{{ Src::detail($headline[1]) }}" class="item-img item-img--aside"
-                    data-duration="{{ count($headline[1]['photonews'] ?? 0) }}"
-                    aria-label="{{ $headline[1]['news_title'] ?? null }}">
-                    @include('image', [
-                        'source' => $headline[1],
-                        'size' => '230x129',
-                        $headline[1]['news_title'] ?? null,
-                    ])
-                    <span class="text-overlay fs-4 p-3">
-                        <p>{{ $headline[1]['news_title'] ?? null }}</p>
-                    </span>
-                    <span class="data-overlay">
-                        {{ count($headline[1]['photonews'] ?? 0) }}
-                    </span>
-                </a>
-                <a href="{{ Src::detail($headline[2]) }}" class="item-img item-img--aside"
-                    data-duration="{{ count($headline[2]['photonews'] ?? 0) }}"
-                    aria-label="{{ $headline[2]['news_title'] ?? null }}">
-                    @include('image', [
-                        'source' => $headline[2],
-                        'size' => '230x129',
-                        $headline[2]['news_title'] ?? null,
-                    ])
-                    <span class="text-overlay fs-4 p-3">
-                        <p>{{ $headline[2]['news_title'] ?? null }}</p>
-                    </span>
-                    <span class="data-overlay">
-                        {{ count($headline[2]['photonews'] ?? 0) }}
-                    </span>
-                </a>
-                <a href="{{ Src::detail($headline[3]) }}" class="item-img item-img--aside"
-                    data-duration="{{ count($headline[3]['photonews'] ?? 0) }}"
-                    aria-label="{{ $headline[3]['news_title'] ?? null }}">
-                    @include('image', [
-                        'source' => $headline[3],
-                        'size' => '230x129',
-                        $headline[3]['news_title'] ?? null,
-                    ])
-                    <span class="text-overlay fs-4 p-3">
-                        <p>{{ $headline[3]['news_title'] ?? null }}</p>
-                    </span>
-                    <span class="data-overlay">
-                        {{ count($headline[3]['photonews'] ?? 0) }}
-                    </span>
-                </a>
+                @if ($headline[1] ?? null)
+                    <a href="{{ Src::detail($headline[1]) }}" class="item-img item-img--aside"
+                        data-duration="{{ count($headline[1]['photonews'] ?? 0) }}"
+                        aria-label="{{ $headline[1]['news_title'] ?? null }}">
+                        @include('image', [
+                            'source' => $headline[1],
+                            'size' => '230x129',
+                            $headline[1]['news_title'] ?? null,
+                        ])
+                        <span class="text-overlay fs-4 p-3">
+                            <p>{{ $headline[1]['news_title'] ?? null }}</p>
+                        </span>
+                        <span class="data-overlay">
+                            {{ count($headline[1]['photonews'] ?? 0) }}
+                        </span>
+                    </a>
+                @endif
+
+                @if ($headline[2] ?? null)
+                    <a href="{{ Src::detail($headline[2]) }}" class="item-img item-img--aside"
+                        data-duration="{{ count($headline[2]['photonews'] ?? 0) }}"
+                        aria-label="{{ $headline[2]['news_title'] ?? null }}">
+                        @include('image', [
+                            'source' => $headline[2],
+                            'size' => '230x129',
+                            $headline[2]['news_title'] ?? null,
+                        ])
+                        <span class="text-overlay fs-4 p-3">
+                            <p>{{ $headline[2]['news_title'] ?? null }}</p>
+                        </span>
+                        <span class="data-overlay">
+                            {{ count($headline[2]['photonews'] ?? 0) }}
+                        </span>
+                    </a>
+                @endif
+
+                @if ($headline[3] ?? null)
+                    <a href="{{ Src::detail($headline[3]) }}" class="item-img item-img--aside"
+                        data-duration="{{ count($headline[3]['photonews'] ?? 0) }}"
+                        aria-label="{{ $headline[3]['news_title'] ?? null }}">
+                        @include('image', [
+                            'source' => $headline[3],
+                            'size' => '230x129',
+                            $headline[3]['news_title'] ?? null,
+                        ])
+                        <span class="text-overlay fs-4 p-3">
+                            <p>{{ $headline[3]['news_title'] ?? null }}</p>
+                        </span>
+                        <span class="data-overlay">
+                            {{ count($headline[3]['photonews'] ?? 0) }}
+                        </span>
+                    </a>
+                @endif
             </div>
         </div>
     @endif
