@@ -396,7 +396,7 @@ class NewsController extends Controller
                 'id'=> $row['news_category'][0]['id']??null,
             ],
         ]);
-        dd($row);
+        // dd($row);
         if( ($row['news_type']??null) == 'photonews' )
         {
             config()->set('site.use_footer', 'no');
