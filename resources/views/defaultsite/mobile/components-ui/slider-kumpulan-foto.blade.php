@@ -1,6 +1,6 @@
 <div class="swiper-wrapper">
-  @dump($row)
-  {{-- @if (count($row['photonews']??[])>0)
+  {{-- @dump($row) --}}
+  @if (count($row['photonews']??[])>0)
     <div class="header-photo">
         <h3 class="photo-t">{{ $row['news_title'] ?? null }}</h3>
         <p class="photo-author pt-2">Oleh <a style="color: #CA0000 ;"  href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
@@ -24,5 +24,5 @@
        @endforeach
       </div>
       <div class="slider-counter"><span id="sliderCounter"></span> / {{ count($row['photonews']) }}</div>
-    @endif --}}
+    @endif
 </div>
