@@ -1183,7 +1183,7 @@ nav {
 
 /* CREDIT CSS */
 .credit-container {
-    margin-bottom: 20px;
+    margin: 24px 0;
 }
 
 .row-card {
@@ -1223,8 +1223,8 @@ nav {
 
 /* SHARE NEWS CSS */
 .share-news-container {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    margin: 24px 0;
+    padding-bottom: 24px;
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -1715,6 +1715,13 @@ nav {
 }
 
 /*  RELATED NEWS  & VIDDEO LIST*/
+.related-thumb {
+    font-family: var(--prompt-font);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+}
 
 .related-news-container,
 .related-video-container {
