@@ -87,7 +87,6 @@ Route::group(['namespace'=> config('site.namespace')], function()
         Route::get('/{category}/{subCategory1}/{page?}', 'category')->middleware(['cacheResponse:900', 'desired.slug'])->where('page', '^page\-([0-9]+)');
         Route::get('/{category}/{subCategory1}/{subCategory2}/{page?}', 'category')->middleware(['cacheResponse:900', 'desired.slug'])->where('page', '^page\-([0-9]+)');
 
-        Route::get('/', 'home')->middleware('desired.slug');
-        // Route::get('/', 'home')->middleware(['cacheResponse:300', 'desired.slug']);
+        Route::get('/', 'home')->middleware(['cacheResponse:300', 'desired.slug']);
     });
 });
