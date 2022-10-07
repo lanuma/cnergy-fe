@@ -801,6 +801,7 @@ a:hover {
     margin-bottom: 30px;
     display: flex;
     flex-direction: row;
+    gap: 10px;
     flex-wrap: wrap;
     line-height: 200%;
 }
@@ -818,16 +819,6 @@ a:hover {
     border-radius: 8px;
 }
 
-/* .related-tag-container a::after {
-    content: "/";
-    margin: 0 10px;
-    color: black;
-} */
-
-/* .related-tag-container a:last-child {
-    color: #000;
-} */
-
 .artikel-terkait-container {
     margin: 10px 20px;
 }
@@ -839,6 +830,7 @@ a:hover {
     font-family: var(--prompt-font);
     font-style: italic;
     text-transform: uppercase;
+    padding-bottom: 10px;
 }
 
 .artikel-terkait-container .image-news {
@@ -1431,7 +1423,6 @@ a:hover {
     font-family: "Lato";
     font-weight: bolder;
     font-size: 14px;
-    padding-top: 10px;
     margin: 10px 20px;
     color: #000000;
 }
