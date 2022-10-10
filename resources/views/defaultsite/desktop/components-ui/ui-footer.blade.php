@@ -17,20 +17,20 @@
         <ul>
             @php $socmed = json_decode(config('site.attributes.sosmed', '{}')) @endphp
             @if ($socmed->fb ?? null)
-                <li><a href="{{ $socmed->fb }}" style="background-color: #4a6db4" aria-label="facebook"><i
-                            class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="{{ $socmed->fb }}" style="background-color: #4a6db4" target="_blank"
+                        aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
             @endif
             @if ($socmed->twitter ?? null)
-                <li><a href="{{ $socmed->twitter }}" style="background-color: #1dadeb" aria-label="twitter"><i
-                            class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="{{ $socmed->twitter }}" style="background-color: #1dadeb" target="_blank"
+                        aria-label="twitter"><i class="fa-brands fa-twitter"></i></a></li>
             @endif
             @if ($socmed->youtube ?? null)
-                <li><a href="{{ $socmed->youtube }}" style="background-color: #fe0000" aria-label="youtube"><i
-                            class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="{{ $socmed->youtube }}" style="background-color: #fe0000" target="_blank"
+                        aria-label="youtube"><i class="fa-brands fa-youtube"></i></a></li>
             @endif
             @if ($socmed->ig ?? null)
-                <li><a href="{{ $socmed->ig }}" style="background-color: #f10073" aria-label="instagram"><i
-                            class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="{{ $socmed->ig }}" style="background-color: #f10073" target="_blank"
+                        aria-label="instagram"><i class="fa-brands fa-instagram"></i></a></li>
             @endif
         </ul>
     </div>
