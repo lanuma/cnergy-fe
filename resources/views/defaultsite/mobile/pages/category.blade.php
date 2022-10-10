@@ -25,10 +25,10 @@
                         </h1>
                         <span class="item-desc-type text-10 mt-4">
                             @if( $headline['news_type'] == 'video' )
-                            <i class="icon icon--sm icon--video mr-1"></i> Putar Video
+                            <i class="icon icon--sm icon--video mr-1"></i> Play Video
                             @endif
                             @if( $headline['news_type'] == 'photonews' )
-                            <i class="icon icon--sm icon--photo mr-1"></i> Lihat Foto
+                            <i class="icon icon--sm icon--photo mr-1"></i> Open Photo
                             @endif
                         </span>
                     </figcaption>

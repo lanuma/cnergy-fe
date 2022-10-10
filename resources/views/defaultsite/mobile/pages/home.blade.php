@@ -3,7 +3,7 @@
 @section('content')
 
 {{-- headline --}}    
-@if ($headline[0]['news_type'] == 'news' ?? null)
+@if ($headline[0]['news_id'] ?? null)
     @include('defaultsite.mobile.components-ui.main-news', ['mn' => $headline])
 @endif
 

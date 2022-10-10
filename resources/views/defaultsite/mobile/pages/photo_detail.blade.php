@@ -69,8 +69,8 @@ window.addEventListener('load', function(){
     @include('defaultsite.mobile.components-ui.main-news-photo')
 
         {{-- related tag --}}
-        <p class="photo-title">TAG TERKAIT</p>
-        @include('defaultsite.mobile.components-ui.related-tag')
+        
+        @include('defaultsite.mobile.components-ui.related-tag', ['title' => 'RELATED TAGS'])
 
         {{-- trending tag --}}
         @include('defaultsite.mobile.components-ui.trending-tag')
@@ -78,7 +78,7 @@ window.addEventListener('load', function(){
         {{-- <div class="channel-ad channel-ad_ad-sc-2">
             {!! Util::getAds('showcase-2') !!}
         </div> --}}
-        @include( 'defaultsite.mobile.components-ui.related-news',['news'=>$row['latest'], 'title' => 'Berita Terbaru'] )
+        @include( 'defaultsite.mobile.components-ui.related-news',['news'=>$row['latest'], 'title' => 'LATEST NEWS'] )
 
     </div>
 </div>
