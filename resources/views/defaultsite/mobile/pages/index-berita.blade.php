@@ -19,10 +19,10 @@
                             <a href="{{\Src::detail($headline)}}"><h3>{{$headline['news_title']??null}}</h3></a>
                         <span class="item-desc-type text-10 mt-4">
                             @if( $headline['news_type'] == 'video' )
-                            <i class="icon icon--sm icon--video mr-1"></i> Putar Video
+                            <i class="icon icon--sm icon--video mr-1"></i> Play Video
                             @endif
                             @if( $headline['news_type'] == 'photonews' )
-                            <i class="icon icon--sm icon--photo mr-1"></i> Lihat Foto
+                            <i class="icon icon--sm icon--photo mr-1"></i> Open Photo
                             @endif
                         </span>
                     </div>
@@ -38,7 +38,7 @@
           
         <div class="section section--infscroll">
             @if( $feed ??null )
-                @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $feed,'page'=> 'category','data'=> 'headline'])
+                @include( 'defaultsitory'e.mobile.components-ui.list-main-news-index', ['rows'=> $feed,'page'=> 'categ,'data'=> 'headline'])
             @endif
             @if( $latest ??null)
                 @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $latest['data'],'page'=> 'category','data'=> 'latest'])

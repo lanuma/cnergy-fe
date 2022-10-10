@@ -43,7 +43,7 @@
                     <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}"><p class="photo-desc-p">{{ $headline[0]['news_title'] }}</p></a>
                     <div  class="item-desc-type-foto text-10 mt-2 " style="color: white" >
                         @if( $headline[0]['news_type'] == 'photonews' )
-                        <i class="fa-solid fa-camera"><span class="photo-list">Lihat foto</span></i>
+                        <i class="fa-solid fa-camera"><span class="photo-list">Open Photo</span></i>
                         @endif
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between">
-    <p class="special-font-prompt text-uppercase fs-3 fw-bold">Laporkan Artikel</p>
+    <p class="special-font-prompt text-uppercase fs-3 fw-bold">REPORT NEWS</p>
     <button type="button" class="close" style="color:#CA0000;" data-dismiss="modal">&times;</button>
   </div>
   

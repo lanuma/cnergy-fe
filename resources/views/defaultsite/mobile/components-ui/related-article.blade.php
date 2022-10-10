@@ -1,4 +1,5 @@
 <div class="artikel-terkait-container">
+
    <h4>{{$title}}</h4>
     @foreach ($news as $item)
     <figure>

@@ -14,9 +14,8 @@ ul {
 a {
     color: #000;
 }
-
-html:not([amp4ads]) body {
-    margin: auto !important;
+a:hover {
+    color: #dc3545 !important;
 }
 
 #btn-back-toTop {
@@ -792,9 +791,6 @@ nav img {
     font-size: 14px;
     text-align: justify;
 }
-a:hover {
-    color: #dc3545 !important;
-}
 
 .related-tag-container {
     margin: 0 20px;
@@ -804,6 +800,16 @@ a:hover {
     gap: 10px;
     flex-wrap: wrap;
     line-height: 200%;
+}
+.related-tag-title {
+    font-family: var(--prompt-font);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 16px;
+    color: #000;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin: 0 20px;
 }
 
 .related-tag-container a {
@@ -982,6 +988,16 @@ a:hover {
     line-height: 17px;
     padding-left: 5px;
     color: #ffffff;
+}
+.main-section .photo-list,
+.main-section .video-list {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+
+    color: #000000;
 }
 
 .highlight-article-container img,
