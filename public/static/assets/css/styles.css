@@ -1534,8 +1534,11 @@ nav {
 .not-found-container p {
     font-family: var(--lato-font);
     font-weight: 400;
-    font-size: 20px;
+    font-size: 14px;
     color: #999999;
+    text-align: center;
+    margin-top: 10px;
+    width: 250px;
 }
 
 /* asd */
