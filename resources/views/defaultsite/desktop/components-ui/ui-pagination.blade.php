@@ -1,7 +1,7 @@
 @isset($current_page, $last_page)
     @if ($last_page > 1)
         @if ($pagination = Util::pagination($current_page, $last_page) ?? null)
-            <div class="pagination-container mt-4">
+            <div class="pagination-container1">
                 <ul class="paginationlist">
                     @foreach ($pagination['list'] as $p)
                         @if ($pagination['current_page'] == $p['page'])
@@ -14,8 +14,8 @@
                     @endforeach
                     @if ($pagination['last_page'] != $pagination['current_page'])
                         <li class="paginationlist-item"><a
-                                href="/{{ $slug }}/page-{{ $pagination['current_page'] + 1 }}">LANJUT<svg
-                                    class="iconSVG ml-1" viewBox="0 0 16 16" fill="currentColor"
+                                href="/{{ $slug }}/page-{{ $pagination['current_page'] + 1 }}">Next <svg
+                                    class="iconSVG mx-2" viewBox="0 0 16 16" fill="currentColor"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
