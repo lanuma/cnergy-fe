@@ -1773,11 +1773,19 @@ nav {
 }
 
 /* PAGINATION CONTAINER */
-.pagination-container ul {
+.pagination-container1 ul,
+.pagination-container2 ul {
     display: flex;
     list-style-type: none;
     align-items: center;
+}
+
+.pagination-container1 ul {
     justify-content: center;
+}
+
+.pagination-container2 ul {
+    justify-content: start;
 }
 
 .paginationlist-item:not(:first-child) {
@@ -1796,6 +1804,14 @@ nav {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     color: rgb(0, 0, 0);
+}
+
+.paginationlist span {
+    font-family: var(--lato-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 .paginationlist-item a .iconSVG {
