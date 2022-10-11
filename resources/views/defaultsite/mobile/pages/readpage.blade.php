@@ -160,6 +160,15 @@
       }
   @endphp
   </div>
+
+    @if (($row['has_paging']??null)==1)
+        @include( 'defaultsite/mobile/components-ui/pagination2',[
+            'current_page'=> $row['current_page'],
+            'last_page'=> $row['last_page'],
+            'slug'=> $row['slug']
+        ])
+    @endif
+
   {{-- report --}}
   <div style="margin:0px 20px;">
     <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i

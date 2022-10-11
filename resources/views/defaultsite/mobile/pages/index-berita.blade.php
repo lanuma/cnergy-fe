@@ -4,8 +4,7 @@
 
 <div class="main-body ">
     <div class="main-article">
-     
-         @if( $headline )
+        @if( $headline )
         <div class="section section--headline -mx-4">
             <div class="section--headline-top">
                 <figure class="item item--headline">
@@ -29,13 +28,8 @@
                 </figure>
             </div>
         </div>
-        @endif 
-    
-        
+        @endif
 
-
- 
-          
         <div class="section section--infscroll">
             @if( $feed ??null )
                 @include( 'defaultsitory'e.mobile.components-ui.list-main-news-index', ['rows'=> $feed,'page'=> 'categ,'data'=> 'headline'])
@@ -55,21 +49,21 @@
             'slug'=> $slug
         ])
         </div>
-      
-                {{-- slider trending tapi data belum ada --}}
-@if ($popular = \Data::popular() ?? null)
-@include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])
-@endif
-                
-{{--list populer news--}}
-@if ($popular = \Data::popular() ?? null)
-    @include('defaultsite.mobile.components-ui.populer-news', ['hl' => $popular])
-@endif
+
+        {{-- slider trending tapi data belum ada --}}
+        @if ($popular = \Data::popular() ?? null)
+            @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])
+        @endif
+
+        {{--list populer news--}}
+        @if ($popular = \Data::popular() ?? null)
+            @include('defaultsite.mobile.components-ui.populer-news', ['hl' => $popular])
+        @endif
 
         {{-- slider latest news --}}
-@if ($latest = \Data::latest() ?? null)
-@include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Berita Terbaru'])
-@endif
+        @if ($latest = \Data::latest() ?? null)
+            @include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Berita Terbaru'])
+        @endif
 
 
     </div>
