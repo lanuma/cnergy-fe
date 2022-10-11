@@ -4,9 +4,8 @@
 
 {{-- headline news --}}
 
+
 @include('defaultsite.mobile.components-ui.main-news-article')
-
-
 
 {{-- read too list --}}
 @if ($popular = \Data::popular() ?? null)

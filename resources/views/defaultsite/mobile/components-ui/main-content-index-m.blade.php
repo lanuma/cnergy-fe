@@ -9,7 +9,7 @@
         </p>
     {{-- <p class="index-tentang">Tentang: {{ $headline['news_synopsis'] ?? null }}</p> --}}
     <p class="index-lokasi">Lokasi Pelaksanaan: Bandung</p>
-    <p class="index-date">Tanggal Pelaksanaan: {{ Util::date($tag['date_entry'], 'ago') }}</p>
+    {{-- <p class="index-date">Tanggal Pelaksanaan: {{ Util::date($tag['date_entry'], 'ago') ?? null }}</p> --}}
     </div>  
     
 </div>
