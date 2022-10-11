@@ -950,6 +950,19 @@ nav {
     gap: 15px;
 }
 
+.social-media-container ul li a {
+    align-items: center;
+    border-radius: 8px;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 36px;
+    min-width: 36px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    color: rgb(255, 255, 255);
+}
+
 .copyright {
     margin-top: 40px;
     padding: 15px;
@@ -1534,8 +1547,11 @@ nav {
 .not-found-container p {
     font-family: var(--lato-font);
     font-weight: 400;
-    font-size: 20px;
+    font-size: 14px;
     color: #999999;
+    text-align: center;
+    margin-top: 10px;
+    width: 250px;
 }
 
 /* asd */
@@ -2035,6 +2051,7 @@ p as {
 .video-container .video-item-top figcaption h2 a:hover {
     color: #dc3545;
 }
+
 .gallery-video-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
