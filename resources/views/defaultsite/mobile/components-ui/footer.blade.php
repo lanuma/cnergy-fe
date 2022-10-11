@@ -1,16 +1,9 @@
 <div class="footer-container">
   <img src="{{ URL::asset('assets/images/logo-footer.png') }}" alt="logo footer" width="105px" height="21px">
   @if ($footer_menu = Data::menu(position: 'footer') ?? null)
-  <div class="link-footer">
+  <div class="link-footer mt-3 d-flex flex-row justify-content-center">
     @foreach ($footer_menu as $l)
-    <a href="#">beritamusi.co.id</a>
-    <a href="#">tentang kami</a>
-    <a href="#">redaksi</a>
-    <a href="#">pedoman media siber</a>
-    <a href="#">kode perilaku wartawan beritamusi</a>
-    <a href="{{ $l['url'] }}">{{ $l['title'] }}</a>
-    <a href="#">pedoman hak wajib</a>
-    <a href="#">kebijakan data pengguna</a>
+    <a  href="{{ $l['url'] }}">{{ $l['title'] }}</a>
   @endforeach
 </div>
   @endif
