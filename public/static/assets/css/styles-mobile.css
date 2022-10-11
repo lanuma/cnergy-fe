@@ -620,6 +620,10 @@ nav img {
     margin-bottom: 1.5rem;
 }
 
+.dt-paragraph p img {
+    width: 100%;
+}
+
 .main-content-news-container span a {
     color: #ca0000;
     text-decoration: none;
@@ -1331,13 +1335,25 @@ nav img {
     color: #000000;
     padding: 10px 0px;
 }
+
 /* pagination */
 /* PAGINATION CONTAINER */
+.pagination-container {
+    margin: 20px;
+}
+
+.pagination-container .pagination-pages {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: var(--prompt-font);
+    text-transform: uppercase;
+}
+
 .pagination-container ul {
     display: flex;
     list-style-type: none;
     align-items: center;
-    justify-content: center;
 }
 
 .paginationlist-item:not(:first-child) {

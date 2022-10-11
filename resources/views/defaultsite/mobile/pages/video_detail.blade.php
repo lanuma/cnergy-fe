@@ -201,18 +201,14 @@
 <div style="margin:0px 20px 30px;">
     <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
         class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>REPORT NEWS</button>
-
         <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
                     {{-- FORM REPORT --}}
                     @include('defaultsite.mobile.components-ui.form-report')
                 </div>
             </div>
-
         </div>
         </div>
     </div>

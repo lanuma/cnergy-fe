@@ -51,8 +51,6 @@
           </div>
           @endif
 
-    
-
         <div class="py-3">
             @include('defaultsite.mobile.components-ui.ads-on')
         </div>

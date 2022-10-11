@@ -2,7 +2,19 @@
 
 @section('content')
 
-@include('defaultsite.mobile.components-ui.main-content-index-m')
+<div class="more-info-container-index">
+    <h1 class="index-h1"> {{ $headline['news_title'] ?? null }}</h1>
+    {{$tag['name']??null}}
+    <div class="desc-index">
+            <p class="index-p">
+                {{$tag['description']??null}}
+                <span class="index-span">Selengkapnya</span>
+        </p>
+    <p class="index-tentang">About: {{ $headline['news_synopsis'] ?? null }}</p>
+    <p class="index-lokasi">Location: {{ $headline['news_city'] ?? null }}</p>
+    <p class="index-date">News Date Publish: {{ Util::date($headline['news_entry'], 'ago') }}</p>
+    </div>
+</div>
 
 
 {{-- Slider kumpulan foto --}}
