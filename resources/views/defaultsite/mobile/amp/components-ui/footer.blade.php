@@ -1,16 +1,9 @@
 <div class="footer-container">
   <a href="/" class="header-logo" style="background-image: url({{ Src::imgNewsCdn(config('site.attributes'), '320x', 'webp', 'file_logo') }})">Logo</a>
     @if ($footer_menu = Data::menu(position: 'footer') ?? null)
-    <div class="link-footer">
+    <div class="link-footer ">
       @foreach ($footer_menu as $l)
-      <a href="#">beritamusi.co.id</a>
-      <a href="#">tentang kami</a>
-      <a href="#">redaksi</a>
-      <a href="#">pedoman media siber</a>
-      <a href="#">kode perilaku wartawan beritamusi</a>
       <a href="{{ $l['url'] }}">{{ $l['title'] }}</a>
-      <a href="#">pedoman hak wajib</a>
-      <a href="#">kebijakan data pengguna</a>
     @endforeach
   </div>
     @endif

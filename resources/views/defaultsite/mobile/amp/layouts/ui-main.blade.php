@@ -929,14 +929,16 @@
             text-align: center;
         }
 
-        .link-footer a {
+        .link-footer  {
             text-decoration: none;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
         }
 
         .footer-container .link-footer {
             margin-top: 30px;
             display: flex;
-            flex-direction: column;
             gap: 10px;
         }
 
