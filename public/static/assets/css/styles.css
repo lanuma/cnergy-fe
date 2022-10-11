@@ -276,7 +276,6 @@ nav {
 /* TEXT-NEWS */
 .text-news-container {
     border-bottom: 1px solid #e5e5e5;
-    border-radius: 10px;
 }
 
 .text-news-container:last-child {
