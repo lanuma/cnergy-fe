@@ -27,7 +27,7 @@
 {{-- report --}}
 <div style="margin:20px;">
 <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
-    class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>LAPORKAN ARTIKEL</button>
+    class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>REPORT ARTICLE</button>
 
     <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">

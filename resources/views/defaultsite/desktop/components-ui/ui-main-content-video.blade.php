@@ -39,7 +39,7 @@
                 target="_blank"><i class="icon icons--share icon--share-tweet"></i></a>
         </div>
     </div>
-
+    {{-- @dump($row) --}}
     <div class="content-news mt-3">
         <figure>
             <div>

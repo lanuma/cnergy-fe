@@ -37,7 +37,7 @@
 
           <div class="main-news-deskripsi">
               <h3>{{ $row['news_title'] ?? null }}</h3>
-              <p>Oleh <span><a href="{{ Src::author($row) }}" style="color: #CA0000;">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+              <p>By <span><a href="{{ Src::author($row) }}" style="color: #CA0000;">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
               <figure>
                 <div class="image-news">
                     @include('defaultsite/mobile/amp/image', [

@@ -42,7 +42,7 @@
                     <a href="{{ Src::detail($headline[0]) }}" aria-label="{{ $headline[0]['news_title'] ?? null }}"><p class="photo-desc-p">{{ $headline[0]['news_title'] }}</p></a>
                     <div  class="item-desc-type-foto d-flex text-10 mt-3 " style="color: white" >
                         @if( $headline[0]['news_type'] == 'video' )
-                        <i class="fa-brands fa-youtube" style="width:100%; height:100%;"><span class="video-list">Putar Video</span></i>
+                        <i class="fa-brands fa-youtube" style="width:100%; height:100%;"><span class="video-list">Play Video</span></i>
                         @endif
                     </div>
                 </div>
