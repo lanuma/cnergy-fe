@@ -14,7 +14,7 @@
   </figure>
 </div> --}}
 <div class="more-info-container-index">
-    @dump($headline)
+
     {{-- <p>{{ $tag['content'] ?? null }}</p> --}}
     <h1 class="index-h1"> {{ $headline['news_title'] ?? null }}</h1>
     {{$tag['name']??null}}
