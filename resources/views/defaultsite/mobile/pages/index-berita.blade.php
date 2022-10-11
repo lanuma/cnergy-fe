@@ -4,8 +4,7 @@
 
 <div class="main-body ">
     <div class="main-article">
-     
-         @if( $headline )
+        @if( $headline )
         <div class="section section--headline -mx-4">
             <div class="section--headline-top">
                 <figure class="item item--headline">
@@ -19,26 +18,21 @@
                             <a href="{{\Src::detail($headline)}}"><h3>{{$headline['news_title']??null}}</h3></a>
                         <span class="item-desc-type text-10 mt-4">
                             @if( $headline['news_type'] == 'video' )
-                            <i class="icon icon--sm icon--video mr-1"></i> Putar Video
+                            <i class="icon icon--sm icon--video mr-1"></i> Play Video
                             @endif
                             @if( $headline['news_type'] == 'photonews' )
-                            <i class="icon icon--sm icon--photo mr-1"></i> Lihat Foto
+                            <i class="icon icon--sm icon--photo mr-1"></i> Open Photo
                             @endif
                         </span>
                     </div>
                 </figure>
             </div>
         </div>
-        @endif 
-    
-        
+        @endif
 
-
- 
-          
         <div class="section section--infscroll">
             @if( $feed ??null )
-                @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $feed,'page'=> 'category','data'=> 'headline'])
+                @include( 'defaultsitory'e.mobile.components-ui.list-main-news-index', ['rows'=> $feed,'page'=> 'categ,'data'=> 'headline'])
             @endif
             @if( $latest ??null)
                 @include( 'defaultsite.mobile.components-ui.list-main-news-index', ['rows'=> $latest['data'],'page'=> 'category','data'=> 'latest'])
@@ -55,21 +49,21 @@
             'slug'=> $slug
         ])
         </div>
-      
-                {{-- slider trending tapi data belum ada --}}
-@if ($popular = \Data::popular() ?? null)
-@include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])
-@endif
-                
-{{--list populer news--}}
-@if ($popular = \Data::popular() ?? null)
-    @include('defaultsite.mobile.components-ui.populer-news', ['hl' => $popular])
-@endif
+
+        {{-- slider trending tapi data belum ada --}}
+        @if ($popular = \Data::popular() ?? null)
+            @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])
+        @endif
+
+        {{--list populer news--}}
+        @if ($popular = \Data::popular() ?? null)
+            @include('defaultsite.mobile.components-ui.populer-news', ['hl' => $popular])
+        @endif
 
         {{-- slider latest news --}}
-@if ($latest = \Data::latest() ?? null)
-@include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Berita Terbaru'])
-@endif
+        @if ($latest = \Data::latest() ?? null)
+            @include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Berita Terbaru'])
+        @endif
 
 
     </div>

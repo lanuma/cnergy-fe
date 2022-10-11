@@ -42,7 +42,7 @@
 <div>
     <div class="header-photo">
         <h3 class="photo-t">{{ $row['news_title'] ?? null }}</h3>
-        <p class="photo-author pt-2">Oleh <a style="color: #CA0000 ;"  href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+        <p class="photo-author pt-2">By <a style="color: #CA0000 ;"  href="{{ Src::author($row) }}">{{$row['news_editor'][0]['name']??null}}</a> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
     </div> 
         <figure class="">
         <style>
@@ -194,25 +194,21 @@
     </div>
 </div>
 
-<p class="photo-title">TAG TERKAIT</p>
-@include('defaultsite.mobile.components-ui.related-tag')
+
+@include('defaultsite.mobile.components-ui.related-tag', ['title' => 'RELATED TAGS'])
 
 {{-- report --}}
 <div style="margin:0px 20px 30px;">
     <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
-        class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>LAPORKAN ARTIKEL</button>
-
+        class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>REPORT NEWS</button>
         <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
                     {{-- FORM REPORT --}}
                     @include('defaultsite.mobile.components-ui.form-report')
                 </div>
             </div>
-
         </div>
         </div>
     </div>

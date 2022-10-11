@@ -1,7 +1,7 @@
 @if ($popular = \Data::popular() ?? null)
     <div class="populer-container">
         @if (count($popular) > 0)
-            <h4>populer</h4>
+            <h4>popular</h4>
             <div class="list-populer-container">
                 <a href="{{ Src::detail($popular[1]) }}" aria-label="{{ $popular[1]['news_title'] ?? null }}">
                     <article class="image-content">

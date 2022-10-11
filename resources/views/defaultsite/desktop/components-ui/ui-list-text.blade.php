@@ -9,7 +9,6 @@
                 ])
             </a>
         </div>
-
         <figcaption class="mx-4">
             <div class="text-news-time">
                 <a href="{{ Src::category($r) }}">{{ $r['category_name'] ?? (last($r['news_category'])['name'] ?? '') }}

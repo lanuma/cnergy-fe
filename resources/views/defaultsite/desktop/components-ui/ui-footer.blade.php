@@ -1,5 +1,4 @@
 <div class="footer-container">
-
     <a href="/" class="m-auto mb-4"><img src="{{ URL::asset('assets/images/logo.webp') }}" alt="logo"
             width="168px" height="34px"></a>
     <div class="first-link-footer mt-3 d-flex flex-row justify-content-center">
@@ -13,25 +12,25 @@
             </ul>
         @endif
     </div>
-
     <p class="special-font-lato mt-5" style="color: #999999; font-size: 12px;">{!! nl2br(config('site.attributes.address')) !!}</p>
-
     <div class="social-media-container mt-3">
         <ul>
+            @php $socmed = json_decode(config('site.attributes.sosmed', '{}')) @endphp
             @if ($socmed->fb ?? null)
-                <li><a href="{{ $socmed->fb }}" aria-label="facebook"><i class="fa-brands fa-facebook fa-2xl"
-                            style="color: #4A6DB4"></i></a></li>
+                <li><a href="{{ $socmed->fb }}" style="background-color: #4a6db4" target="_blank"
+                        aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
             @endif
             @if ($socmed->twitter ?? null)
-                <li><a href="{{ $socmed->twitter }}" aria-label="twitter"><i class="fa-brands fa-twitter fa-2xl"
-                            style="color: #1DADEB"></i></a></li>
+                <li><a href="{{ $socmed->twitter }}" style="background-color: #1dadeb" target="_blank"
+                        aria-label="twitter"><i class="fa-brands fa-twitter"></i></a></li>
             @endif
             @if ($socmed->youtube ?? null)
-                <li><a href="{{ $socmed->youtube }}" aria-label="youtube"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="{{ $socmed->youtube }}" style="background-color: #fe0000" target="_blank"
+                        aria-label="youtube"><i class="fa-brands fa-youtube"></i></a></li>
             @endif
             @if ($socmed->ig ?? null)
-                <li><a href="{{ $socmed->ig }}" aria-label="instagram"><i
-                            class="fa-brands fa-square-instagram"></i></a></li>
+                <li><a href="{{ $socmed->ig }}" style="background-color: #f10073" target="_blank"
+                        aria-label="instagram"><i class="fa-brands fa-instagram"></i></a></li>
             @endif
         </ul>
     </div>

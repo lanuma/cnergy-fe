@@ -59,6 +59,8 @@
     </div>
     {{-- @yield('m-photo-detail') --}}
 
+    <a id="btn-back-toTop" class="hover"></a>
+
 </body>
 
  <script>
@@ -146,6 +148,25 @@
             counter.innerHTML =count;
         }
     }
+</script>
+
+<script>
+    var btn = $('#btn-back-toTop');
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+
+    btn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, '300');
+    });
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>

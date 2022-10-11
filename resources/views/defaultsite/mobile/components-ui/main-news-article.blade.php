@@ -1,4 +1,5 @@
 <div class="main-news-container">
+    @dump($row)
     <ul class="main-breadcrumb">
         <li class="main-breadcrumb-item"><a href="/">Home</a></li>
         @foreach ($row['news_category'] as $r)
@@ -14,7 +15,7 @@
 
      <div class="main-news-deskripsi">
       <h3>{{ $row['news_title'] ?? null }}</h3>
-      <p>Oleh <span><a href="{{ Src::author($row) }}" style="color: #CA0000;">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
+      <p>By <span><a href="{{ Src::author($row) }}" style="color: #CA0000;">{{$row['news_editor'][0]['name']??null}}</a></span> {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</p>
      <figure>
         <div class="image-news">
             @include('image', [
@@ -158,7 +159,7 @@
   {{-- report --}}
   <div style="margin:0px 20px;">
     <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
-        class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>LAPORKAN ARTIKEL</button>
+        class="fa-solid fa-triangle-exclamation" style="color: #ca0000; margin-right: 10px;"></i>REPORT ARTICLEL</button>
 
         <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">

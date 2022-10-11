@@ -18,15 +18,14 @@
                                     ])
 
                                     @if ($headline['news_type'] == 'photonews')
-                                        <span class="item-img-info">
-                                            <i class="icon icon--photo icon--white mr-1"></i> Lihat Foto
+                                        <span class="img-info"> Lihat Foto
+                                            <i class="fa-sharp fa-solid fa-camera ms-2" style="color: #CA0000"></i>
                                         </span>
                                     @endif
                                     @if ($headline['news_type'] == 'video')
-                                        <span class="item-img-info">
-                                            <i class="icon icon--video icon--white mr-1"></i> Putar Video
+                                        <span class="video-info"> Lihat Video
+                                            <i class="fa-solid fa-circle-play ms-2" style="color: #CA0000"></i>
                                         </span>
-
                                     @endif
                                 </a>
                                 <figcaption> {{ Util::date($headline['news_date_publish'], 'ago') }} </figcaption>
@@ -38,24 +37,23 @@
                             </a>
                             <p>{{ $headline['news_synopsis'] }}</p>
                         </div>
+                        {{-- **BERITA SLIDE** --}}
+                        @if (count($feed) > 0 ?? null)
+                            @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])
+                        @endif
                     </div>
-                    @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])
+
+                    {{-- **BERITA SPOTLIGHT** --}}
+                    <div class="spotlight-wrapper">
+                        @if ($latest['data'] ?? null)
+                            @include('defaultsite.desktop.components-ui.ui-spotlight-news', [
+                                'sl' => $latest['data'],
+                            ])
+                        @endif
+                    </div>
                 @endif
-
-
-
 
                 {{-- !! END OF HEADLINE !! --}}
-
-                {{-- **BERITA SPOTLIGHT** --}}
-                {{-- @dump($latest['data']) --}}
-                @if ($latest['data'] ?? null)
-                    @include('defaultsite.desktop.components-ui.ui-spotlight-news', [
-                        'sl' => $latest['data'],
-                    ])
-                @endif
-
-
 
                 {{-- @dump($latest['data']) --}}
                 @include('defaultsite.desktop.components-ui.ui-list-main-news-conf', [

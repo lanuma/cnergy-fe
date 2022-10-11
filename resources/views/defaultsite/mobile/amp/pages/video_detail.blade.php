@@ -45,7 +45,7 @@
                         <div class="dt-header">
                             <h1 class="dt-title text-24 font-black mb-1">{{ $row['news_title'] ?? null }}</h1>
                             <div class="dt-info mb-4">
-                                <span class="dt-info-detail text-12">Oleh <a class="dt-info-link" href="#">{{ $row['news_editor'][0]['name'] ?? null }}</a> pada {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</span>
+                                <span class="dt-info-detail text-12">By <a class="dt-info-link" href="#">{{ $row['news_editor'][0]['name'] ?? null }}</a> pada {{ Util::date($row['news_date_publish'] ?? null, 'long_time') }}</span>
                             </div>
                         </div>
                         <div class="dt-body">
