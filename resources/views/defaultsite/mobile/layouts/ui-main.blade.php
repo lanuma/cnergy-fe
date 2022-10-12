@@ -114,7 +114,7 @@
 
     window.__gcse = {
         callback: function() {
-            document.getElementsByClassName("gsc-input")[2].setAttribute("placeholder", "Berita apa yang ingin Anda cari?");
+            document.getElementsByClassName("gsc-input")[2].setAttribute("placeholder", "Search news, keyword, and more…");
 
             if (focus) {
                 document.getElementsByClassName("gsc-input")[2].focus()

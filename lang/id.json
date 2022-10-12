@@ -1,12 +1,12 @@
 {
-    "just moment": "baru saja",
-    "yesterday": "kemarin",
-    "attime": "pukul",
-    "ago": "lalu",
-    "year": "tahun",
-    "month": "bulan",
-    "day": "hari",
-    "hour": "jam",
-    "minute": "menit",
-    "second": "detik"
+    "just moment": "just moment",
+    "yesterday": "yesterday",
+    "attime": "at time",
+    "ago": "ago",
+    "year": "year",
+    "month": "month",
+    "day": "day",
+    "hour": "hour",
+    "minute": "minute",
+    "second": "second"
 }
