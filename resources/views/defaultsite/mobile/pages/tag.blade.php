@@ -8,7 +8,7 @@
     <div class="desc-index">
             <p class="index-p">
                 {{$tag['description']??null}}
-                <span class="index-span">Selengkapnya</span>
+                <span class="index-span">Read more</span>
         </p>
     <p class="index-tentang">About: {{ $headline['news_synopsis'] ?? null }}</p>
     <p class="index-lokasi">Location: {{ $headline['news_city'] ?? null }}</p>
@@ -20,7 +20,7 @@
 {{-- Slider kumpulan foto --}}
 {{-- @dump($feed) --}}
 {{-- @if ($latest = \Data::latest() ?? null) --}}
-    @include('defaultsite.mobile.components-ui.photo-collection', [ 'title' => 'Foto ' ])
+    @include('defaultsite.mobile.components-ui.photo-collection', [ 'title' => 'Photo ' ])
 {{-- @endif --}}
 
 {{-- Kumpulan video --}}
@@ -53,7 +53,7 @@
 
 {{-- slider trending tapi data belum ada --}}
 @if ($popular = \Data::popular() ?? null)
-    @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])
+    @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Popular News'])
 @endif
 
 {{--list populer news--}}
@@ -63,7 +63,7 @@
 
 {{-- slider latest news --}}
 @if ($latest = \Data::latest() ?? null)
-    @include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Berita Terbaru'])
+    @include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Latest News'])
 @endif
 
 @endsection

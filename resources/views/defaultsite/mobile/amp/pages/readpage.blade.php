@@ -202,7 +202,7 @@
 
 
     @if (($row['has_paging'] ?? null) == 1)
-        @include('defaultsite/mobile/amp/components/pagination2', [
+        @include('defaultsite/mobile/amp/components-ui/pagination2', [
             'current_page' => $row['current_page'],
             'last_page' => $row['last_page'],
             'slug' => $row['slug'],
@@ -215,7 +215,7 @@
     @endif
 
     {{-- related tag --}}
-    <p class="photo-title">TAG TERKAIT</p>
+   
     @include('defaultsite.mobile.amp.components-ui.related-tag')
 
     @if ($latest = \Data::popular() ?? null)

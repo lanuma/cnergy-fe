@@ -14,7 +14,7 @@
     <form class="form-submit">
         <input type="hidden" class="form-control" value="{{url()->current()}}" name="url" hidden readonly>
         <div class="form-box">
-            <input type="text" class="form-control " placeholder="Nama Depan" value="" name="name">
+            <input type="text" class="form-control " placeholder="Frist Name" value="" name="name">
             <label id="name-error" class="error label-error" for="name"></label>
         </div>
         <div class="form-box">
@@ -22,20 +22,20 @@
             <label id="from-error" class="error label-error" for="from"></label>
         </div>
         <div class="form-box">
-            <input type="text" class="form-control  " placeholder="Nomor HP" value="" name="phone" rule='[^0-9]' required='required' minlength='9' maxlength='12'>
+            <input type="text" class="form-control  " placeholder="Phone Number" value="" name="phone" rule='[^0-9]' required='required' minlength='9' maxlength='12'>
             <label id="phone-error" class="error label-error" for="phone"></label>
         </div>
         <div class="form-box">
-            <input type="text" class="form-control  " placeholder="Judul Laporan" value="" name="subject"  required='required'>
+            <input type="text" class="form-control  " placeholder="Head Report" value="" name="subject"  required='required'>
             <label id="subject-error" class="error label-error" for="subject"></label>
         </div>
         <div class="form-box">
-            <textarea class="form-control " rows="5" placeholder="Detail Laporan" value="" name="content"  required='required'></textarea>
+            <textarea class="form-control " rows="5" placeholder="Details" value="" name="content"  required='required'></textarea>
             <label id="content-error" class="error label-error" for="content"></label>
         </div>
         <div class="form-box d-flex justify-content-end">
             <div class="form-button">
-                <button type="submit" class="btn btn--submit py-2 px-6 rounded-md" style="background-color: #CA0000; color: white">Kirim</button>
+                <button type="submit" class="btn btn--submit py-2 px-6 rounded-md" style="background-color: #CA0000; color: white">Send</button>
             </div>
         </div>
     </form>
