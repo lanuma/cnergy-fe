@@ -122,7 +122,7 @@
     window.__gcse = {
         callback: function() {
             document.getElementsByClassName("gsc-input")[2].setAttribute("placeholder",
-                "Berita apa yang ingin Anda cari?");
+                "Search news, keywords, and more...");
 
             if (focus) {
                 document.getElementsByClassName("gsc-input")[2].focus()

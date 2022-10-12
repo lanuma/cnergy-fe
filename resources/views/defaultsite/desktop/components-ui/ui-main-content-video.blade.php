@@ -42,13 +42,20 @@
     {{-- @dump($row) --}}
     <div class="content-news mt-3">
         <figure>
+            <style>
+                iframe {
+                    aspect-ratio: 38 / 19;
+                    width: 680px !important;
+                    height: 380px !important;
+                }
+            </style>
             <div>
                 {!! htmlspecialchars_decode($row['news_video']['video'] ?? null) !!}
             </div>
         </figure>
         <figcaption>{{ $row['news_sub_title'] ?? null }}</figcaption>
 
-        <div class="dt-paragraph mt-3 d-flex flex-column align-items-center">
+        <div class="dt-paragraph mt-1 d-flex flex-column align-items-center">
 
             {!! str_replace(
                 ['mce-mce-mce-mce-no/type', 'mce-no/type'],

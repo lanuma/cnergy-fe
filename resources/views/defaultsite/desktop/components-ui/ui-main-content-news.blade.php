@@ -88,6 +88,16 @@
                 </script>
             @endpush
         </div>
+        <div class="my-5">
+            @if (($row['has_paging'] ?? null) == 1)
+                @include('defaultsite.desktop.components-ui.ui-pagination2', [
+                    'current_page' => $row['current_page'],
+                    'last_page' => $row['last_page'],
+                    'slug' => $row['slug'],
+                ])
+            @endif
+        </div>
+
 
         {{-- RELATED TAG --}}
         @include('defaultsite.desktop.components-ui.ui-related-tag')
@@ -99,7 +109,7 @@
         @include('defaultsite.desktop.components-ui.ui-share-news')
 
         <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
-                class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
+                class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Report Article </button>
 
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">

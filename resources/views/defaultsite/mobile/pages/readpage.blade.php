@@ -220,7 +220,7 @@
 
 {{-- slider latest news --}}
 @if ($latest = \Data::latest() ?? null)
-    @include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Popular News'])
+    @include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Latest News'])
 @endif
 
 @endsection
