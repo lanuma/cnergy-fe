@@ -21,15 +21,15 @@ class Util {
         {
            'ago'  => self::time_elapsed_string($date),
 
-           'short' => sprintf('%s %s %d', $d, __('global.month_short.'.$m), $y),
+           'short' => sprintf('%s %s %d',__('global.month_short.'.$m), $d, $y),
 
-           'long'  => sprintf('%s %s %d', $d, __('global.month_long.'.$m), $y),
+           'long'  => sprintf('%s %s %d',__('global.month_short.'.$m), $d, $y),
            
            'time'  => sprintf('%s:%s WIB', $h, $i),
 
-           'short_time'  => sprintf('%s %s %d, %s:%s WIB', $d, __('global.month_short.'.$m), $y, $h, $i),
+           'short_time'  => sprintf('%s %s %d, %s:%s WIB', __('global.month_short.'.$m), $d, $y, $h, $i),
 
-           'long_time'   => sprintf('%s %s %d, %s:%s WIB', $d, __('global.month_long.'.$m), $y, $h, $i),           
+           'long_time'   => sprintf('%s %s %d, %s:%s WIB',__('global.month_long.'.$m), $d, $y, $h, $i),           
         };
     }
 
@@ -51,12 +51,12 @@ class Util {
                              1  =>  'second'
         ];
         $a_plural = [   
-            'year'   => 'year',
-            'month'  => 'month',
-            'day'    => 'day',
-            'hour'   => 'hour',
-            'minute' => 'minute',
-            'second' => 'second'
+            'year'   => 'years',
+            'month'  => 'months',
+            'day'    => 'days',
+            'hour'   => 'hours',
+            'minute' => 'minutes',
+            'second' => 'seconds'
         ];
 
         foreach ($a as $secs => $str)

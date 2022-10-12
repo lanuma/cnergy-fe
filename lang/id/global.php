@@ -13,28 +13,28 @@ return [
         'Feb' => 'Feb',
         'Mar' => 'Mar',
         'Apr' => 'Apr',
-        'May' => 'Mei',
+        'May' => 'May',
         'Jun' => 'Jun',
         'Jul' => 'Jul',
-        'Aug' => 'Ags',
+        'Aug' => 'Aug',
         'Sep' => 'Sep',
-        'Oct' => 'Okt',
+        'Oct' => 'Oct',
         'Nov' => 'Nov',
-        'Dec' => 'Des'
+        'Dec' => 'Dec'
     ],
     'month_long' => [
-        'Jan' => 'Januari',
-        'Feb' => 'Februari',
-        'Mar' => 'Maret',
+        'Jan' => 'January',
+        'Feb' => 'February',
+        'Mar' => 'March',
         'Apr' => 'April',
-        'May' => 'Mei',
-        'Jun' => 'Juni',
-        'Jul' => 'Juli',
-        'Aug' => 'Agustus',
+        'May' => 'May',
+        'Jun' => 'June',
+        'Jul' => 'July',
+        'Aug' => 'August',
         'Sep' => 'September',
-        'Oct' => 'Oktober',
+        'Oct' => 'October',
         'Nov' => 'November',
-        'Dec' => 'Desember'
+        'Dec' => 'December'
     ],
 
 ];
