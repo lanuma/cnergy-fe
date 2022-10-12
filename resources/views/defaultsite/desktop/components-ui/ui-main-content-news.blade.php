@@ -109,7 +109,7 @@
         @include('defaultsite.desktop.components-ui.ui-share-news')
 
         <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-light report-btn"><i
-                class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Laporkan Artikel</button>
+                class="fa-solid fa-triangle-exclamation" style="color: #ca0000"></i> Report Article </button>
 
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
