@@ -689,6 +689,7 @@
             font-family: var(--prompt-font);
             font-style: italic;
             text-transform: uppercase;
+            margin-bottom: 10px;
         }
         .artikel-terkait-container .image-news {
             position: relative;
@@ -977,6 +978,80 @@
             font-weight: 400;
             font-size: 11px;
         }
+        /* pagination */
+/* PAGINATION CONTAINER */
+.pagination-container {
+    margin: 20px;
+}
+
+.pagination-container .pagination-pages {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: var(--prompt-font);
+    text-transform: uppercase;
+}
+
+.pagination-container ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+.paginationlist-item:not(:first-child) {
+    margin-left: 8px;
+}
+
+.paginationlist-item a {
+    align-items: center;
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 36px;
+    min-width: 36px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    color: #000;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.paginationlist-item a .iconSVG {
+    height: 12px;
+    width: 12px;
+}
+
+.paginationlist-item a:hover,
+.paginationlist-item.active a {
+    background-color: #ca0000;
+    color: white !important;
+}
+
+.paginationlist-item a:hover .iconSVG,
+.paginationlist-item.active a .iconSVG {
+    fill: #ffffff;
+}
+/* end pagination */
+.photo-title {
+    font-family: "Lato";
+    font-weight: bolder;
+    font-size: 14px;
+    margin: 10px 20px;
+    color: #000000;
+}
+.related-title{
+    font-weight: 700;
+    font-size: 16px;
+    font-family: var(--prompt-font);
+    font-style: italic;
+    text-transform: uppercase;
+    margin: 10px 20px;
+}
 
     </style>
     @stack('preload')
