@@ -44,7 +44,7 @@
 
 {{-- slider --}}
 @if ($headline[0]['news_id'] ?? null)
-@include('defaultsite.mobile.components-ui.slider', ['hl' => $headline, 'title' => 'Berita Terbaru'])
+@include('defaultsite.mobile.components-ui.slider', ['hl' => $headline, 'title' => 'Latest News'])
 @endif
 
 @include('defaultsite.mobile.components-ui.ads-main')
@@ -56,7 +56,7 @@
 
 {{-- slider --}}
 @if ($headline[0]['news_id'] ?? null)
-@include('defaultsite.mobile.components-ui.slider', ['hl' => $headline, 'title' => 'Berita Terbaru'])
+@include('defaultsite.mobile.components-ui.slider', ['hl' => $headline, 'title' => 'Latest News'])
 @endif
 
 {{-- list main news --}}
