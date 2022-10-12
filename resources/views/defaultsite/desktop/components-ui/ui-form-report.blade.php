@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between">
-    <p class="special-font-prompt text-uppercase fs-3 fw-bold ms-5" style="color: black;">Laporkan Artikel</p>
+    <p class="special-font-prompt text-uppercase fs-3 fw-bold" style="color: black;">Report Article</p>
     <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
 </div>
 
@@ -19,7 +19,7 @@
     <form class="form-submit">
         <input type="hidden" class="form-control" value="{{ url()->current() }}" name="url" hidden readonly>
         <div class="form-box">
-            <input type="text" class="form-control " placeholder="Nama Depan" value="" name="name">
+            <input type="text" class="form-control " placeholder="First Name" value="" name="name">
             <label id="name-error" class="error label-error" for="name"></label>
         </div>
         <div class="form-box">
@@ -28,24 +28,23 @@
             <label id="from-error" class="error label-error" for="from"></label>
         </div>
         <div class="form-box">
-            <input type="text" class="form-control  " placeholder="Nomor HP" value="" name="phone"
+            <input type="text" class="form-control  " placeholder="Phone Number" value="" name="phone"
                 rule='[^0-9]' required='required' minlength='9' maxlength='12'>
             <label id="phone-error" class="error label-error" for="phone"></label>
         </div>
         <div class="form-box">
-            <input type="text" class="form-control  " placeholder="Judul Laporan" value="" name="subject"
+            <input type="text" class="form-control  " placeholder="Head Report" value="" name="subject"
                 required='required'>
             <label id="subject-error" class="error label-error" for="subject"></label>
         </div>
         <div class="form-box">
-            <textarea class="form-control " rows="5" placeholder="Detail Laporan" value="" name="content"
-                required='required'></textarea>
+            <textarea class="form-control " rows="5" placeholder="Details" value="" name="content" required='required'></textarea>
             <label id="content-error" class="error label-error" for="content"></label>
         </div>
         <div class="form-box d-flex justify-content-end">
             <div class="form-button">
                 <button type="submit" class="btn btn--submit py-2 px-6 rounded-md"
-                    style="background-color: #CA0000; color: white">Kirim</button>
+                    style="background-color: #CA0000; color: white">Send</button>
             </div>
         </div>
     </form>

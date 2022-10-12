@@ -98,7 +98,7 @@
 
                     <button type="button" data-toggle="modal" data-target="#myModal"
                         class="btn btn-light report-btn mt-5"><i class="fa-solid fa-triangle-exclamation"
-                            style="color: #ca0000"></i> Laporkan Artikel</button>
+                            style="color: #ca0000"></i> Report Article </button>
 
                     <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">

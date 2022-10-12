@@ -1085,7 +1085,6 @@ nav {
     margin: 0;
     height: auto;
     background-color: silver;
-    width: 100%;
     border-radius: 8px;
 }
 
@@ -1093,6 +1092,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: fill;
 }
 
 .main-content-news-container .content-news img {
