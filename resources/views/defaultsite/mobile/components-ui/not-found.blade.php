@@ -1,7 +1,7 @@
 <div class="not-found-container">
-  <div class="image-news">
-    <img src="{{ URL::asset('assets/images/not-found.webp') }}" alt="not found" >
-  </div>
-  <h1>Halaman Tidak Ditemukan</h1>
-  <p>Alamat yang anda masukkan salah, tidak tersedia, atau sudah dihapus</p>
+    <div class="image-news">
+        <img src="{{ URL::asset('assets/images/not-found.webp') }}" alt="not found">
+    </div>
+    <h1>Page Not Found</h1>
+    <p>The link address you have been entered is incorrect, unavailable, or deleted</p>
 </div>
