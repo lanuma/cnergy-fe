@@ -1,5 +1,6 @@
 <nav>
     <div class="nav-first_section d-flex justify-content-between">
+
         <a href="/">
             <img src="{{ URL::asset('assets/images/logo.webp') }}" alt="logo" width="168px" height="34px">
         </a>
@@ -292,6 +293,7 @@
         @endif
     </div>
 </nav>
+
 
 <script>
     function collapseLainnya() {

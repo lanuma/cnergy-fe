@@ -16,12 +16,12 @@
                                         $headline[0]['news_title'] ?? null,
                                     ])
                                     @if ($headline[0]['news_type'] == 'photonews')
-                                        <span class="img-info"> Lihat Foto
+                                        <span class="img-info"> Open Photo
                                             <i class="fa-sharp fa-solid fa-camera ms-2" style="color: #CA0000"></i>
                                         </span>
                                     @endif
                                     @if ($headline[0]['news_type'] == 'video')
-                                        <span class="video-info"> Lihat Video
+                                        <span class="video-info"> Play Video
                                             <i class="fa-solid fa-circle-play ms-2" style="color: #CA0000"></i>
                                         </span>
                                     @endif
@@ -59,7 +59,7 @@
                 ])
 
                 <div class="d-flex justify-content-center align-content-center my-4"><a href="/index-berita"
-                        class="border border-danger p-3 px-4 text-danger">Indeks Berita</a>
+                        class="border border-danger p-3 px-4 text-danger">News Index</a>
                 </div>
             </div>
             <div class="col-4">

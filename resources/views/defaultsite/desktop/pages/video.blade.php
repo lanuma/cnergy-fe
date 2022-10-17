@@ -28,7 +28,7 @@
                     </figure>
                     <figcaption class="d-flex flex-column mx-4 my-3">
                         <h4>
-                            <a href="/" class="mt-3">TIPS TRIK</a>
+                            <a href="/" class="mt-3">TIPS & TRICK</a>
                         </h4>
                         <span class="my-2">{{ Util::date($headline[0]['news_date_publish'] ?? null, 'long_time') }}</span>
                         <h2>

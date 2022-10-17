@@ -18,12 +18,12 @@
                                     ])
 
                                     @if ($headline['news_type'] == 'photonews')
-                                        <span class="img-info"> Lihat Foto
+                                        <span class="img-info"> Open Photo
                                             <i class="fa-sharp fa-solid fa-camera ms-2" style="color: #CA0000"></i>
                                         </span>
                                     @endif
                                     @if ($headline['news_type'] == 'video')
-                                        <span class="video-info"> Lihat Video
+                                        <span class="video-info"> Play Video
                                             <i class="fa-solid fa-circle-play ms-2" style="color: #CA0000"></i>
                                         </span>
                                     @endif
