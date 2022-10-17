@@ -49,6 +49,9 @@
         {{-- Header --}}
         @section('header')
             @include('defaultsite.desktop.components-ui.ui-header')
+            <div class="ads-header1">
+                ADS-HEADER
+            </div>
         @show
 
         {{-- Breaking news --}}

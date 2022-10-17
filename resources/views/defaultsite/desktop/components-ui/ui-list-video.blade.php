@@ -1,6 +1,6 @@
 @if (count($rows) > 0)
     <div class="d-flex align-items-center justify-content-between">
-        <p class="text-dark fs-1">VIDEO TERBARU</p>
+        <p class="related-thumb my-3">LATEST VIDEO</p>
     </div>
     <div class="related-video-container">
         @foreach ($rows as $r)

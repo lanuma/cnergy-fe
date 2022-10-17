@@ -285,6 +285,7 @@ nav {
     color: #000000;
     padding: 0 20px;
     font-weight: bold;
+    line-height: 30px;
 }
 
 .img-info:hover,
@@ -803,6 +804,7 @@ nav {
     font-size: 14px;
     color: #000000;
     margin-top: 6px;
+    font-weight: 700;
 }
 
 .berita-sidebar-container span:hover {
@@ -2361,4 +2363,33 @@ p as {
 .contact-us-container .form-contact .form-button button {
     background-color: #ca0000;
     color: white;
+}
+
+/* ads */
+.ads-side1,
+.ads-side2,
+.ads-side3 {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0px;
+    text-align: center;
+}
+.ads-side1 {
+    min-height: 270px;
+}
+
+.ads-side2 {
+    min-height: 620px;
+}
+
+.ads-side3 {
+    min-height: 270px;
+}
+
+.ads-header1 {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0px;
+    text-align: center;
+    min-height: 250px;
 }

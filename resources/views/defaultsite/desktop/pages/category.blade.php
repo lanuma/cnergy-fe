@@ -27,12 +27,12 @@
 
                                     @if ($headline['news_type'] == 'photonews')
                                         <span class="item-img-info">
-                                            <i class="icon icon--photo icon--white mr-1"></i> Lihat Foto
+                                            <i class="icon icon--photo icon--white mr-1"></i> Open Photo
                                         </span>
                                     @endif
                                     @if ($headline['news_type'] == 'video')
                                         <span class="item-img-info">
-                                            <i class="icon icon--video icon--white mr-1"></i> Putar Video
+                                            <i class="icon icon--video icon--white mr-1"></i> Play Video
                                         </span>
                                     @endif
                                 </a>
@@ -45,8 +45,8 @@
                             </a>
                             <p>{{ $headline['news_synopsis'] }}</p>
                         </div>
+                        @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])
                     </div>
-                    @include('defaultsite.desktop.components-ui.ui-slider', ['fd' => $feed])
                 @endif
 
                 {{-- @dump($latest['data']) --}}
