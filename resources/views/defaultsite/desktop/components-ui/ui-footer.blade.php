@@ -3,7 +3,7 @@
             width="168px" height="34px"></a>
     <div class="first-link-footer mt-3 d-flex flex-row justify-content-center">
         @if ($footer_menu = Data::menu(position: 'footer') ?? null)
-            @dump($footer_menu)
+            {{-- @dump($footer_menu) --}}
             <ul>
                 @if ($footer_menu != null || count($footer_menu > 0))
                     @foreach ($footer_menu as $l)
