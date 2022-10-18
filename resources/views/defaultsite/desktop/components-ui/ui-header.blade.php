@@ -1,6 +1,8 @@
 <nav>
     <div class="nav-first_section d-flex justify-content-between">
-
+        <div class="channel-ad channel-ad_ad-topfrm">
+            {!! Util::getAds('billboardmasthead') !!}
+        </div>
         <a href="/">
             <img src="{{ URL::asset('assets/images/logo.webp') }}" alt="logo" width="168px" height="34px">
         </a>
@@ -293,6 +295,11 @@
         @endif
     </div>
 </nav>
+<div class="container px-8 pt-5">
+    <div class="channel-ad channel-ad_ad-lb">
+        {!! Util::getAds('leaderboard') !!}
+    </div>
+</div>
 
 
 <script>
