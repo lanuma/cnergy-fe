@@ -5,7 +5,7 @@
 
     {{-- slider trending tapi data belum ada --}}
     @if ($popular = \Data::popular() ?? null)
-        @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Berita Populer'])
+        @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Popular News'])
     @endif
 
     {{--list populer news--}}
@@ -15,6 +15,6 @@
 
     {{-- slider latest news --}}
     @if ($latest = \Data::latest() ?? null)
-        @include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Berita Terbaru'])
+        @include('defaultsite.mobile.components-ui.slider', ['hl' => $latest, 'title' => 'Latest News'])
     @endif
 @endsection
