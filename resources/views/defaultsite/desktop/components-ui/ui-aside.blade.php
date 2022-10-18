@@ -1,15 +1,17 @@
 @include('defaultsite.desktop.components-ui.ui-trending-tag')
 
-<div class="ads-side1">
-    ADS-SIDE1
+
+
+<div class="channel-ad channel-ad_ad-sc">
+    {!! Util::getAds('showcase-1') !!}
 </div>
 
-<div class="ads-side2">
-    ADS-SIDE2
+<div class="channel-ad channel-ad_ad-hl">
+    {!! Util::getAds('half-page') !!}
 </div>
 
-<div class="ads-side3">
-    ADS-SIDE3
+<div class="channel-ad channel-ad_ad-sc2">
+    {!! Util::getAds('showcase-2') !!}
 </div>
 
 @if ($reference ?? null)

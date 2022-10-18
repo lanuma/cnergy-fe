@@ -41,3 +41,9 @@
             Rights Reserved</p>
     </div>
 </div>
+<div class="channel-ad channel-ad_ad-skinads">
+    {!! Util::getAds('skin-ads') !!}
+</div>
+<div class="channel-ad channel-ad_ad-bttmfrm">
+    {!! Util::getAds('bottom-frame') !!}
+</div>

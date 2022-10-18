@@ -2364,32 +2364,3 @@ p as {
     background-color: #ca0000;
     color: white;
 }
-
-/* ads */
-.ads-side1,
-.ads-side2,
-.ads-side3 {
-    display: flex;
-    justify-content: center;
-    margin: 15px 0px;
-    text-align: center;
-}
-.ads-side1 {
-    min-height: 270px;
-}
-
-.ads-side2 {
-    min-height: 620px;
-}
-
-.ads-side3 {
-    min-height: 270px;
-}
-
-.ads-header1 {
-    display: flex;
-    justify-content: center;
-    margin: 15px 0px;
-    text-align: center;
-    min-height: 250px;
-}

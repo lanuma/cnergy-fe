@@ -1,6 +1,6 @@
 @if (count($latest) > 0)
     @if ($latest = collect($latest)->slice(0, 18))
-        <h2 class="related-thumb">Related News</h2>
+        <h2 class="related-thumb">{{ $title ?? 'Related News' }}</h2>
         <div class="related-news-container">
             @foreach ($latest as $r)
                 <div class="img-news">
