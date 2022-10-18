@@ -174,7 +174,7 @@ class Util {
     static function getAds($name)
     {
         if(!config('app.enabled_ads')) return false;
-
+        
         return  str_replace(["\n", "\r"], "", config('site.ads')[$name] ?? '');
     }
 }

@@ -10,7 +10,7 @@ class NewsController extends Controller
     function home()
     {
         $headline = Data::headline();
-
+        // dd(config('site.ads'));
         $feed = collect($headline)->slice(1,6);
 
         $latest = Data::latest(
