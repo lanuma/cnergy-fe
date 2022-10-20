@@ -32,6 +32,9 @@
     </figure>
 </div>
 {{-- adds --}}
+<div class="channel-ad channel-ad_ad-headline text-center">
+    {!! Util::getAds('headline') !!}
+</div>
 @include('defaultsite.mobile.components-ui.ads-on')
 {{-- st-share --}}
 @include('defaultsite.mobile.components-ui.dt-share')
@@ -151,9 +154,9 @@
                   $counter++;
                   if ($counter==2) 
                   {
-                      $exposer1 = str_replace("script", "scr+ipt", str_replace('+', '',Util::getAds("exposer-1")));
+                   $exposer1 = str_replace("script", "scr+ipt", str_replace('+', '',Util::getAds("exposer-1")));
                       echo '<div class="channel-ad channel-ad_ad-exposer">'.$exposer1.'</div>';
-                  }
+                    }
                   }; 
               }
           }
@@ -204,6 +207,9 @@
 @if ($latest = \Data::popular() ?? null)
 @include('defaultsite.mobile.components-ui.related-article', ['news' => $latest, 'title' => 'Related News']) 
 @endif
+<div class="channel-ad channel-ad_ad-sc text-center">
+    {!! Util::getAds('showcase-1') !!}
+</div> 
 
 {{-- trending tag --}}
 @include('defaultsite.mobile.components-ui.trending-tag')
@@ -212,6 +218,9 @@
 @if ($popular = \Data::popular() ?? null)
     @include('defaultsite.mobile.components-ui.slider', ['hl' => $popular, 'title' => 'Popular News'])
 @endif
+<div class="channel-ad channel-ad_ad-sc-2 text-center">
+    {!! Util::getAds('showcase-2') !!}
+</div>
 
 {{--list populer news--}}
 @if ($popular = \Data::popular() ?? null)

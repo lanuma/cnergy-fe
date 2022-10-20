@@ -3,9 +3,9 @@
         @if ($loop->index==0)
             @if (($page??null)=='homepage')
                 @if (($data??null)=='latest')
-                    {{-- <div class="channel-ad channel-ad_ad-sc-2">
+                    <div class="channel-ad channel-ad_ad-sc-2">
                         {!! Util::getAds('showcase-2') !!}
-                    </div> --}}
+                    </div>
                 @endif
             @endif
         @endif

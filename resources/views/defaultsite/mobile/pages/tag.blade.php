@@ -27,9 +27,11 @@
 @include('defaultsite.mobile.components-ui.video-collection', [ 'title' => 'Video ' ])
 
 {{-- adds-on --}}
-{{-- @if ($headline[2]['news_id'] ?? null)  --}}
+<div class="channel-ad channel-ad_ad-headline text-center">
+    {!! Util::getAds('headline') !!}
+</div>
  @include('defaultsite.mobile.components-ui.ads-on')
- {{-- @endif  --}}
+ 
 
 
 {{-- list main news --}}
@@ -38,6 +40,9 @@
 @if ($popular = \Data::popular() ?? null)
     @include('defaultsite.mobile.components-ui.list-main-news', ['listnews' => $popular])
 @endif
+<div class="channel-ad channel-ad_ad-exposer text-center">
+    {!! Util::getAds('exposer') !!}
+</div>
 
 {{-- highlight --}} 
 {{-- @dump($headline) --}}
@@ -50,6 +55,9 @@
     @include('defaultsite.mobile.components-ui.list-main-news', ['listnews' => $headline])
 @endif
 
+<div class="channel-ad channel-ad_ad-sc text-center">
+    {!! Util::getAds('showcase-1') !!}
+</div> 
 
 {{-- slider trending tapi data belum ada --}}
 @if ($popular = \Data::popular() ?? null)
@@ -60,6 +68,10 @@
 @if ($popular = \Data::popular() ?? null)
     @include('defaultsite.mobile.components-ui.populer-news', ['hl' => $popular])
 @endif
+
+<div class="channel-ad channel-ad_ad-sc-2 text-center">
+    {!! Util::getAds('showcase-2') !!}
+</div>
 
 {{-- slider latest news --}}
 @if ($latest = \Data::latest() ?? null)

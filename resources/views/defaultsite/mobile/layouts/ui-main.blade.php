@@ -174,6 +174,22 @@
         }, '300');
     });
 </script>
+<script>
+    
+    function copyToClipboard() {
+        // document.getElementById("copy-link").select();
+        // document.execCommand('copy');
+        var dummy = document.createElement('input'),
+        text = window.location.href;
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+        var button = document.querySelector(".icons-share-link")
+        button.innerHTML = "Copied !"
+    }
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
 
