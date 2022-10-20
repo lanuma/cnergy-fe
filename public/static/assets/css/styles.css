@@ -1274,6 +1274,18 @@ nav {
     font-weight: 700;
 }
 
+.share-news-container .icons .copy-link button {
+    border: 8px;
+    padding: 8px;
+    background-color: #424242;
+    font-family: var(--lato-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 30px;
+    color: #ffffff;
+}
+
 /* REPORT ARTICLE CSS */
 .report-btn {
     font-family: var(--lato-font);
