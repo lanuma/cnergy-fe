@@ -1,5 +1,7 @@
 @extends('defaultsite.mobile.layouts.ui-main')
 
+
+
 @section('content')
 
 {{-- headline --}}    
@@ -29,7 +31,12 @@
   </div>
 </div>
 
-{{-- Adds-1 --}}    
+{{-- Adds-1 --}} 
+<div class="-mx-4">
+  <div class="channel-ad channel-ad_ad-headline text-center">
+      {!! Util::getAds('headline') !!}
+  </div>
+</div>   
 @if ($headline[2]['news_id'] ?? null) 
  @include('defaultsite.mobile.components-ui.ads-on')
  @endif 
@@ -47,17 +54,27 @@
 @include('defaultsite.mobile.components-ui.slider', ['hl' => $headline, 'title' => 'Latest News'])
 @endif
 
+ <div class="channel-ad channel-ad_ad-sc text-center">
+            {!! Util::getAds('showcase-1') !!}
+        </div> 
 @include('defaultsite.mobile.components-ui.ads-main')
 
 {{-- list main news --}}
 @if ($headline[0]['news_id'] ?? null)
     @include('defaultsite.mobile.components-ui.list-main-news', ['listnews' => $headline])
 @endif
+<div class="channel-ad channel-ad_ad-exposer text-center text-center">
+  {!! Util::getAds('exposer') !!}
+</div>
 
 {{-- slider --}}
 @if ($headline[0]['news_id'] ?? null)
 @include('defaultsite.mobile.components-ui.slider', ['hl' => $headline, 'title' => 'Latest News'])
 @endif
+
+ <div class="channel-ad channel-ad_ad-sc-2 text-center">
+            {!! Util::getAds('showcase-2') !!}
+        </div>
 
 {{-- list main news --}}
 @if ($headline[0]['news_id'] ?? null)
