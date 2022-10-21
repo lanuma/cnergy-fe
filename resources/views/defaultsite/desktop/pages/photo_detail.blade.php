@@ -56,7 +56,7 @@
 @endsection
 
 @section('khusus-photo-detail')
-    @dump($row)
+    {{-- @dump($row) --}}
     <div class="photo-detail-section">
         <div class="container w-kly">
             {{-- Header --}}
