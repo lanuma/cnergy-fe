@@ -1,5 +1,50 @@
 @extends('defaultsite.desktop.layouts.ui-main')
 
+<style>
+    .description {
+        line-height: 18px;
+        max-height: calc(18px * 1);
+        overflow: hidden;
+    }
+
+    .check-input {
+        display: none;
+    }
+
+    .button-readmore::after {
+        content: 'Read More';
+        display: inline-block;
+    }
+
+    .button-readmore {
+        display: inline-block;
+        font-size: 12px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .button-readmore:hover {
+        color: #dc3545;
+    }
+
+    .check-input:checked~.button-readmore::after {
+        content: 'Read Less';
+
+    }
+
+    .check-input:checked~.description {
+        max-height: 100vh;
+    }
+
+    /* Hide input checkbox */
+    /* #check-readmore {
+        position: absolute;
+        left: -100px;
+    } */
+</style>
+
+
+
 @section('title', $row['news_title'])
 
 {{-- Exlude Header --}}
@@ -54,12 +99,17 @@
                                 </div>
                                 <div class="carousel-inner">
                                     @foreach ($row['photonews'] as $photo)
+                                        {{-- @dump($row) --}}
                                         <div class="carousel-item {{ $loop->first ? ' active' : '' }}">
                                             <div class="carousel-image-desc">
                                                 <img src="{{ $photo['image']['real'] }}" class="d-block w-100">
-                                                <div class="d-flex justify-content-between text-desc-photo">
-                                                    <p>{{ $photo['description'] }}</p>
-                                                    <span>Selengkapnya</span>
+                                                <div
+                                                    class="d-flex justify-content-between text-desc-photo gap-2 align-items-center">
+                                                    <p class="description">{{ $photo['description'] }} </p>
+                                                    <input class="check-input" type="checkbox" id="{{ $photo['id'] }}">
+                                                    <label style="width: 120px; text-align: center; font-style: italic"
+                                                        for="{{ $photo['id'] }}" class="button-readmore"></label>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -144,7 +194,8 @@
                                     style="color: #1DADEB"></i></a>
                         @endif
                         @if ($socmed->youtube ?? null)
-                            <a href="{{ $socmed->youtube }}" aria-label="youtube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="{{ $socmed->youtube }}" aria-label="youtube"><i
+                                    class="fa-brands fa-youtube"></i></a>
                         @endif
                         @if ($socmed->ig ?? null)
                             <a href="{{ $socmed->ig }}" aria-label="instagram"><i

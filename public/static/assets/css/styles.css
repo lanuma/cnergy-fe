@@ -1903,10 +1903,15 @@ nav {
     padding: 0px 10px;
     font-family: var(--lato-font);
     font-size: 14px;
+    z-index: 10;
 }
 
 .carousel-image-desc .text-desc-photo {
     cursor: pointer;
+}
+
+.list-photo-detail {
+    margin-bottom: 50px;
 }
 
 .list-photo-detail button {
