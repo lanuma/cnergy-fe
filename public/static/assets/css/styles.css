@@ -1890,6 +1890,25 @@ nav {
     margin: 20px;
 }
 
+.carousel-image-desc {
+    position: relative;
+}
+
+.carousel-image-desc .text-desc-photo {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.536);
+    width: 100%;
+    color: white;
+    padding: 0px 10px;
+    font-family: var(--lato-font);
+    font-size: 14px;
+}
+
+.carousel-image-desc .text-desc-photo {
+    cursor: pointer;
+}
+
 .list-photo-detail button {
     min-height: 30px;
     min-width: 70px;
