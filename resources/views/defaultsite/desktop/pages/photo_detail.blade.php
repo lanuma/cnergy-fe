@@ -11,6 +11,7 @@
 @endsection
 
 @section('khusus-photo-detail')
+    @dump($row)
     <div class="photo-detail-section">
         <div class="container w-kly">
             {{-- Header --}}
@@ -54,7 +55,13 @@
                                 <div class="carousel-inner">
                                     @foreach ($row['photonews'] as $photo)
                                         <div class="carousel-item {{ $loop->first ? ' active' : '' }}">
-                                            <img src="{{ $photo['image']['real'] }}" class="d-block w-100">
+                                            <div class="carousel-image-desc">
+                                                <img src="{{ $photo['image']['real'] }}" class="d-block w-100">
+                                                <div class="d-flex justify-content-between text-desc-photo">
+                                                    <p>{{ $photo['description'] }}</p>
+                                                    <span>Selengkapnya</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
