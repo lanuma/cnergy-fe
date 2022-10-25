@@ -5,8 +5,10 @@
             Utama Lainnya</h4>
     </div>
     <section class="custom-slider">
-        <button class="pre-btn"><img src="{{ URL::asset('assets/icons/prev.svg') }}" alt=""></button>
-        <button class="nxt-btn"><img src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
+        <button type="button" aria-label="prev-btn" class="pre-btn"><img width="40px" height="40px"
+                src="{{ URL::asset('assets/icons/prev.svg') }}" alt=""></button>
+        <button type="button" aria-label="next-btn" class="nxt-btn"><img width="40px" height="40px"
+                src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
         <div class="slider-container">
             @foreach ($fd as $s)
                 <a href="{{ Src::detail($s) }}" aria-label="{{ $s[0]['news_title'] ?? null }}" class="slider-card">
