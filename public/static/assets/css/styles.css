@@ -244,7 +244,7 @@ nav {
 }
 
 .main-news-container figure {
-    aspect-ratio: calc(16 / 9);
+    aspect-ratio: 16 / 9;
     border-radius: 8px;
 }
 
@@ -308,8 +308,12 @@ nav {
     align-items: flex-start;
 }
 
-.text-news-container figure img {
-    aspect-ratio: calc(19 / 11);
+.text-news-container figure .img-wrapper {
+    aspect-ratio: 19 / 11;
+    border-radius: 8px;
+}
+
+.text-news-container figure .img-wrapper img {
     border-radius: 8px;
     object-fit: cover;
 }
@@ -452,8 +456,8 @@ nav {
     font-weight: 700;
 }
 
-.custom-slider .pre-btn,
-.custom-slider .nxt-btn {
+.custom-slider button.pre-btn,
+.custom-slider button.nxt-btn {
     border: none;
     position: absolute;
     height: 100%;
@@ -539,12 +543,16 @@ nav {
 .photo-headline-gallery {
     width: 426px;
     background-color: silver;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .photo-headline-gallery img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .gallery-image-container .gallery-image-row-2 p {
@@ -572,6 +580,16 @@ nav {
 
 .photo-gallery-overlay {
     position: relative;
+}
+
+.photo-gallery-overlay:first-child,
+.photo-gallery-overlay:first-child img {
+    border-top-right-radius: 8px;
+}
+
+.photo-gallery-overlay:last-child,
+.photo-gallery-overlay:last-child img {
+    border-bottom-right-radius: 8px;
 }
 
 .photo-gallery-overlay:last-child {
@@ -608,6 +626,7 @@ nav {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.4);
+    border-bottom-right-radius: 8px;
 }
 
 .photo-gallery-overlay:last-child a:after,
@@ -689,7 +708,7 @@ nav {
 }
 
 .video-news-container .img-wrapper {
-    aspect-ratio: calc(16 / 9);
+    aspect-ratio: 16 / 9;
     border-radius: 8px;
 }
 
@@ -2072,7 +2091,7 @@ nav {
 }
 
 .video-container figure {
-    aspect-ratio: calc(16 / 9);
+    aspect-ratio: 16 / 9;
     background-color: #f9f9f9;
 }
 
@@ -2172,7 +2191,7 @@ p as {
 
 .video-trending-container .trending-video {
     background-color: silver;
-    aspect-ratio: calc(19 / 11);
+    aspect-ratio: 19 / 11;
     border-radius: 8px;
     background-color: silver;
 }

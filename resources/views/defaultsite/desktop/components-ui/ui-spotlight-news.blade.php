@@ -2,8 +2,10 @@
     <h4 class="special-font-prompt text-uppercase fst-italic fw-bold" style="font-size: 16px; margin-left: 20px">
         Spotlight</h4>
     <section class="custom-slider">
-        <button class="pre-btn"><img src="{{ URL::asset('assets/icons/prev.svg') }}" alt=""></button>
-        <button class="nxt-btn"><img src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
+        <button class="pre-btn" aria-label="prev-btn"><img width="40px" height="40px"
+                src="{{ URL::asset('assets/icons/prev.svg') }}" alt=""></button>
+        <button class="nxt-btn" aria-label="next-btn"><img width="40px" height="40px"
+                src="{{ URL::asset('assets/icons/next.svg') }}" alt=""></button>
         <div class="slider-container">
             @foreach ($sl as $s)
                 <a href="{{ Src::detail($s) }}" aria-label="{{ $s['news_title'] ?? null }}" class="slider-card">
